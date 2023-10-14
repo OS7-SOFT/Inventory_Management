@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "56ead787-5255-456a-8314-a58ee14a2f25": {
+      "ProjectGuid": "56ead787-5255-456a-8314-a58ee14a2f25",
+      "DisplayName": "inventory_management",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
