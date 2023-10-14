@@ -83,16 +83,28 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Views\Forms\Form1.cs">
+    <Compile Include="Views\Forms\mainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Forms\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Views\Forms\mainForm.Designer.cs">
+      <DependentUpon>mainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Views\Forms\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Views\Forms\IneventoryManageFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\IneventoryManageFrm.Designer.cs">
+      <DependentUpon>IneventoryManageFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\InventoryInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\InventoryInfoForm.Designer.cs">
+      <DependentUpon>InventoryInfoForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\Forms\mainForm.resx">
+      <DependentUpon>mainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -104,6 +116,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\Forms\IneventoryManageFrm.resx">
+      <DependentUpon>IneventoryManageFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\InventoryInfoForm.resx">
+      <DependentUpon>InventoryInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="App.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

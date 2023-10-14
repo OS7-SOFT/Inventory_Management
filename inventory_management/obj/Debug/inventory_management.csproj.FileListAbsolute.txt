@@ -24,7 +24,6 @@ D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\bin\Debug\
 D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\bin\Debug\DevExpress.Pdf.v23.1.Drawing.xml
 D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.csproj.AssemblyReference.cache
 D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.csproj.SuggestedBindingRedirects.cache
-D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.Form1.resources
 D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.Properties.Resources.resources
 D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.csproj.GenerateResource.cache
 D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.csproj.CoreCompileInputs.cache
@@ -99,3 +98,6 @@ D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\bin\Debug\
 D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\bin\Debug\DevExpress.XtraTreeMap.v23.1.UI.xml
 D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\bin\Debug\DevExpress.XtraDiagram.v23.1.xml
 D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\bin\Debug\DevExpress.Diagram.v23.1.Core.xml
+D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.Views.Forms.IneventoryManageFrm.resources
+D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.mainForm.resources
+D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.Views.Forms.InventoryInfoForm.resources
