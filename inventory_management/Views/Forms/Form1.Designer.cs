@@ -62,7 +62,7 @@
             DevExpress.XtraCharts.SideBySideBarSeriesView sideBySideBarSeriesView2 = new DevExpress.XtraCharts.SideBySideBarSeriesView();
             DevExpress.XtraCharts.ChartTitle chartTitle2 = new DevExpress.XtraCharts.ChartTitle();
             DevExpress.XtraGrid.GridLevelNode gridLevelNode1 = new DevExpress.XtraGrid.GridLevelNode();
-            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode3 = new DevExpress.XtraGrid.GridLevelNode();
             DevExpress.XtraCharts.UI.ChartControlCommandGalleryItemGroup2DColumn chartControlCommandGalleryItemGroup2DColumn1 = new DevExpress.XtraCharts.UI.ChartControlCommandGalleryItemGroup2DColumn();
             DevExpress.XtraCharts.UI.CreateBarChartItem createBarChartItem1 = new DevExpress.XtraCharts.UI.CreateBarChartItem();
             DevExpress.XtraCharts.UI.CreateFullStackedBarChartItem createFullStackedBarChartItem1 = new DevExpress.XtraCharts.UI.CreateFullStackedBarChartItem();
@@ -173,6 +173,10 @@
             DevExpress.XtraCharts.UI.CreateSideBySideGanttChartItem createSideBySideGanttChartItem1 = new DevExpress.XtraCharts.UI.CreateSideBySideGanttChartItem();
             DevExpress.XtraCharts.UI.ChartControlCommandGalleryItemGroupBoxPlot chartControlCommandGalleryItemGroupBoxPlot1 = new DevExpress.XtraCharts.UI.ChartControlCommandGalleryItemGroupBoxPlot();
             DevExpress.XtraCharts.UI.CreateBoxPlotChartItem createBoxPlotChartItem1 = new DevExpress.XtraCharts.UI.CreateBoxPlotChartItem();
+            DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox2 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode2 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode4 = new DevExpress.XtraGrid.GridLevelNode();
+            DevExpress.XtraGrid.GridLevelNode gridLevelNode5 = new DevExpress.XtraGrid.GridLevelNode();
             this.directXFormContainerControl1 = new DevExpress.XtraEditors.DirectXFormContainerControl();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.homeBtn = new DevExpress.XtraTab.XtraTabPage();
@@ -205,6 +209,13 @@
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraTabPage3 = new DevExpress.XtraTab.XtraTabPage();
             this.xtraScrollableControl3 = new DevExpress.XtraEditors.XtraScrollableControl();
+            this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
+            this.lblProductSold = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.lblProductCounts = new DevExpress.XtraEditors.LabelControl();
+            this.lblDefectiveProd = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ribbonControl3 = new DevExpress.XtraBars.Ribbon.RibbonControl();
@@ -212,7 +223,6 @@
             this.barButtonItem8 = new DevExpress.XtraBars.BarButtonItem();
             this.barButtonItem9 = new DevExpress.XtraBars.BarButtonItem();
             this.barEditItem1 = new DevExpress.XtraBars.BarEditItem();
-            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -223,15 +233,63 @@
             this.commandBarGalleryDropDown5 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
             this.commandBarGalleryDropDown6 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
             this.commandBarGalleryDropDown7 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
-            this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.ribbonControl4 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.barButtonItem10 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem11 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem12 = new DevExpress.XtraBars.BarButtonItem();
+            this.barEditItem2 = new DevExpress.XtraBars.BarEditItem();
+            this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.xtraScrollableControl4 = new DevExpress.XtraEditors.XtraScrollableControl();
+            this.groupControl7 = new DevExpress.XtraEditors.GroupControl();
+            this.lblCategoriesCount = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
+            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
+            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.xtraTabPage4 = new DevExpress.XtraTab.XtraTabPage();
+            this.ribbonControl5 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.barButtonItem13 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem14 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem15 = new DevExpress.XtraBars.BarButtonItem();
+            this.barEditItem3 = new DevExpress.XtraBars.BarEditItem();
+            this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.xtraScrollableControl5 = new DevExpress.XtraEditors.XtraScrollableControl();
+            this.groupControl8 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
+            this.gridControl3 = new DevExpress.XtraGrid.GridControl();
+            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.barButtonItem16 = new DevExpress.XtraBars.BarButtonItem();
+            this.barEditItem4 = new DevExpress.XtraBars.BarEditItem();
+            this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
+            this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
+            this.xtraTabPage5 = new DevExpress.XtraTab.XtraTabPage();
+            this.ribbonControl6 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.barButtonItem17 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem18 = new DevExpress.XtraBars.BarButtonItem();
+            this.barButtonItem19 = new DevExpress.XtraBars.BarButtonItem();
+            this.barEditItem5 = new DevExpress.XtraBars.BarEditItem();
+            this.barButtonItem20 = new DevExpress.XtraBars.BarButtonItem();
+            this.barEditItem6 = new DevExpress.XtraBars.BarEditItem();
+            this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.xtraScrollableControl6 = new DevExpress.XtraEditors.XtraScrollableControl();
+            this.groupControl9 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl18 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl19 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
+            this.gridControl4 = new DevExpress.XtraGrid.GridControl();
+            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.directXFormContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
@@ -267,12 +325,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl2)).BeginInit();
+            this.xtraTabPage1.SuspendLayout();
             this.xtraTabPage3.SuspendLayout();
             this.xtraScrollableControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
+            this.groupControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown3)).BeginInit();
@@ -280,8 +340,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
-            this.groupControl6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(repositoryItemComboBox2)).BeginInit();
+            this.xtraScrollableControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).BeginInit();
+            this.groupControl7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            this.xtraTabPage4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl5)).BeginInit();
+            this.xtraScrollableControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).BeginInit();
+            this.groupControl8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
+            this.xtraTabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl6)).BeginInit();
+            this.xtraScrollableControl6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl9)).BeginInit();
+            this.groupControl9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
             this.SuspendLayout();
             // 
             // directXFormContainerControl1
@@ -306,8 +386,9 @@
             this.homeBtn,
             this.xtraTabPage2,
             this.xtraTabPage1,
-            this.xtraTabPage3});
-            this.xtraTabControl1.Click += new System.EventHandler(this.xtraTabControl1_Click);
+            this.xtraTabPage3,
+            this.xtraTabPage4,
+            this.xtraTabPage5});
             // 
             // homeBtn
             // 
@@ -488,7 +569,6 @@
             this.xtraScrollableControl2.Name = "xtraScrollableControl2";
             this.xtraScrollableControl2.Size = new System.Drawing.Size(1698, 647);
             this.xtraScrollableControl2.TabIndex = 1;
-            this.xtraScrollableControl2.Click += new System.EventHandler(this.xtraScrollableControl2_Click);
             // 
             // groupControl5
             // 
@@ -679,6 +759,8 @@
             // 
             // xtraTabPage1
             // 
+            this.xtraTabPage1.Controls.Add(this.xtraScrollableControl4);
+            this.xtraTabPage1.Controls.Add(this.ribbonControl4);
             this.xtraTabPage1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage1.ImageOptions.Image")));
             this.xtraTabPage1.Name = "xtraTabPage1";
             this.xtraTabPage1.Size = new System.Drawing.Size(1698, 830);
@@ -692,7 +774,6 @@
             this.xtraTabPage3.Name = "xtraTabPage3";
             this.xtraTabPage3.Size = new System.Drawing.Size(1698, 830);
             this.xtraTabPage3.Text = "Products";
-            this.xtraTabPage3.Paint += new System.Windows.Forms.PaintEventHandler(this.xtraTabPage3_Paint);
             // 
             // xtraScrollableControl3
             // 
@@ -704,13 +785,96 @@
             this.xtraScrollableControl3.Size = new System.Drawing.Size(1698, 647);
             this.xtraScrollableControl3.TabIndex = 1;
             // 
+            // groupControl6
+            // 
+            this.groupControl6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupControl6.Appearance.BackColor = System.Drawing.Color.White;
+            this.groupControl6.Appearance.Options.UseBackColor = true;
+            this.groupControl6.AppearanceCaption.BackColor = System.Drawing.Color.White;
+            this.groupControl6.AppearanceCaption.Options.UseBackColor = true;
+            this.groupControl6.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl6.CaptionImageOptions.Image")));
+            this.groupControl6.Controls.Add(this.labelControl5);
+            this.groupControl6.Controls.Add(this.lblProductSold);
+            this.groupControl6.Controls.Add(this.labelControl4);
+            this.groupControl6.Controls.Add(this.lblProductCounts);
+            this.groupControl6.Controls.Add(this.lblDefectiveProd);
+            this.groupControl6.Controls.Add(this.labelControl1);
+            this.groupControl6.Location = new System.Drawing.Point(1262, 13);
+            this.groupControl6.Name = "groupControl6";
+            this.groupControl6.Size = new System.Drawing.Size(425, 339);
+            this.groupControl6.TabIndex = 3;
+            this.groupControl6.Text = "Statices";
+            // 
+            // labelControl5
+            // 
+            this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl5.Appearance.Options.UseFont = true;
+            this.labelControl5.Location = new System.Drawing.Point(17, 234);
+            this.labelControl5.Name = "labelControl5";
+            this.labelControl5.Size = new System.Drawing.Size(242, 22);
+            this.labelControl5.TabIndex = 5;
+            this.labelControl5.Text = "The number of Products sold :";
+            // 
+            // lblProductSold
+            // 
+            this.lblProductSold.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductSold.Appearance.Options.UseFont = true;
+            this.lblProductSold.Location = new System.Drawing.Point(17, 272);
+            this.lblProductSold.Name = "lblProductSold";
+            this.lblProductSold.Size = new System.Drawing.Size(20, 22);
+            this.lblProductSold.TabIndex = 4;
+            this.lblProductSold.Text = "52";
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(17, 136);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(286, 22);
+            this.labelControl4.TabIndex = 3;
+            this.labelControl4.Text = "The number of defective  Products :";
+            // 
+            // lblProductCounts
+            // 
+            this.lblProductCounts.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductCounts.Appearance.Options.UseFont = true;
+            this.lblProductCounts.Location = new System.Drawing.Point(17, 83);
+            this.lblProductCounts.Name = "lblProductCounts";
+            this.lblProductCounts.Size = new System.Drawing.Size(50, 22);
+            this.lblProductCounts.TabIndex = 2;
+            this.lblProductCounts.Text = "15240";
+            this.lblProductCounts.Click += new System.EventHandler(this.labelControl3_Click);
+            // 
+            // lblDefectiveProd
+            // 
+            this.lblDefectiveProd.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDefectiveProd.Appearance.Options.UseFont = true;
+            this.lblDefectiveProd.Location = new System.Drawing.Point(17, 174);
+            this.lblDefectiveProd.Name = "lblDefectiveProd";
+            this.lblDefectiveProd.Size = new System.Drawing.Size(20, 22);
+            this.lblDefectiveProd.TabIndex = 1;
+            this.lblDefectiveProd.Text = "52";
+            // 
+            // labelControl1
+            // 
+            this.labelControl1.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl1.Appearance.Options.UseFont = true;
+            this.labelControl1.Location = new System.Drawing.Point(17, 45);
+            this.labelControl1.Name = "labelControl1";
+            this.labelControl1.Size = new System.Drawing.Size(133, 22);
+            this.labelControl1.TabIndex = 0;
+            this.labelControl1.Text = "Products Count :";
+            this.labelControl1.Click += new System.EventHandler(this.labelControl1_Click);
+            // 
             // gridControl1
             // 
             this.gridControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            gridLevelNode2.RelationName = "Level1";
+            gridLevelNode3.RelationName = "Level1";
             this.gridControl1.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
-            gridLevelNode2});
+            gridLevelNode3});
             this.gridControl1.Location = new System.Drawing.Point(11, 13);
             this.gridControl1.MainView = this.gridView2;
             this.gridControl1.MenuManager = this.ribbonControl1;
@@ -741,8 +905,6 @@
             this.ribbonControl3.Name = "ribbonControl3";
             this.ribbonControl3.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage3});
-            this.ribbonControl3.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.repositoryItemComboBox1});
             this.ribbonControl3.Size = new System.Drawing.Size(1698, 183);
             // 
             // barButtonItem7
@@ -753,7 +915,6 @@
             this.barButtonItem7.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.Image")));
             this.barButtonItem7.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem7.ImageOptions.LargeImage")));
             this.barButtonItem7.Name = "barButtonItem7";
-            this.barButtonItem7.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barButtonItem7_ItemClick);
             // 
             // barButtonItem8
             // 
@@ -776,19 +937,12 @@
             // barEditItem1
             // 
             this.barEditItem1.Caption = "Categories";
-            this.barEditItem1.Edit = this.repositoryItemComboBox1;
+            this.barEditItem1.Edit = repositoryItemComboBox2;
             this.barEditItem1.Id = 4;
             this.barEditItem1.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barEditItem1.ImageOptions.Image")));
             this.barEditItem1.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barEditItem1.ImageOptions.LargeImage")));
             this.barEditItem1.Name = "barEditItem1";
             this.barEditItem1.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
-            // 
-            // repositoryItemComboBox1
-            // 
-            this.repositoryItemComboBox1.AutoHeight = false;
-            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
             // 
             // ribbonPage3
             // 
@@ -1416,124 +1570,594 @@
             this.commandBarGalleryDropDown7.Name = "commandBarGalleryDropDown7";
             this.commandBarGalleryDropDown7.Ribbon = this.ribbonControl1;
             // 
-            // groupControl6
+            // ribbonControl4
             // 
-            this.groupControl6.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.ribbonControl4.ExpandCollapseItem.Id = 0;
+            this.ribbonControl4.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ribbonControl4.ExpandCollapseItem,
+            this.barButtonItem10,
+            this.barButtonItem11,
+            this.barButtonItem12,
+            this.barEditItem2});
+            this.ribbonControl4.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl4.MaxItemId = 5;
+            this.ribbonControl4.Name = "ribbonControl4";
+            this.ribbonControl4.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPage4});
+            this.ribbonControl4.Size = new System.Drawing.Size(1698, 183);
+            // 
+            // barButtonItem10
+            // 
+            this.barButtonItem10.Caption = "Add";
+            this.barButtonItem10.Hint = "Add new Category";
+            this.barButtonItem10.Id = 1;
+            this.barButtonItem10.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.Image")));
+            this.barButtonItem10.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem10.ImageOptions.LargeImage")));
+            this.barButtonItem10.Name = "barButtonItem10";
+            // 
+            // barButtonItem11
+            // 
+            this.barButtonItem11.Caption = "Edit";
+            this.barButtonItem11.Hint = "Edit Category";
+            this.barButtonItem11.Id = 2;
+            this.barButtonItem11.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.Image")));
+            this.barButtonItem11.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem11.ImageOptions.LargeImage")));
+            this.barButtonItem11.Name = "barButtonItem11";
+            // 
+            // barButtonItem12
+            // 
+            this.barButtonItem12.Caption = "Delete";
+            this.barButtonItem12.Hint = "Delete Category";
+            this.barButtonItem12.Id = 3;
+            this.barButtonItem12.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem12.ImageOptions.Image")));
+            this.barButtonItem12.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem12.ImageOptions.LargeImage")));
+            this.barButtonItem12.Name = "barButtonItem12";
+            // 
+            // barEditItem2
+            // 
+            this.barEditItem2.Caption = "Inventories";
+            repositoryItemComboBox2.AutoHeight = false;
+            repositoryItemComboBox2.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            repositoryItemComboBox2.Name = "repositoryItemComboBox1";
+            this.barEditItem2.Edit = repositoryItemComboBox2;
+            this.barEditItem2.Id = 4;
+            this.barEditItem2.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barEditItem2.ImageOptions.Image")));
+            this.barEditItem2.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barEditItem2.ImageOptions.LargeImage")));
+            this.barEditItem2.Name = "barEditItem2";
+            this.barEditItem2.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // ribbonPage4
+            // 
+            this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup5,
+            this.ribbonPageGroup6});
+            this.ribbonPage4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage4.ImageOptions.Image")));
+            this.ribbonPage4.Name = "ribbonPage4";
+            this.ribbonPage4.Text = "Manage";
+            // 
+            // ribbonPageGroup5
+            // 
+            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem10);
+            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem11);
+            this.ribbonPageGroup5.ItemLinks.Add(this.barButtonItem12);
+            this.ribbonPageGroup5.Name = "ribbonPageGroup5";
+            this.ribbonPageGroup5.Text = "Products Management";
+            // 
+            // ribbonPageGroup6
+            // 
+            this.ribbonPageGroup6.ItemLinks.Add(this.barEditItem2);
+            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
+            this.ribbonPageGroup6.Text = "Filter category by inventories";
+            // 
+            // xtraScrollableControl4
+            // 
+            this.xtraScrollableControl4.Controls.Add(this.groupControl7);
+            this.xtraScrollableControl4.Controls.Add(this.gridControl2);
+            this.xtraScrollableControl4.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraScrollableControl4.Location = new System.Drawing.Point(0, 183);
+            this.xtraScrollableControl4.Name = "xtraScrollableControl4";
+            this.xtraScrollableControl4.Size = new System.Drawing.Size(1698, 647);
+            this.xtraScrollableControl4.TabIndex = 2;
+            // 
+            // groupControl7
+            // 
+            this.groupControl7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.groupControl6.Appearance.BackColor = System.Drawing.Color.White;
-            this.groupControl6.Appearance.Options.UseBackColor = true;
-            this.groupControl6.AppearanceCaption.BackColor = System.Drawing.Color.White;
-            this.groupControl6.AppearanceCaption.Options.UseBackColor = true;
-            this.groupControl6.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl6.CaptionImageOptions.Image")));
-            this.groupControl6.Controls.Add(this.label7);
-            this.groupControl6.Controls.Add(this.label8);
-            this.groupControl6.Controls.Add(this.label5);
-            this.groupControl6.Controls.Add(this.label6);
-            this.groupControl6.Controls.Add(this.label3);
-            this.groupControl6.Controls.Add(this.label4);
-            this.groupControl6.Controls.Add(this.label2);
-            this.groupControl6.Controls.Add(this.label1);
-            this.groupControl6.Location = new System.Drawing.Point(1262, 13);
-            this.groupControl6.Name = "groupControl6";
-            this.groupControl6.Size = new System.Drawing.Size(425, 339);
-            this.groupControl6.TabIndex = 3;
-            this.groupControl6.Text = "Statices";
+            this.groupControl7.Appearance.BackColor = System.Drawing.Color.White;
+            this.groupControl7.Appearance.Options.UseBackColor = true;
+            this.groupControl7.AppearanceCaption.BackColor = System.Drawing.Color.White;
+            this.groupControl7.AppearanceCaption.Options.UseBackColor = true;
+            this.groupControl7.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl7.CaptionImageOptions.Image")));
+            this.groupControl7.Controls.Add(this.lblCategoriesCount);
+            this.groupControl7.Controls.Add(this.labelControl9);
+            this.groupControl7.Location = new System.Drawing.Point(1262, 18);
+            this.groupControl7.Name = "groupControl7";
+            this.groupControl7.Size = new System.Drawing.Size(425, 150);
+            this.groupControl7.TabIndex = 5;
+            this.groupControl7.Text = "Statices";
             // 
-            // label1
+            // lblCategoriesCount
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(19, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 22);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Products Count :";
+            this.lblCategoriesCount.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoriesCount.Appearance.Options.UseFont = true;
+            this.lblCategoriesCount.Location = new System.Drawing.Point(17, 83);
+            this.lblCategoriesCount.Name = "lblCategoriesCount";
+            this.lblCategoriesCount.Size = new System.Drawing.Size(50, 22);
+            this.lblCategoriesCount.TabIndex = 2;
+            this.lblCategoriesCount.Text = "15240";
             // 
-            // label2
+            // labelControl9
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(60, 85);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(60, 22);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "15420";
+            this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl9.Appearance.Options.UseFont = true;
+            this.labelControl9.Location = new System.Drawing.Point(17, 45);
+            this.labelControl9.Name = "labelControl9";
+            this.labelControl9.Size = new System.Drawing.Size(147, 22);
+            this.labelControl9.TabIndex = 0;
+            this.labelControl9.Text = "Categories Count :";
             // 
-            // label3
+            // gridControl2
             // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.gridControl2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            gridLevelNode2.RelationName = "Level1";
+            this.gridControl2.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode2});
+            this.gridControl2.Location = new System.Drawing.Point(11, 18);
+            this.gridControl2.MainView = this.gridView3;
+            this.gridControl2.MenuManager = this.ribbonControl1;
+            this.gridControl2.Name = "gridControl2";
+            this.gridControl2.Size = new System.Drawing.Size(1236, 735);
+            this.gridControl2.TabIndex = 4;
+            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView3});
+            // 
+            // gridView3
+            // 
+            this.gridView3.Appearance.GroupPanel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView3.Appearance.GroupPanel.Options.UseFont = true;
+            this.gridView3.GridControl = this.gridControl2;
+            this.gridView3.Name = "gridView3";
+            // 
+            // xtraTabPage4
+            // 
+            this.xtraTabPage4.Controls.Add(this.xtraScrollableControl5);
+            this.xtraTabPage4.Controls.Add(this.ribbonControl5);
+            this.xtraTabPage4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage4.ImageOptions.Image")));
+            this.xtraTabPage4.Name = "xtraTabPage4";
+            this.xtraTabPage4.Size = new System.Drawing.Size(1698, 830);
+            this.xtraTabPage4.Text = "Orders";
+            // 
+            // ribbonControl5
+            // 
+            this.ribbonControl5.ExpandCollapseItem.Id = 0;
+            this.ribbonControl5.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ribbonControl5.ExpandCollapseItem,
+            this.barButtonItem13,
+            this.barButtonItem14,
+            this.barButtonItem15,
+            this.barEditItem3,
+            this.barButtonItem16,
+            this.barEditItem4});
+            this.ribbonControl5.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl5.MaxItemId = 7;
+            this.ribbonControl5.Name = "ribbonControl5";
+            this.ribbonControl5.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPage5});
+            this.ribbonControl5.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemComboBox1});
+            this.ribbonControl5.Size = new System.Drawing.Size(1698, 183);
+            // 
+            // barButtonItem13
+            // 
+            this.barButtonItem13.Caption = "Add";
+            this.barButtonItem13.Hint = "Add new Product";
+            this.barButtonItem13.Id = 1;
+            this.barButtonItem13.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem13.ImageOptions.Image")));
+            this.barButtonItem13.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem13.ImageOptions.LargeImage")));
+            this.barButtonItem13.Name = "barButtonItem13";
+            // 
+            // barButtonItem14
+            // 
+            this.barButtonItem14.Caption = "Edit";
+            this.barButtonItem14.Hint = "Edit Product";
+            this.barButtonItem14.Id = 2;
+            this.barButtonItem14.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.Image")));
+            this.barButtonItem14.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem14.ImageOptions.LargeImage")));
+            this.barButtonItem14.Name = "barButtonItem14";
+            // 
+            // barButtonItem15
+            // 
+            this.barButtonItem15.Caption = "Delete";
+            this.barButtonItem15.Hint = "Delete Product";
+            this.barButtonItem15.Id = 3;
+            this.barButtonItem15.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.Image")));
+            this.barButtonItem15.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem15.ImageOptions.LargeImage")));
+            this.barButtonItem15.Name = "barButtonItem15";
+            // 
+            // barEditItem3
+            // 
+            this.barEditItem3.Caption = "Categories";
+            this.barEditItem3.Edit = null;
+            this.barEditItem3.Id = 4;
+            this.barEditItem3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barEditItem3.ImageOptions.Image")));
+            this.barEditItem3.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barEditItem3.ImageOptions.LargeImage")));
+            this.barEditItem3.Name = "barEditItem3";
+            this.barEditItem3.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // ribbonPage5
+            // 
+            this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup7,
+            this.ribbonPageGroup9});
+            this.ribbonPage5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage5.ImageOptions.Image")));
+            this.ribbonPage5.Name = "ribbonPage5";
+            this.ribbonPage5.Text = "Manage";
+            // 
+            // ribbonPageGroup7
+            // 
+            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem13);
+            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem14);
+            this.ribbonPageGroup7.ItemLinks.Add(this.barButtonItem15);
+            this.ribbonPageGroup7.Name = "ribbonPageGroup7";
+            this.ribbonPageGroup7.Text = "Orders Management";
+            // 
+            // xtraScrollableControl5
+            // 
+            this.xtraScrollableControl5.Controls.Add(this.groupControl8);
+            this.xtraScrollableControl5.Controls.Add(this.gridControl3);
+            this.xtraScrollableControl5.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraScrollableControl5.Location = new System.Drawing.Point(0, 183);
+            this.xtraScrollableControl5.Name = "xtraScrollableControl5";
+            this.xtraScrollableControl5.Size = new System.Drawing.Size(1698, 647);
+            this.xtraScrollableControl5.TabIndex = 2;
+            // 
+            // groupControl8
+            // 
+            this.groupControl8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(308, 85);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 22);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "15420";
+            this.groupControl8.Appearance.BackColor = System.Drawing.Color.White;
+            this.groupControl8.Appearance.Options.UseBackColor = true;
+            this.groupControl8.AppearanceCaption.BackColor = System.Drawing.Color.White;
+            this.groupControl8.AppearanceCaption.Options.UseBackColor = true;
+            this.groupControl8.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl8.CaptionImageOptions.Image")));
+            this.groupControl8.Controls.Add(this.labelControl11);
+            this.groupControl8.Controls.Add(this.labelControl12);
+            this.groupControl8.Controls.Add(this.labelControl2);
+            this.groupControl8.Controls.Add(this.labelControl3);
+            this.groupControl8.Controls.Add(this.labelControl6);
+            this.groupControl8.Controls.Add(this.labelControl7);
+            this.groupControl8.Controls.Add(this.labelControl8);
+            this.groupControl8.Controls.Add(this.labelControl10);
+            this.groupControl8.Location = new System.Drawing.Point(1262, 14);
+            this.groupControl8.Name = "groupControl8";
+            this.groupControl8.Size = new System.Drawing.Size(425, 402);
+            this.groupControl8.TabIndex = 5;
+            this.groupControl8.Text = "Statices";
             // 
-            // label4
+            // labelControl2
             // 
-            this.label4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.labelControl2.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl2.Appearance.Options.UseFont = true;
+            this.labelControl2.Location = new System.Drawing.Point(17, 234);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(212, 22);
+            this.labelControl2.TabIndex = 5;
+            this.labelControl2.Text = "Number of canceled orders";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(17, 272);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(20, 22);
+            this.labelControl3.TabIndex = 4;
+            this.labelControl3.Text = "52";
+            // 
+            // labelControl6
+            // 
+            this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl6.Appearance.Options.UseFont = true;
+            this.labelControl6.Location = new System.Drawing.Point(17, 136);
+            this.labelControl6.Name = "labelControl6";
+            this.labelControl6.Size = new System.Drawing.Size(212, 22);
+            this.labelControl6.TabIndex = 3;
+            this.labelControl6.Text = "Number of current orders :";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Location = new System.Drawing.Point(17, 83);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(50, 22);
+            this.labelControl7.TabIndex = 2;
+            this.labelControl7.Text = "15240";
+            // 
+            // labelControl8
+            // 
+            this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl8.Appearance.Options.UseFont = true;
+            this.labelControl8.Location = new System.Drawing.Point(17, 174);
+            this.labelControl8.Name = "labelControl8";
+            this.labelControl8.Size = new System.Drawing.Size(20, 22);
+            this.labelControl8.TabIndex = 1;
+            this.labelControl8.Text = "52";
+            // 
+            // labelControl10
+            // 
+            this.labelControl10.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl10.Appearance.Options.UseFont = true;
+            this.labelControl10.Location = new System.Drawing.Point(17, 45);
+            this.labelControl10.Name = "labelControl10";
+            this.labelControl10.Size = new System.Drawing.Size(117, 22);
+            this.labelControl10.TabIndex = 0;
+            this.labelControl10.Text = "Orders Count :";
+            // 
+            // gridControl3
+            // 
+            this.gridControl3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            gridLevelNode4.RelationName = "Level1";
+            this.gridControl3.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode4});
+            this.gridControl3.Location = new System.Drawing.Point(11, 14);
+            this.gridControl3.MainView = this.gridView4;
+            this.gridControl3.MenuManager = this.ribbonControl1;
+            this.gridControl3.Name = "gridControl3";
+            this.gridControl3.Size = new System.Drawing.Size(1236, 735);
+            this.gridControl3.TabIndex = 4;
+            this.gridControl3.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView4});
+            // 
+            // gridView4
+            // 
+            this.gridView4.Appearance.GroupPanel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView4.Appearance.GroupPanel.Options.UseFont = true;
+            this.gridView4.GridControl = this.gridControl3;
+            this.gridView4.Name = "gridView4";
+            // 
+            // ribbonPageGroup8
+            // 
+            this.ribbonPageGroup8.ItemLinks.Add(this.barEditItem3);
+            this.ribbonPageGroup8.Name = "ribbonPageGroup8";
+            this.ribbonPageGroup8.Text = "Filter products by category";
+            // 
+            // ribbonPageGroup9
+            // 
+            this.ribbonPageGroup9.ItemLinks.Add(this.barEditItem4);
+            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
+            this.ribbonPageGroup9.Text = "Filter by Customer";
+            // 
+            // barButtonItem16
+            // 
+            this.barButtonItem16.Caption = "barButtonItem16";
+            this.barButtonItem16.Id = 5;
+            this.barButtonItem16.Name = "barButtonItem16";
+            // 
+            // barEditItem4
+            // 
+            this.barEditItem4.Caption = "Customer";
+            this.barEditItem4.Edit = this.repositoryItemComboBox1;
+            this.barEditItem4.Id = 6;
+            this.barEditItem4.Name = "barEditItem4";
+            // 
+            // repositoryItemComboBox1
+            // 
+            this.repositoryItemComboBox1.AutoHeight = false;
+            this.repositoryItemComboBox1.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repositoryItemComboBox1.Name = "repositoryItemComboBox1";
+            // 
+            // labelControl11
+            // 
+            this.labelControl11.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl11.Appearance.Options.UseFont = true;
+            this.labelControl11.Location = new System.Drawing.Point(17, 328);
+            this.labelControl11.Name = "labelControl11";
+            this.labelControl11.Size = new System.Drawing.Size(226, 22);
+            this.labelControl11.TabIndex = 7;
+            this.labelControl11.Text = "Number of completed orders";
+            // 
+            // labelControl12
+            // 
+            this.labelControl12.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl12.Appearance.Options.UseFont = true;
+            this.labelControl12.Location = new System.Drawing.Point(17, 366);
+            this.labelControl12.Name = "labelControl12";
+            this.labelControl12.Size = new System.Drawing.Size(20, 22);
+            this.labelControl12.TabIndex = 6;
+            this.labelControl12.Text = "52";
+            // 
+            // xtraTabPage5
+            // 
+            this.xtraTabPage5.Controls.Add(this.xtraScrollableControl6);
+            this.xtraTabPage5.Controls.Add(this.ribbonControl6);
+            this.xtraTabPage5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("xtraTabPage5.ImageOptions.Image")));
+            this.xtraTabPage5.Name = "xtraTabPage5";
+            this.xtraTabPage5.Size = new System.Drawing.Size(1698, 830);
+            this.xtraTabPage5.Text = "Customers";
+            this.xtraTabPage5.Paint += new System.Windows.Forms.PaintEventHandler(this.xtraTabPage5_Paint);
+            // 
+            // ribbonControl6
+            // 
+            this.ribbonControl6.ExpandCollapseItem.Id = 0;
+            this.ribbonControl6.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ribbonControl6.ExpandCollapseItem,
+            this.barButtonItem17,
+            this.barButtonItem18,
+            this.barButtonItem19,
+            this.barEditItem5,
+            this.barButtonItem20,
+            this.barEditItem6});
+            this.ribbonControl6.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl6.MaxItemId = 7;
+            this.ribbonControl6.Name = "ribbonControl6";
+            this.ribbonControl6.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPage6});
+            this.ribbonControl6.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.repositoryItemComboBox1});
+            this.ribbonControl6.Size = new System.Drawing.Size(1698, 183);
+            // 
+            // barButtonItem17
+            // 
+            this.barButtonItem17.Caption = "Add";
+            this.barButtonItem17.Hint = "Add new Product";
+            this.barButtonItem17.Id = 1;
+            this.barButtonItem17.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem17.ImageOptions.Image")));
+            this.barButtonItem17.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem17.ImageOptions.LargeImage")));
+            this.barButtonItem17.Name = "barButtonItem17";
+            // 
+            // barButtonItem18
+            // 
+            this.barButtonItem18.Caption = "Edit";
+            this.barButtonItem18.Hint = "Edit Product";
+            this.barButtonItem18.Id = 2;
+            this.barButtonItem18.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem18.ImageOptions.Image")));
+            this.barButtonItem18.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem18.ImageOptions.LargeImage")));
+            this.barButtonItem18.Name = "barButtonItem18";
+            // 
+            // barButtonItem19
+            // 
+            this.barButtonItem19.Caption = "Delete";
+            this.barButtonItem19.Hint = "Delete Product";
+            this.barButtonItem19.Id = 3;
+            this.barButtonItem19.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem19.ImageOptions.Image")));
+            this.barButtonItem19.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem19.ImageOptions.LargeImage")));
+            this.barButtonItem19.Name = "barButtonItem19";
+            // 
+            // barEditItem5
+            // 
+            this.barEditItem5.Caption = "Categories";
+            this.barEditItem5.Edit = null;
+            this.barEditItem5.Id = 4;
+            this.barEditItem5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barEditItem5.ImageOptions.Image")));
+            this.barEditItem5.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barEditItem5.ImageOptions.LargeImage")));
+            this.barEditItem5.Name = "barEditItem5";
+            this.barEditItem5.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonItemStyles.Large;
+            // 
+            // barButtonItem20
+            // 
+            this.barButtonItem20.Caption = "barButtonItem16";
+            this.barButtonItem20.Id = 5;
+            this.barButtonItem20.Name = "barButtonItem20";
+            // 
+            // barEditItem6
+            // 
+            this.barEditItem6.Caption = "Customer";
+            this.barEditItem6.Edit = this.repositoryItemComboBox1;
+            this.barEditItem6.Id = 6;
+            this.barEditItem6.Name = "barEditItem6";
+            // 
+            // ribbonPage6
+            // 
+            this.ribbonPage6.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup10});
+            this.ribbonPage6.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage6.ImageOptions.Image")));
+            this.ribbonPage6.Name = "ribbonPage6";
+            this.ribbonPage6.Text = "Manage";
+            // 
+            // ribbonPageGroup10
+            // 
+            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem17);
+            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem18);
+            this.ribbonPageGroup10.ItemLinks.Add(this.barButtonItem19);
+            this.ribbonPageGroup10.Name = "ribbonPageGroup10";
+            this.ribbonPageGroup10.Text = "Customers Management";
+            // 
+            // xtraScrollableControl6
+            // 
+            this.xtraScrollableControl6.Controls.Add(this.groupControl9);
+            this.xtraScrollableControl6.Controls.Add(this.gridControl4);
+            this.xtraScrollableControl6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.xtraScrollableControl6.Location = new System.Drawing.Point(0, 183);
+            this.xtraScrollableControl6.Name = "xtraScrollableControl6";
+            this.xtraScrollableControl6.Size = new System.Drawing.Size(1698, 647);
+            this.xtraScrollableControl6.TabIndex = 2;
+            // 
+            // groupControl9
+            // 
+            this.groupControl9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(267, 50);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(143, 22);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Products Count :";
+            this.groupControl9.Appearance.BackColor = System.Drawing.Color.White;
+            this.groupControl9.Appearance.Options.UseBackColor = true;
+            this.groupControl9.AppearanceCaption.BackColor = System.Drawing.Color.White;
+            this.groupControl9.AppearanceCaption.Options.UseBackColor = true;
+            this.groupControl9.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl9.CaptionImageOptions.Image")));
+            this.groupControl9.Controls.Add(this.labelControl17);
+            this.groupControl9.Controls.Add(this.labelControl18);
+            this.groupControl9.Controls.Add(this.labelControl19);
+            this.groupControl9.Controls.Add(this.labelControl20);
+            this.groupControl9.Location = new System.Drawing.Point(1262, 13);
+            this.groupControl9.Name = "groupControl9";
+            this.groupControl9.Size = new System.Drawing.Size(425, 218);
+            this.groupControl9.TabIndex = 7;
+            this.groupControl9.Text = "Statices";
             // 
-            // label5
+            // labelControl17
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(60, 185);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(60, 22);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "15420";
+            this.labelControl17.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl17.Appearance.Options.UseFont = true;
+            this.labelControl17.Location = new System.Drawing.Point(17, 136);
+            this.labelControl17.Name = "labelControl17";
+            this.labelControl17.Size = new System.Drawing.Size(135, 22);
+            this.labelControl17.TabIndex = 3;
+            this.labelControl17.Text = "Best Customers :";
             // 
-            // label6
+            // labelControl18
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(19, 150);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(143, 22);
-            this.label6.TabIndex = 4;
-            this.label6.Text = "Products Count :";
+            this.labelControl18.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl18.Appearance.Options.UseFont = true;
+            this.labelControl18.Location = new System.Drawing.Point(17, 83);
+            this.labelControl18.Name = "labelControl18";
+            this.labelControl18.Size = new System.Drawing.Size(50, 22);
+            this.labelControl18.TabIndex = 2;
+            this.labelControl18.Text = "15240";
             // 
-            // label7
+            // labelControl19
             // 
-            this.label7.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(308, 185);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(60, 22);
-            this.label7.TabIndex = 7;
-            this.label7.Text = "15420";
+            this.labelControl19.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl19.Appearance.Options.UseFont = true;
+            this.labelControl19.Location = new System.Drawing.Point(17, 174);
+            this.labelControl19.Name = "labelControl19";
+            this.labelControl19.Size = new System.Drawing.Size(138, 22);
+            this.labelControl19.TabIndex = 1;
+            this.labelControl19.Text = "Cristiano Ronaldo";
             // 
-            // label8
+            // labelControl20
             // 
-            this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.Color.Transparent;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(267, 150);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(143, 22);
-            this.label8.TabIndex = 6;
-            this.label8.Text = "Products Count :";
+            this.labelControl20.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl20.Appearance.Options.UseFont = true;
+            this.labelControl20.Location = new System.Drawing.Point(17, 45);
+            this.labelControl20.Name = "labelControl20";
+            this.labelControl20.Size = new System.Drawing.Size(148, 22);
+            this.labelControl20.TabIndex = 0;
+            this.labelControl20.Text = "Customers Count :";
+            // 
+            // gridControl4
+            // 
+            this.gridControl4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            gridLevelNode5.RelationName = "Level1";
+            this.gridControl4.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
+            gridLevelNode5});
+            this.gridControl4.Location = new System.Drawing.Point(11, 13);
+            this.gridControl4.MainView = this.gridView5;
+            this.gridControl4.MenuManager = this.ribbonControl1;
+            this.gridControl4.Name = "gridControl4";
+            this.gridControl4.Size = new System.Drawing.Size(1236, 735);
+            this.gridControl4.TabIndex = 6;
+            this.gridControl4.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView5});
+            // 
+            // gridView5
+            // 
+            this.gridView5.Appearance.GroupPanel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridView5.Appearance.GroupPanel.Options.UseFont = true;
+            this.gridView5.GridControl = this.gridControl4;
+            this.gridView5.Name = "gridView5";
             // 
             // Form1
             // 
@@ -1583,13 +2207,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl2)).EndInit();
+            this.xtraTabPage1.ResumeLayout(false);
+            this.xtraTabPage1.PerformLayout();
             this.xtraTabPage3.ResumeLayout(false);
             this.xtraTabPage3.PerformLayout();
             this.xtraScrollableControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).EndInit();
+            this.groupControl6.ResumeLayout(false);
+            this.groupControl6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown3)).EndInit();
@@ -1597,9 +2225,33 @@
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).EndInit();
-            this.groupControl6.ResumeLayout(false);
-            this.groupControl6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(repositoryItemComboBox2)).EndInit();
+            this.xtraScrollableControl4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).EndInit();
+            this.groupControl7.ResumeLayout(false);
+            this.groupControl7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            this.xtraTabPage4.ResumeLayout(false);
+            this.xtraTabPage4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl5)).EndInit();
+            this.xtraScrollableControl5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).EndInit();
+            this.groupControl8.ResumeLayout(false);
+            this.groupControl8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
+            this.xtraTabPage5.ResumeLayout(false);
+            this.xtraTabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl6)).EndInit();
+            this.xtraScrollableControl6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl9)).EndInit();
+            this.groupControl9.ResumeLayout(false);
+            this.groupControl9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1651,20 +2303,74 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage3;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
         private DevExpress.XtraBars.BarEditItem barEditItem1;
-        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl3;
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
         private DevExpress.XtraEditors.GroupControl groupControl6;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl lblProductCounts;
+        private DevExpress.XtraEditors.LabelControl lblDefectiveProd;
+        private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.XtraEditors.LabelControl labelControl5;
+        private DevExpress.XtraEditors.LabelControl lblProductSold;
+        private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl4;
+        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl4;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem10;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem11;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem12;
+        private DevExpress.XtraBars.BarEditItem barEditItem2;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
+        private DevExpress.XtraEditors.GroupControl groupControl7;
+        private DevExpress.XtraEditors.LabelControl lblCategoriesCount;
+        private DevExpress.XtraEditors.LabelControl labelControl9;
+        private DevExpress.XtraGrid.GridControl gridControl2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage4;
+        private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl5;
+        private DevExpress.XtraEditors.GroupControl groupControl8;
+        private DevExpress.XtraEditors.LabelControl labelControl11;
+        private DevExpress.XtraEditors.LabelControl labelControl12;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraEditors.LabelControl labelControl6;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.XtraEditors.LabelControl labelControl8;
+        private DevExpress.XtraEditors.LabelControl labelControl10;
+        private DevExpress.XtraGrid.GridControl gridControl3;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
+        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl5;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem13;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem14;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem15;
+        private DevExpress.XtraBars.BarEditItem barEditItem3;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem16;
+        private DevExpress.XtraBars.BarEditItem barEditItem4;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
+        private DevExpress.XtraTab.XtraTabPage xtraTabPage5;
+        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl6;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem17;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem18;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem19;
+        private DevExpress.XtraBars.BarEditItem barEditItem5;
+        private DevExpress.XtraBars.BarButtonItem barButtonItem20;
+        private DevExpress.XtraBars.BarEditItem barEditItem6;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage6;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup10;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup8;
+        private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl6;
+        private DevExpress.XtraEditors.GroupControl groupControl9;
+        private DevExpress.XtraEditors.LabelControl labelControl17;
+        private DevExpress.XtraEditors.LabelControl labelControl18;
+        private DevExpress.XtraEditors.LabelControl labelControl19;
+        private DevExpress.XtraEditors.LabelControl labelControl20;
+        private DevExpress.XtraGrid.GridControl gridControl4;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
     }
 }
 

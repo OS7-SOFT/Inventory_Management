@@ -18,22 +18,17 @@ namespace inventory_management
             
         }
 
-        private void xtraScrollableControl2_Click(object sender, EventArgs e)
+        private void labelControl3_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void xtraTabControl1_Click(object sender, EventArgs e)
+        private void labelControl1_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void xtraTabPage3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void barButtonItem7_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void xtraTabPage5_Paint(object sender, PaintEventArgs e)
         {
 
         }
