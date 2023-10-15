@@ -83,6 +83,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logic\Services\CategoryServices.cs" />
+    <Compile Include="Logic\Services\DataBase.cs" />
+    <Compile Include="Logic\Services\IDataHelper.cs" />
+    <Compile Include="Models\AccountModel.cs" />
+    <Compile Include="Models\CategoryModel.cs" />
+    <Compile Include="Models\CustomerModel.cs" />
+    <Compile Include="Models\InventoryModel.cs" />
+    <Compile Include="Models\OrderModel.cs" />
+    <Compile Include="Models\ProductClass.cs" />
+    <Compile Include="Models\SupplierModel.cs" />
     <Compile Include="Views\Forms\AccountsManageFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,9 +207,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Models\" />
-    <Folder Include="Presenters\" />
-    <Folder Include="Services\" />
+    <Folder Include="Logic\Presenters\" />
     <Folder Include="Views\Interfaces\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
