@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace inventory_management.Views.Forms
 {
-    public partial class IneventoryManageFrm : DevExpress.XtraEditors.XtraForm
+    public partial class OrderManageFrm : DevExpress.XtraEditors.XtraForm
     {
-        public IneventoryManageFrm()
+        public OrderManageFrm()
         {
             InitializeComponent();
         }
