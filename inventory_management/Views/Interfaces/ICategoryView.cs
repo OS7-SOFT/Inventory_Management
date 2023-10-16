@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace inventory_management.Views.Interfaces
 {
-    internal interface ICategoryView
+    public interface ICategoryView
     {
+        string Name { get; set; }
     }
 }
