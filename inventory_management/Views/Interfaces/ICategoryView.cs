@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace inventory_management
+namespace inventory_management.Views.Interfaces
 {
-    internal class SharedClass
+    internal interface ICategoryView
     {
-        public string Name { get; set; }
     }
 }
