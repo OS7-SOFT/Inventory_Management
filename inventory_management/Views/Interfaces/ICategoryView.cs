@@ -9,5 +9,7 @@ namespace inventory_management.Views.Interfaces
     public interface ICategoryView
     {
         string Name { get; set; }
+        string Message { get; set; }
+        bool IsSuccessed { get; set; }
     }
 }

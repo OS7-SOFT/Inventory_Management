@@ -10,7 +10,5 @@ namespace inventory_management.Views.Forms.Categories
     public class Category : ICategoryView
     {
         public string Name { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public string Message { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
-        public bool IsSuccessed { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
     }
 }
