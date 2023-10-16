@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\inventory_management",
+    "\\inventory_management\\Logic",
+    "\\inventory_management\\Logic\\Services",
+    "\\inventory_management\\Views",
+    "\\inventory_management\\Views\\Forms",
+    "\\inventory_management\\Views\\Interfaces"
+  ],
+  "SelectedNode": "\\inventory_management.sln",
+  "PreviewInSolutionExplorer": false
+}
