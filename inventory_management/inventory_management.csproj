@@ -155,6 +155,7 @@
     <Compile Include="Views\Forms\TransFormFrm.Designer.cs">
       <DependentUpon>TransFormFrm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Interfaces\Interface1.cs" />
     <EmbeddedResource Include="Views\Forms\AccountsManageFrm.resx">
       <DependentUpon>AccountsManageFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -206,10 +207,7 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Logic\Presenters\" />
-    <Folder Include="Views\Interfaces\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

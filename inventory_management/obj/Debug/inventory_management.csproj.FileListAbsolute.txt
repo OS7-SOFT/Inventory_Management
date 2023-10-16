@@ -102,3 +102,9 @@ D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\
 D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.Views.Forms.InventoryInfoForm.resources
 D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.Views.Forms.InventoryManageFrm.resources
 D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.Views.Forms.TransFormFrm.resources
+D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.Views.Forms.AccountsManageFrm.resources
+D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.Views.Forms.CategoryManageFrm.resources
+D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.Views.Forms.CustomersManageFrm.resources
+D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.Views.Forms.OrderManageFrm.resources
+D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.Views.Forms.ProductManageFrm.resources
+D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.Views.Forms.SuppliersManageFrm.resources
