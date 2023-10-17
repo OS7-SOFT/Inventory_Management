@@ -44,5 +44,10 @@ namespace inventory_management.Logic.Services
             command.Parameters.Add("@email", SqlDbType.VarChar).Value = (string)Params[3];
             command.Parameters.Add("@location", SqlDbType.VarChar).Value = (string)Params[4];
         }
+
+        public DataTable GetData()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

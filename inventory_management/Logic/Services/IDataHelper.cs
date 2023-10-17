@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,6 @@ namespace inventory_management.Logic.Services
         // Delete method
         void DeleteData(int id);
         void DeleteDataParameters(int id, SqlCommand command);
-
+        DataTable GetData();
     }
 }

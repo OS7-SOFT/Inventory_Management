@@ -52,5 +52,10 @@ namespace inventory_management.Logic.Services
             command.Parameters.Add("@categoryId", SqlDbType.Int).Value = (int)Params[7];
             command.Parameters.Add("@supplierId", SqlDbType.Int).Value = (int)Params[8];
         }
+
+        public DataTable GetData()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -47,5 +47,10 @@ namespace inventory_management.Logic.Services
             command.Parameters.Add("@password", SqlDbType.VarChar).Value = (string)Params[2];
             command.Parameters.Add("@permission", SqlDbType.VarChar).Value = (string)Params[3];
         }
+
+        public DataTable GetData()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

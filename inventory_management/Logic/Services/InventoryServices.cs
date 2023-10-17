@@ -44,5 +44,10 @@ namespace inventory_management.Logic.Services
             command.Parameters.Add("@inventoryLocation", SqlDbType.VarChar).Value = (string)Params[3];
             command.Parameters.Add("@inventoryCapacity", SqlDbType.Int).Value = (int)Params[4];
         }
+
+        public DataTable GetData()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

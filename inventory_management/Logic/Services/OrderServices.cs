@@ -46,5 +46,10 @@ namespace inventory_management.Logic.Services
             command.Parameters.Add("@deliveryStatus", SqlDbType.VarChar).Value = (string)Params[4];
             command.Parameters.Add("@customerId", SqlDbType.Int).Value = (int)Params[5];
         }
+
+        public DataTable GetData()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

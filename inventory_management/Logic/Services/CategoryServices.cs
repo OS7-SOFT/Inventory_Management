@@ -38,5 +38,19 @@ namespace inventory_management.Logic.Services
             command.Parameters.Add("@id", SqlDbType.Int).Value = (int)Params[0];
             command.Parameters.Add("@categoryName", SqlDbType.VarChar).Value = (string)Params[1];
         }
+        //GetData method
+        public DataTable GetData()
+        {
+            return DataBase.Select("selectCategory", () => { });
+        }
+        //GetData By Value method
+        public DataTable GetDataByValue(int id)
+        {
+            return DataBase.GetDataByValue("selectCategoriesById", () => GetDataByValueParameters(id,DataBase.command));
+        }
+        public void GetDataByValueParameters(int id, SqlCommand command)
+        {
+            command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+        }
     }
 }

@@ -201,7 +201,6 @@ C:\Users\Ali\Documents\GithubProject\Inventory_Management\inventory_management\b
 C:\Users\Ali\Documents\GithubProject\Inventory_Management\inventory_management\obj\Debug\inventory_management.csproj.SuggestedBindingRedirects.cache
 C:\Users\Ali\Documents\GithubProject\Inventory_Management\inventory_management\obj\Debug\inventory_management.Views.Forms.AccountsManageFrm.resources
 C:\Users\Ali\Documents\GithubProject\Inventory_Management\inventory_management\obj\Debug\inventory_management.Views.Forms.Categories.CategoryManageFrm.resources
-C:\Users\Ali\Documents\GithubProject\Inventory_Management\inventory_management\obj\Debug\inventory_management.Views.Forms.CategoryManageFrm.resources
 C:\Users\Ali\Documents\GithubProject\Inventory_Management\inventory_management\obj\Debug\inventory_management.Views.Forms.CustomersManageFrm.resources
 C:\Users\Ali\Documents\GithubProject\Inventory_Management\inventory_management\obj\Debug\inventory_management.mainForm.resources
 C:\Users\Ali\Documents\GithubProject\Inventory_Management\inventory_management\obj\Debug\inventory_management.Properties.Resources.resources
@@ -218,3 +217,4 @@ C:\Users\Ali\Documents\GithubProject\Inventory_Management\inventory_management\o
 C:\Users\Ali\Documents\GithubProject\Inventory_Management\inventory_management\obj\Debug\inventory_management.exe
 C:\Users\Ali\Documents\GithubProject\Inventory_Management\inventory_management\obj\Debug\inventory_management.pdb
 D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.Views.Forms.Categories.CategoryManageFrm.resources
+C:\Users\Ali\Documents\GithubProject\Inventory_Management\inventory_management\obj\Debug\inventory_management.csproj.AssemblyReference.cache

@@ -76,5 +76,33 @@ namespace inventory_management.Logic.Services
             }
             return table;
         }
+        // To get data by value
+        public static DataTable GetDataByValue(string StoredPreName, Action action)
+        {
+            DataTable tbl = new DataTable();
+            SqlDataAdapter adapter;
+
+            using (SqlConnection connection = GetconnectionString())
+            {
+                connection.Open();
+
+                command = new SqlCommand(StoredPreName, connection);
+                command.CommandType = CommandType.StoredProcedure;
+
+                //invok Method
+                action.Invoke();
+
+                command.ExecuteNonQuery();
+
+                adapter = new SqlDataAdapter(command);
+                adapter.Fill(tbl);
+                adapter.Dispose();
+
+                connection.Close();
+
+            }
+
+            return tbl;
+        }
     }
 }
