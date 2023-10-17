@@ -103,7 +103,6 @@ D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\
 D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.Views.Forms.InventoryManageFrm.resources
 D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.Views.Forms.TransFormFrm.resources
 D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.Views.Forms.AccountsManageFrm.resources
-D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.Views.Forms.CategoryManageFrm.resources
 D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.Views.Forms.CustomersManageFrm.resources
 D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.Views.Forms.OrderManageFrm.resources
 D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.Views.Forms.ProductManageFrm.resources
@@ -218,3 +217,4 @@ C:\Users\Ali\Documents\GithubProject\Inventory_Management\inventory_management\o
 C:\Users\Ali\Documents\GithubProject\Inventory_Management\inventory_management\obj\Debug\inventory_management.csproj.CopyComplete
 C:\Users\Ali\Documents\GithubProject\Inventory_Management\inventory_management\obj\Debug\inventory_management.exe
 C:\Users\Ali\Documents\GithubProject\Inventory_Management\inventory_management\obj\Debug\inventory_management.pdb
+D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.Views.Forms.Categories.CategoryManageFrm.resources

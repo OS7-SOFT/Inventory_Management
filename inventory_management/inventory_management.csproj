@@ -83,10 +83,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Logic\Presenters\CategoryPresenter.cs" />
     <Compile Include="Logic\Services\CategoryServices.cs" />
     <Compile Include="Logic\Services\CustomerServices.cs" />
     <Compile Include="Logic\Services\DataBase.cs" />
     <Compile Include="Logic\Services\IDataHelper.cs" />
+    <Compile Include="Logic\Services\InventoryServices.cs" />
+    <Compile Include="Logic\Services\OrderServices.cs" />
+    <Compile Include="Logic\Services\ProductServices.cs" />
+    <Compile Include="Logic\Services\SupplierServices.cs" />
+    <Compile Include="Logic\Services\UserServices.cs" />
     <Compile Include="Models\AccountModel.cs" />
     <Compile Include="Models\CategoryModel.cs" />
     <Compile Include="Models\CustomerModel.cs" />
@@ -105,12 +111,6 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Forms\Categories\CategoryManageFrm.designer.cs">
-      <DependentUpon>CategoryManageFrm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Forms\CategoryManageFrm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\Forms\CategoryManageFrm.Designer.cs">
       <DependentUpon>CategoryManageFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Forms\CustomersManageFrm.cs">
@@ -139,6 +139,7 @@
     <Compile Include="Views\Forms\InventoryInfoForm.Designer.cs">
       <DependentUpon>InventoryInfoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Forms\Notification\NotifayIconSingleton.cs" />
     <Compile Include="Views\Forms\OrderManageFrm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,9 +169,6 @@
       <DependentUpon>AccountsManageFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Categories\CategoryManageFrm.resx">
-      <DependentUpon>CategoryManageFrm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\Forms\CategoryManageFrm.resx">
       <DependentUpon>CategoryManageFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\CustomersManageFrm.resx">

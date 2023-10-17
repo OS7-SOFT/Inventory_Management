@@ -19,7 +19,7 @@ namespace inventory_management
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new InventoryManageFrm());
+            Application.Run(new mainForm());
         }
     }
 }
