@@ -14,6 +14,7 @@ namespace inventory_management
     public partial class mainForm : DevExpress.XtraEditors.DirectXForm
     {
         Category category = Category.Instance();
+        NotificationManger notification = NotificationManger.Instance();
         public mainForm()
         {
             InitializeComponent();
@@ -32,6 +33,7 @@ namespace inventory_management
             addCategoryBtn.ItemClick += delegate
             {
                 category.Add();
+                notification.AddNotification("Asda");
             };
             ////Edit
             //editCategoryBtn.ItemClick += delegate

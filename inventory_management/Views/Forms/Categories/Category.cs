@@ -1,6 +1,5 @@
 ﻿using DevExpress.XtraGrid;
 using inventory_management.Logic.Presenters;
-using inventory_management.Views.Forms.Notification;
 using inventory_management.Views.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -99,9 +98,7 @@ namespace inventory_management.Views.Forms.Categories
         //Notification method
         private void ShowNotification(string title, string message)
         {
-            NotifayIconSingleton.Instance.NotifyIcon.BalloonTipTitle = title;
-            NotifayIconSingleton.Instance.NotifyIcon.BalloonTipText = title;
-            NotifayIconSingleton.Instance.NotifyIcon.ShowBalloonTip(3000);
+            
 
         }
 
