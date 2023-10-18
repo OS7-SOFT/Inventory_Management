@@ -64,6 +64,7 @@ namespace inventory_management.Logic.Presenters
             categoryServices.DeleteData(model.Id);
             view.Message = "Category deleted successfully";
             view.IsSuccessed = true;
+            LoadData();
         }
 
         private void SaveChange(object sender, EventArgs e)
@@ -95,6 +96,7 @@ namespace inventory_management.Logic.Presenters
                     }
 
                     view.IsSuccessed = true;
+                    LoadData();
                 }
                 catch(Exception ex)
                 {

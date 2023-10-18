@@ -1,4 +1,5 @@
-﻿using DevExpress.XtraGrid;
+﻿using DevExpress.XtraEditors;
+using DevExpress.XtraGrid;
 using inventory_management.Logic.Presenters;
 using inventory_management.Views.Interfaces;
 using System;
@@ -22,7 +23,7 @@ namespace inventory_management.Views.Forms.Categories
         //fildes 
         public string Name;
 
-
+        CategoryManageFrm CMF;
         CategoryPresenter categoryPresenter;
 
         //Constructor
@@ -55,6 +56,7 @@ namespace inventory_management.Views.Forms.Categories
         public void Add()
         {
             AddEvent?.Invoke(this, EventArgs.Empty);
+            Name = null;
             ShowCategoryManageForm();
         }
 
@@ -81,12 +83,12 @@ namespace inventory_management.Views.Forms.Categories
             SaveEvent?.Invoke(this, EventArgs.Empty);
             if (isSuccessed)
             {
-                CategoryManageFrm.Instance().Close();
+                CMF.Close();
                 string title = isEdit == true ? "Edit Category" : "Add Category";
                 ShowNotification(title, message);
             }
             else
-                MessageBox.Show(message,"Error in input",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                XtraMessageBox.Show(message,"Error in input",MessageBoxButtons.OK,MessageBoxIcon.Error);
         }
 
         //Get data from database
@@ -105,18 +107,20 @@ namespace inventory_management.Views.Forms.Categories
         //open category manage form 
         private void ShowCategoryManageForm()
         {
+            CMF = new CategoryManageFrm();
+            CMF.ShowDialog();
             if (IsEdit)
             {
-                CategoryManageFrm.Instance().Text = "Edit Category";
+                CMF.Text = "Edit Category";
                 //Change icons
             }
             else
             {
-                CategoryManageFrm.Instance().Text = "Add Category";
+                CMF.Text = "Add Category";
                 //Change icons
             }
 
-            CategoryManageFrm.Instance().ShowDialog();
+            
         }
 
         //Singleton

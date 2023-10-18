@@ -139,7 +139,7 @@
     <Compile Include="Views\Forms\InventoryInfoForm.Designer.cs">
       <DependentUpon>InventoryInfoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Forms\Notification\NotificationManger.cs" />
+    <Compile Include="Views\Notification\NotificationManger.cs" />
     <Compile Include="Views\Forms\OrderManageFrm.cs">
       <SubType>Form</SubType>
     </Compile>

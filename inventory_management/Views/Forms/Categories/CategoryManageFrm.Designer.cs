@@ -96,6 +96,7 @@
             this.MinimizeBox = false;
             this.MinimumSize = new System.Drawing.Size(425, 206);
             this.Name = "CategoryManageFrm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Add Category";
             ((System.ComponentModel.ISupportInitialize)(this.txtCategoryName.Properties)).EndInit();
             this.ResumeLayout(false);

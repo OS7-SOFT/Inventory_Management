@@ -27,6 +27,8 @@ namespace inventory_management.Views.Forms.Categories
 
         private void PerformedMethod()
         {
+            txtCategoryName.Text = category.Name;
+
             okBtn.Click += delegate
             {
                 category.Name = txtCategoryName.Text.Trim();
@@ -35,21 +37,9 @@ namespace inventory_management.Views.Forms.Categories
 
             cancelBtn.Click += delegate
             {
-                txtCategoryName.Text = "";
+                txtCategoryName.Text = null;
                 this.Close();
             };
-        }
-
-        //Singleton
-        private static CategoryManageFrm Object = null;
-        public static CategoryManageFrm Instance()
-        {
-            if (Object == null)
-            {
-                Object = new CategoryManageFrm();
-               
-            }
-            return Object;
         }
 
     }

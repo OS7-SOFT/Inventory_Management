@@ -15,6 +15,7 @@ namespace inventory_management
     {
         Category category = Category.Instance();
         NotificationManger notification = NotificationManger.Instance();
+
         public mainForm()
         {
             InitializeComponent();
@@ -33,28 +34,23 @@ namespace inventory_management
             addCategoryBtn.ItemClick += delegate
             {
                 category.Add();
-                notification.AddNotification("Asda");
-            };
-            ////Edit
-            //editCategoryBtn.ItemClick += delegate
-            //{
+                notification.AddNotification("Category","Added Successfully", "2154adadasdas");
                 
-            //    category.Edit(GetCurrentId);
-            //};
+            };
+            //Edit
+            editCategoryBtn.ItemClick += delegate
+            {
+         
+            };
             //////Delete
             //deleteCategoryBtn.ItemClick += delegate
             //{
             //    category.Delete(GetCurrentId);
             //};
 
-            
+
         }
-        //Get Current id 
-        //int GetCurrentId()
-        //{
-        //    int id = Convert.ToInt32(dgvCategory.Focused.ToString());
-        //    return id;
-        //}
+        
 
     }
 }
