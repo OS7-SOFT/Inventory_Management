@@ -30,7 +30,9 @@ namespace inventory_management.Logic.Presenters
             this.view.EditEvent += LoadDataToEdit;
             this.view.DeleteEvent += DeleteCategory;
             this.view.SaveEvent += SaveChange;
-            this.view.SetCategoriesData(categoryList);           
+            this.view.CategoryList =  categoryList;
+            //load all data
+            LoadData();
         }
 
         private void LoadData()
