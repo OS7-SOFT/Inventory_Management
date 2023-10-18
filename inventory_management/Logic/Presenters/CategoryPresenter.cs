@@ -33,15 +33,15 @@ namespace inventory_management.Logic.Presenters
             this.view.SetCategoriesData(categoryList);           
         }
 
-        private void AddMethod(object sender, EventArgs e)
-        {
-            view.IsEdit = false;
-        }
-
         private void LoadData()
         {
             //Set data in categoryList from database
             categoryList.DataSource = categoryServices.GetData();
+        }
+
+        private void AddMethod(object sender, EventArgs e)
+        {
+            view.IsEdit = false;
         }
 
         private void LoadDataToEdit(object sender, EventArgs e)

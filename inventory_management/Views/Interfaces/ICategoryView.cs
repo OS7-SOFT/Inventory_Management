@@ -23,8 +23,8 @@ namespace inventory_management.Views.Interfaces
         event EventHandler DeleteEvent;
 
 
-        //Method
-        BindingSource SetCategoriesData(BindingSource categoryList);
+        //Get Data
+        BindingSource CategoryList { set; }
 
     }
 }

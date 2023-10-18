@@ -18,6 +18,7 @@ namespace inventory_management.Views.Forms.Categories
         string message;
         bool isSuccessed;
         bool isEdit;
+        BindingSource categoryList;
 
         //fildes 
         public string Name;
@@ -41,6 +42,7 @@ namespace inventory_management.Views.Forms.Categories
         public string Message { set { message = value; } }
         public bool IsSuccessed { set { isSuccessed = value; } }
         public bool IsEdit { get { return isEdit; } set { isEdit = value; } }
+        public BindingSource CategoryList{ set { categoryList = value; } }
 
         //event
         public event EventHandler SaveEvent;
@@ -89,7 +91,7 @@ namespace inventory_management.Views.Forms.Categories
         }
 
         //Get data from database
-        public BindingSource SetCategoriesData(BindingSource categoryList)
+        public BindingSource SetCategoriesData()
         {
             return categoryList;
         }

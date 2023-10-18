@@ -25,6 +25,9 @@ namespace inventory_management
         //Category Management
         private void CategoryManagement()
         {
+            //Set Data in dataGridView
+            dgvCategory.DataSource = category.SetCategoriesData().DataSource;
+
             //Add
             addCategoryBtn.ItemClick += delegate
             {
