@@ -34,16 +34,15 @@ namespace inventory_management
             addCategoryBtn.ItemClick += delegate
             {
                 category.Add();
-<<<<<<< Updated upstream
                 notification.AddNotification("Category","Added Successfully", "2154adadasdas");
-=======
+
             };
             ////Edit
             //editCategoryBtn.ItemClick += delegate
             //{
->>>>>>> Stashed changes
+ 
                 
-            };
+            //};
             //Edit
             editCategoryBtn.ItemClick += delegate
             {
