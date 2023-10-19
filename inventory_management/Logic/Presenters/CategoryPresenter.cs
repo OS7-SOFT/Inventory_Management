@@ -60,7 +60,7 @@ namespace inventory_management.Logic.Presenters
         {
             model.Id = view.CategoryId;
 
-            //delete Categroy then return Message and result in IsSuccessed
+            //delete Categroy
             categoryServices.DeleteData(model.Id);
             view.Message = "Category deleted successfully";
             view.IsSuccessed = true;

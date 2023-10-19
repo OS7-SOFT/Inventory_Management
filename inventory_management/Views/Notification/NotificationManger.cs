@@ -25,18 +25,17 @@ namespace inventory_management.Views.Forms.Notification
             return Object;
         }
 
-        public void AddNotification(string header,string message, string id)
+        public void SuccessedNotification(string header,string message ,string id)
         {
 
 
-            notification.Template = ToastNotificationTemplate.ImageAndText02;
+            notification.Template = ToastNotificationTemplate.ImageAndText01;
             notification.Header = header;
             notification.Body = message;
             notification.Sound = ToastNotificationSound.IM;
             notification.ID = id;
-            notification.Image = ImageHelper.GetImage("images/actions/apply_32x32.png");
-            
-
+            notification.Image = ImageHelper.GetImage($"images/actions/apply_32x32.png");
+            //To Show Notify 
             toastNotificationsManager.ShowNotification(notification);
         }
 

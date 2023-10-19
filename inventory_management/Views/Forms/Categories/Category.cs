@@ -1,6 +1,8 @@
-﻿using DevExpress.XtraEditors;
+﻿using DevExpress.DashboardWin.Native;
+using DevExpress.XtraEditors;
 using DevExpress.XtraGrid;
 using inventory_management.Logic.Presenters;
+using inventory_management.Views.Forms.Notification;
 using inventory_management.Views.Interfaces;
 using System;
 using System.Collections.Generic;
@@ -25,6 +27,7 @@ namespace inventory_management.Views.Forms.Categories
 
         CategoryManageFrm CMF;
         CategoryPresenter categoryPresenter;
+        NotificationManger notification = NotificationManger.Instance();
 
         //Constructor
         public Category()
@@ -63,17 +66,27 @@ namespace inventory_management.Views.Forms.Categories
         //Edit
         public void Edit(int id)
         {
-            this.id = id;
-            EditEvent?.Invoke(this, EventArgs.Empty);
-            ShowCategoryManageForm();
-            
+            if(id != 0)
+            {
+                this.id = id;
+                EditEvent?.Invoke(this, EventArgs.Empty);
+                ShowCategoryManageForm();
+            }
+           
         }
 
         //Delete
         public void Delete(int id)
         {
-            this.id = id;
-            DeleteEvent?.Invoke(this, EventArgs.Empty);
+            if(id != 0)
+            {
+                this.id = id;
+                DeleteEvent?.Invoke(this, EventArgs.Empty);
+                if (isSuccessed)
+                    notification.SuccessedNotification("Delete Category", message, "2653SADFA");
+                else 
+                    XtraMessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         //Save
@@ -85,7 +98,7 @@ namespace inventory_management.Views.Forms.Categories
             {
                 CMF.Close();
                 string title = isEdit == true ? "Edit Category" : "Add Category";
-                ShowNotification(title, message);
+                notification.SuccessedNotification(title, message, "2653SA1231DFA");
             }
             else
                 XtraMessageBox.Show(message,"Error in input",MessageBoxButtons.OK,MessageBoxIcon.Error);
@@ -97,13 +110,6 @@ namespace inventory_management.Views.Forms.Categories
             return categoryList;
         }
 
-        //Notification method
-        private void ShowNotification(string title, string message)
-        {
-            
-
-        }
-
         //open category manage form 
         private void ShowCategoryManageForm()
         {
@@ -112,12 +118,12 @@ namespace inventory_management.Views.Forms.Categories
             if (IsEdit)
             {
                 CMF.Text = "Edit Category";
-                //Change icons
+                CMF.IconOptions.LargeImage = ImageHelper.GetImage($"images/actions/edittask_32x32.png");
             }
             else
             {
                 CMF.Text = "Add Category";
-                //Change icons
+                CMF.IconOptions.LargeImage = ImageHelper.GetImage($"images/actions/add_32x32.png");
             }
 
             
