@@ -213,7 +213,7 @@
             this.lblCategoriesCount = new DevExpress.XtraEditors.LabelControl();
             this.labelControl9 = new DevExpress.XtraEditors.LabelControl();
             this.dgvCategory = new DevExpress.XtraGrid.GridControl();
-            this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridViewCategory = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ribbonControl4 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.addCategoryBtn = new DevExpress.XtraBars.BarButtonItem();
             this.editCategoryBtn = new DevExpress.XtraBars.BarButtonItem();
@@ -359,7 +359,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).BeginInit();
             this.groupControl7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewCategory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox5)).BeginInit();
@@ -870,20 +870,20 @@
             this.dgvCategory.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode2});
             this.dgvCategory.Location = new System.Drawing.Point(11, 18);
-            this.dgvCategory.MainView = this.gridView3;
+            this.dgvCategory.MainView = this.gridViewCategory;
             this.dgvCategory.MenuManager = this.ribbonControl1;
             this.dgvCategory.Name = "dgvCategory";
             this.dgvCategory.Size = new System.Drawing.Size(1236, 735);
             this.dgvCategory.TabIndex = 4;
             this.dgvCategory.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView3});
+            this.gridViewCategory});
             // 
-            // gridView3
+            // gridViewCategory
             // 
-            this.gridView3.Appearance.GroupPanel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView3.Appearance.GroupPanel.Options.UseFont = true;
-            this.gridView3.GridControl = this.dgvCategory;
-            this.gridView3.Name = "gridView3";
+            this.gridViewCategory.Appearance.GroupPanel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewCategory.Appearance.GroupPanel.Options.UseFont = true;
+            this.gridViewCategory.GridControl = this.dgvCategory;
+            this.gridViewCategory.Name = "gridViewCategory";
             // 
             // ribbonControl4
             // 
@@ -2531,7 +2531,7 @@
             this.groupControl7.ResumeLayout(false);
             this.groupControl7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewCategory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox5)).EndInit();
@@ -2656,7 +2656,7 @@
         private DevExpress.XtraEditors.LabelControl lblCategoriesCount;
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraGrid.GridControl dgvCategory;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewCategory;
         private DevExpress.XtraTab.XtraTabPage orderBtn;
         private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl5;
         private DevExpress.XtraEditors.GroupControl groupControl8;

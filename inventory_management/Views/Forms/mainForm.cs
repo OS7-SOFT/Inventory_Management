@@ -40,7 +40,15 @@ namespace inventory_management
             //Edit
             editCategoryBtn.ItemClick += delegate
             {
-         
+                if(gridViewCategory.SelectedRowsCount > 0)
+                {
+                    object CategoryName = gridViewCategory.GetRowCellValue(gridViewCategory.FocusedRowHandle, "CategoryName");
+                    MessageBox.Show(CategoryName.ToString());
+                }
+                else
+                {
+                    MessageBox.Show("you have to select row first");
+                }
             };
             //////Delete
             //deleteCategoryBtn.ItemClick += delegate
