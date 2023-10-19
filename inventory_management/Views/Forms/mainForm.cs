@@ -37,12 +37,6 @@ namespace inventory_management
                 notification.AddNotification("Category","Added Successfully", "2154adadasdas");
 
             };
-            ////Edit
-            //editCategoryBtn.ItemClick += delegate
-            //{
- 
-                
-            //};
             //Edit
             editCategoryBtn.ItemClick += delegate
             {
