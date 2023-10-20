@@ -20,10 +20,11 @@ namespace inventory_management.Views.Forms.Categories
         string message;
         bool isSuccessed;
         bool isEdit;
-        BindingSource categoryList;
 
         //fildes 
+        public BindingSource CategoryList;
         public string Name;
+        public string Count;
 
         CategoryManageFrm CMF;
         CategoryPresenter categoryPresenter;
@@ -41,17 +42,18 @@ namespace inventory_management.Views.Forms.Categories
             get { return Name; }
             set { Name = value; }
         }
-        public string CategoryCount { set => throw new NotImplementedException(); }
+        public string CategoryCount { set { Count = value; } }
         public int CategoryId { get { return id; }}
         public string Message { set { message = value; } }
         public bool IsSuccessed { set { isSuccessed = value; } }
         public bool IsEdit { get { return isEdit; } set { isEdit = value; } }
-        public BindingSource CategoryList{ set { categoryList = value; } }
+        public BindingSource GetCategoryList{ set { CategoryList = value; } }
 
        
 
         //event
         public event EventHandler SaveEvent;
+        public event EventHandler SearchEvent;
         public event EventHandler AddEvent;
         public event EventHandler EditEvent;
         public event EventHandler DeleteEvent;
@@ -107,11 +109,7 @@ namespace inventory_management.Views.Forms.Categories
                 XtraMessageBox.Show(message,"Error in input",MessageBoxButtons.OK,MessageBoxIcon.Error);
         }
 
-        //Get data from database
-        public BindingSource SetCategoriesData()
-        {
-            return categoryList;
-        }
+        
 
         //open category manage form 
         private void ShowCategoryManageForm()

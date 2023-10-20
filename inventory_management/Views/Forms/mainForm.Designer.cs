@@ -882,6 +882,8 @@
             // 
             this.gridViewCategory.Appearance.GroupPanel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gridViewCategory.Appearance.GroupPanel.Options.UseFont = true;
+            this.gridViewCategory.AppearancePrint.HeaderPanel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewCategory.AppearancePrint.HeaderPanel.Options.UseFont = true;
             this.gridViewCategory.GridControl = this.dgvCategory;
             this.gridViewCategory.Name = "gridViewCategory";
             // 

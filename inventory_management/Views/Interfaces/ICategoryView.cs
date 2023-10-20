@@ -26,7 +26,7 @@ namespace inventory_management.Views.Interfaces
 
 
         //Get Data
-        BindingSource CategoryList { set; }
+        BindingSource GetCategoryList { set; }
 
     }
 }
