@@ -41,11 +41,14 @@ namespace inventory_management.Views.Forms.Categories
             get { return Name; }
             set { Name = value; }
         }
+        public string CategoryCount { set => throw new NotImplementedException(); }
         public int CategoryId { get { return id; }}
         public string Message { set { message = value; } }
         public bool IsSuccessed { set { isSuccessed = value; } }
         public bool IsEdit { get { return isEdit; } set { isEdit = value; } }
         public BindingSource CategoryList{ set { categoryList = value; } }
+
+       
 
         //event
         public event EventHandler SaveEvent;

@@ -12,9 +12,11 @@ namespace inventory_management.Views.Interfaces
         //fields
         int CategoryId { get;  }
         string CategoryName { get; set; }
+        string CategoryCount { set; }
         string Message {  set; }
         bool IsSuccessed {  set; }
         bool IsEdit { set; get; }
+
 
         //event 
         event EventHandler SaveEvent;
