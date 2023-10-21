@@ -37,8 +37,10 @@ namespace inventory_management.Views.Forms.Categories
 
             cancelBtn.Click += delegate
             {
-                txtCategoryName.Text = null;
+                
                 this.Close();
+                if (this.IsDisposed)
+                    category.Cancel();
             };
         }
 

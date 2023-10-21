@@ -30,7 +30,8 @@ namespace inventory_management.Logic.Presenters
             this.view.EditEvent += LoadDataToEdit;
             this.view.DeleteEvent += DeleteCategory;
             this.view.SaveEvent += SaveChange;
-            this.view.GetCategoryList =  categoryList;
+            this.view.CancelEvent += CancelMethod;
+            this.view.GetDataList =  categoryList;
             //load all data
             LoadData();
         }
@@ -52,7 +53,7 @@ namespace inventory_management.Logic.Presenters
         private void LoadDataToEdit(object sender, EventArgs e)
         {
             view.IsEdit = true;
-            model.Id = view.CategoryId;
+            model.Id = view.Id;
 
             //Get current Category by id 
             DataTable CategoryName =  categoryServices.GetDataByValue(model.Id);
@@ -61,7 +62,7 @@ namespace inventory_management.Logic.Presenters
 
         private void DeleteCategory(object sender, EventArgs e)
         {
-            model.Id = view.CategoryId;
+            model.Id = view.Id;
 
             //delete Categroy
             categoryServices.DeleteData(model.Id);
@@ -79,7 +80,7 @@ namespace inventory_management.Logic.Presenters
                 try
                 {
                     model.Name = view.CategoryName;
-                    model.Id = view.CategoryId;
+                    model.Id = view.Id;
                     if (view.IsEdit)
                     {
                         //Edit Category name Method 
@@ -110,6 +111,9 @@ namespace inventory_management.Logic.Presenters
                 view.Message = "The name filed is requird";            
         }
 
-
+        private void CancelMethod(object sender, EventArgs e)
+        {
+            view.CategoryName = "";
+        }
     }
 }

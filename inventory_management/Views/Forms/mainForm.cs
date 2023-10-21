@@ -10,21 +10,48 @@ using System.Windows.Forms;
 using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraEditors;
+using inventory_management.Views.Forms.Inventories;
 
 namespace inventory_management
 {
     public partial class mainForm : DevExpress.XtraEditors.DirectXForm
     {
         Category category = Category.Instance();
-       
+        Inventory inventory = Inventory.Instance();
 
         public mainForm()
         {
             InitializeComponent();
             CategoryManagement();
+            InventoryManagement();
         }
 
 
+
+        //Inventory Management
+        private void InventoryManagement()
+        {
+            //dgvInventory.DataSource = inventory.InventoryList.DataSource;
+
+            //Search
+            GetValueBySearch(gridViewInventory);
+            //Add
+            addInventoryBtn.ItemClick += delegate
+            {
+                inventory.Add();
+            };
+            //Edit
+            editInventoryBtn.ItemClick += delegate
+            {
+                inventory.Edit(GetIdToEdit(gridViewInventory));
+
+            };
+            //Delete
+            deleteInventoryBtn.ItemClick += delegate
+            {
+                inventory.Delete(GetIdToDelete(gridViewInventory));
+            };
+        }
 
         //Category Management
         private void CategoryManagement()
@@ -39,8 +66,7 @@ namespace inventory_management
             //Add
             addCategoryBtn.ItemClick += delegate
             {
-                MessageBox.Show(gridViewCategory.FindFilterText);
-               // category.Add();
+               category.Add();
             };
             //Edit
             editCategoryBtn.ItemClick += delegate
@@ -56,6 +82,8 @@ namespace inventory_management
 
 
         }
+
+        
 
         //Get Search result
         private void GetValueBySearch(GridView gridView)
@@ -95,6 +123,6 @@ namespace inventory_management
             return 0;
         }
 
-
+        
     }
 }

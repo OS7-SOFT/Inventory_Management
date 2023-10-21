@@ -1,6 +1,5 @@
 ﻿using DevExpress.DashboardWin.Native;
 using DevExpress.XtraEditors;
-using DevExpress.XtraGrid;
 using inventory_management.Logic.Presenters;
 using inventory_management.Views.Forms.Notification;
 using inventory_management.Views.Interfaces;
@@ -16,6 +15,10 @@ namespace inventory_management.Views.Forms.Categories
 {
     public class Category : ICategoryView
     {
+        CategoryManageFrm CMF;
+        CategoryPresenter categoryPresenter;
+        NotificationManger notification = NotificationManger.Instance();
+
         int id;
         string message;
         bool isSuccessed;
@@ -25,10 +28,6 @@ namespace inventory_management.Views.Forms.Categories
         public BindingSource CategoryList;
         public string Name;
         public string Count;
-
-        CategoryManageFrm CMF;
-        CategoryPresenter categoryPresenter;
-        NotificationManger notification = NotificationManger.Instance();
 
         //Constructor
         public Category()
@@ -43,28 +42,28 @@ namespace inventory_management.Views.Forms.Categories
             set { Name = value; }
         }
         public string CategoryCount { set { Count = value; } }
-        public int CategoryId { get { return id; }}
+        public int Id { get { return id; }}
         public string Message { set { message = value; } }
         public bool IsSuccessed { set { isSuccessed = value; } }
         public bool IsEdit { get { return isEdit; } set { isEdit = value; } }
-        public BindingSource GetCategoryList{ set { CategoryList = value; } }
+        public BindingSource GetDataList { set { CategoryList = value; } }
 
        
 
         //event
         public event EventHandler SaveEvent;
-        public event EventHandler SearchEvent;
         public event EventHandler AddEvent;
         public event EventHandler EditEvent;
         public event EventHandler DeleteEvent;
+        public event EventHandler CancelEvent;
 
         //--------------methods-----------------------
 
         //Add
         public void Add()
         {
+            
             AddEvent?.Invoke(this, EventArgs.Empty);
-            Name = null;
             ShowCategoryManageForm();
         }
 
@@ -89,7 +88,7 @@ namespace inventory_management.Views.Forms.Categories
                 DeleteEvent?.Invoke(this, EventArgs.Empty);
                 if (isSuccessed)
                     notification.SuccessedNotification("Delete Category", message, "2653SADFA");
-                else 
+                else
                     XtraMessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -97,19 +96,23 @@ namespace inventory_management.Views.Forms.Categories
         //Save
         public void Save()
         {
-
             SaveEvent?.Invoke(this, EventArgs.Empty);
             if (isSuccessed)
             {
                 CMF.Close();
+                Cancel();
                 string title = isEdit == true ? "Edit Category" : "Add Category";
                 notification.SuccessedNotification(title, message, "2653SA1231DFA");
             }
             else
-                XtraMessageBox.Show(message,"Error in input",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                XtraMessageBox.Show(message, "Error in input", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        
+        //Cancel
+        public void Cancel()
+        {
+            CancelEvent?.Invoke(this, EventArgs.Empty);
+        }
 
         //open category manage form 
         private void ShowCategoryManageForm()

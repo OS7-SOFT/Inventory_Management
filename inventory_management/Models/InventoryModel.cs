@@ -11,7 +11,7 @@ namespace inventory_management.Models
         public int Id { get; set; }
         public string Name { get; set; }
         public string Location { get; set; }
-        public string Capacity { get; set; }
-        public int CategoryId { get; set; }
+        public double Capacity { get; set; }
+        public string CategoryName { get; set; }
     }
 }
