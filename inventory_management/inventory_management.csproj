@@ -101,10 +101,10 @@
     <Compile Include="Models\OrderModel.cs" />
     <Compile Include="Models\ProductClass.cs" />
     <Compile Include="Models\SupplierModel.cs" />
-    <Compile Include="Views\Forms\AccountsManageFrm.cs">
+    <Compile Include="Views\Forms\Accounts\AccountsManageFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Forms\AccountsManageFrm.Designer.cs">
+    <Compile Include="Views\Forms\Accounts\AccountsManageFrm.Designer.cs">
       <DependentUpon>AccountsManageFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Forms\Categories\Category.cs" />
@@ -154,16 +154,16 @@
     <Compile Include="Views\Forms\Orders\OrderManageFrm.Designer.cs">
       <DependentUpon>OrderManageFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Forms\ProductManageFrm.cs">
+    <Compile Include="Views\Forms\Products\ProductManageFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Forms\ProductManageFrm.Designer.cs">
+    <Compile Include="Views\Forms\Products\ProductManageFrm.Designer.cs">
       <DependentUpon>ProductManageFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Forms\SuppliersManageFrm.cs">
+    <Compile Include="Views\Forms\Suppliers\SuppliersManageFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Forms\SuppliersManageFrm.Designer.cs">
+    <Compile Include="Views\Forms\Suppliers\SuppliersManageFrm.Designer.cs">
       <DependentUpon>SuppliersManageFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Forms\TransFormFrm.cs">
@@ -173,7 +173,7 @@
       <DependentUpon>TransFormFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Interfaces\ICategoryView.cs" />
-    <EmbeddedResource Include="Views\Forms\AccountsManageFrm.resx">
+    <EmbeddedResource Include="Views\Forms\Accounts\AccountsManageFrm.resx">
       <DependentUpon>AccountsManageFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Categories\CategoryManageFrm.resx">
@@ -204,10 +204,10 @@
     <EmbeddedResource Include="Views\Forms\Orders\OrderManageFrm.resx">
       <DependentUpon>OrderManageFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Forms\ProductManageFrm.resx">
+    <EmbeddedResource Include="Views\Forms\Products\ProductManageFrm.resx">
       <DependentUpon>ProductManageFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Forms\SuppliersManageFrm.resx">
+    <EmbeddedResource Include="Views\Forms\Suppliers\SuppliersManageFrm.resx">
       <DependentUpon>SuppliersManageFrm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\TransFormFrm.resx">

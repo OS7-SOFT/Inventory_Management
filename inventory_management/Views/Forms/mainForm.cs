@@ -11,6 +11,7 @@ using DevExpress.XtraGrid.Views.Grid;
 using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraEditors;
 using inventory_management.Views.Forms.Inventories;
+using inventory_management.Views.Forms.Customers;
 
 namespace inventory_management
 {
@@ -18,12 +19,14 @@ namespace inventory_management
     {
         Category category = Category.Instance();
         Inventory inventory = Inventory.Instance();
+        Customer customer = Customer.Instance();
 
         public mainForm()
         {
             InitializeComponent();
             CategoryManagement();
             InventoryManagement();
+            CustomerManagement();
         }
 
 
@@ -31,7 +34,7 @@ namespace inventory_management
         //Inventory Management
         private void InventoryManagement()
         {
-            //dgvInventory.DataSource = inventory.InventoryList.DataSource;
+            dgvInventory.DataSource = inventory.InventoryList.DataSource;
 
             //Search
             GetValueBySearch(gridViewInventory);
@@ -83,6 +86,31 @@ namespace inventory_management
 
         }
 
+        //Customer Management
+        private void CustomerManagement()
+        {
+            dgvCustomer.DataSource = customer.CustomersList.DataSource;
+            lblCustomersCount.Text = customer.Count;
+            lblBestCustomer.Text = customer.Best;
+            //Search
+            GetValueBySearch(gridViewCustomer);
+            //Add
+            addInventoryBtn.ItemClick += delegate
+            {
+                customer.Add();
+            };
+            //Edit
+            editInventoryBtn.ItemClick += delegate
+            {
+                customer.Edit(GetIdToEdit(gridViewCustomer));
+
+            };
+            //Delete
+            deleteInventoryBtn.ItemClick += delegate
+            {
+                customer.Delete(GetIdToDelete(gridViewCustomer));
+            };
+        }
         
 
         //Get Search result

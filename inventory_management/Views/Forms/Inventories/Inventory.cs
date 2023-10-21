@@ -1,5 +1,6 @@
 ﻿using DevExpress.DashboardWin.Native;
 using DevExpress.XtraEditors;
+using inventory_management.Logic.Presenters;
 using inventory_management.Views.Forms.Notification;
 using inventory_management.Views.Interfaces;
 using System;
@@ -15,6 +16,7 @@ namespace inventory_management.Views.Forms.Inventories
     {
         NotificationManger notification = NotificationManger.Instance();
         InventoryManageFrm IMF;
+        InventoryPresenter inventoryPresenter;
 
         int id;
         string message;
@@ -33,7 +35,7 @@ namespace inventory_management.Views.Forms.Inventories
         //Constructor
         public Inventory()
         {
-
+            inventoryPresenter = new InventoryPresenter(this);
         }
 
 

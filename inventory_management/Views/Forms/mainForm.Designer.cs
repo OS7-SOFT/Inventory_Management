@@ -282,7 +282,7 @@
             this.lblBestCustomer = new DevExpress.XtraEditors.LabelControl();
             this.labelControl20 = new DevExpress.XtraEditors.LabelControl();
             this.dgvCustomer = new DevExpress.XtraGrid.GridControl();
-            this.gridView5 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridViewCustomer = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ribbonControl6 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.addCustomerBtn = new DevExpress.XtraBars.BarButtonItem();
             this.editCustomerBtn = new DevExpress.XtraBars.BarButtonItem();
@@ -386,7 +386,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl9)).BeginInit();
             this.groupControl9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl6)).BeginInit();
             this.suppliers.SuspendLayout();
             this.xtraScrollableControl7.SuspendLayout();
@@ -1582,20 +1582,20 @@
             this.dgvCustomer.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode5});
             this.dgvCustomer.Location = new System.Drawing.Point(11, 13);
-            this.dgvCustomer.MainView = this.gridView5;
+            this.dgvCustomer.MainView = this.gridViewCustomer;
             this.dgvCustomer.MenuManager = this.ribbonControl1;
             this.dgvCustomer.Name = "dgvCustomer";
             this.dgvCustomer.Size = new System.Drawing.Size(1236, 735);
             this.dgvCustomer.TabIndex = 6;
             this.dgvCustomer.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView5});
+            this.gridViewCustomer});
             // 
-            // gridView5
+            // gridViewCustomer
             // 
-            this.gridView5.Appearance.GroupPanel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView5.Appearance.GroupPanel.Options.UseFont = true;
-            this.gridView5.GridControl = this.dgvCustomer;
-            this.gridView5.Name = "gridView5";
+            this.gridViewCustomer.Appearance.GroupPanel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewCustomer.Appearance.GroupPanel.Options.UseFont = true;
+            this.gridViewCustomer.GridControl = this.dgvCustomer;
+            this.gridViewCustomer.Name = "gridViewCustomer";
             // 
             // ribbonControl6
             // 
@@ -2568,7 +2568,7 @@
             this.groupControl9.ResumeLayout(false);
             this.groupControl9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl6)).EndInit();
             this.suppliers.ResumeLayout(false);
             this.suppliers.PerformLayout();
@@ -2701,7 +2701,7 @@
         private DevExpress.XtraEditors.LabelControl lblBestCustomer;
         private DevExpress.XtraEditors.LabelControl labelControl20;
         private DevExpress.XtraGrid.GridControl dgvCustomer;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView5;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewCustomer;
         private DevExpress.XtraBars.BarEditItem inventroyCbx;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox2;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox3;
