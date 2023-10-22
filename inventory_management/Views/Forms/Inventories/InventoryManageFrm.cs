@@ -28,7 +28,10 @@ namespace inventory_management.Views.Forms
             txtNameInvent.Text = inventory.Name;
             txtLocation.Text = inventory.Location;
             capacityInvent.Value = (decimal)inventory.Capacity;
-            categoryCbx.Properties.Items.AddRange(inventory.Categories);
+            if (inventory.Categories.Count > 0)
+                categoryCbx.Properties.Items.AddRange(inventory.Categories);
+            else
+                categoryCbx.Properties.Items.Add("No there any Category");
 
             //Get Current Category in edit
             if (inventory.Category_name != "" || inventory.Category_name != null)

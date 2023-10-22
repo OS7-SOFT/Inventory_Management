@@ -9,44 +9,46 @@ using System.Windows.Forms;
 
 namespace inventory_management.Logic.Presenters
 {
-    public class CustomerPresenter
+    public class ProductPresenter
     {
-        ICustomerView view;
-        BindingSource customerList;
+        IProductView view;
+        BindingSource productList;
 
-        CustomerModel model = new CustomerModel();
-
+        ProductModel model = new ProductModel();
         //Constructor
-        public CustomerPresenter(ICustomerView view)
+        public ProductPresenter(IProductView view)
         {
-            customerList = new BindingSource();
+            productList = new BindingSource();
             this.view = view;
             this.view.AddEvent += AddMethod;
             this.view.EditEvent += LoadDataToEdit;
             this.view.DeleteEvent += DeleteInventory;
             this.view.SaveEvent += SaveChange;
             this.view.CancelEvent += CancelMethod;
-            this.view.GetDataList = customerList;
+            this.view.GetDataList = productList;
             //load all data
             LoadData();
         }
 
         private void ConnectionModelWithView()
         {
-            model.Name = view.CustomerName;
-            model.Phone = view.CustomerPhone;
-            model.Email = view.CustomerEmail;
-            model.Location = view.CustomerLocation;
+            model.Name = view.ProductName;
+            model.Quantity = view.ProductQuantity;
+            model.SellPrice = view.SellPrice;
+            model.BuyPrice = view.BuyPrice;
+            model.EntryDate = view.EntryDate;
+            model.ExpirationDate = view.ExpirationDate;
+            model.CategoryName = view.CategoryName;
+            model.SupplierName = view.SupplierName;
         }
 
         private void LoadData()
         {
             //Set data in inventoryList from database
+           
 
-
-            //Get Customer Count
-
-            //Get best Customer
+            //Set all Categories
+            
 
         }
 
@@ -62,8 +64,7 @@ namespace inventory_management.Logic.Presenters
             view.IsEdit = true;
             model.Id = view.Id;
 
-            //Get current Customer by id 
-
+            //Get current inventory by id 
         }
 
         private void DeleteInventory(object sender, EventArgs e)
@@ -71,7 +72,8 @@ namespace inventory_management.Logic.Presenters
             model.Id = view.Id;
 
             //delete Inventory
-            view.Message = $"{view.CustomerName} deleted successfully";
+            
+            view.Message = $"{view.ProductName} deleted successfully";
             view.IsSuccessed = true;
             LoadData();
         }
@@ -89,14 +91,14 @@ namespace inventory_management.Logic.Presenters
                     {
                         model.Id = view.Id;
                         //Edit InventoryMethod 
-
-                        view.Message = $"{view.CustomerName} Edited Successfully";
+                     
+                        view.Message = $"{view.ProductName} Edited Successfully";
                     }
                     else
                     {
                         //Add Category name Method 
-
-                        view.Message = $"{view.CustomerName} Added Successfully";
+                       
+                        view.Message = $"{view.ProductName} Added Successfully";
                     }
 
                     view.IsSuccessed = true;
@@ -112,16 +114,16 @@ namespace inventory_management.Logic.Presenters
 
         private void CancelMethod(object sender, EventArgs e)
         {
-            view.CustomerName = "";
-            view.CustomerPhone = "";
-            view.CustomerEmail = "";
-            view.CustomerLocation = "";
+            view.ProductName = "";
+            view.ProductQuantity = 0;
+            view.BuyPrice = 0;
+            view.SellPrice = 0;
         }
 
 
         private bool CheckInput()
         {
-            if (view.CustomerName.Trim() == "" || view.CustomerPhone == "" || view.CustomerEmail == "" || view.CustomerLocation =="")
+            if (view.ProductName.Trim() == "" || view.ProductQuantity == 0 || view.BuyPrice == 0 || view.SellPrice == 0)
             {
 
                 return false;
@@ -131,3 +133,4 @@ namespace inventory_management.Logic.Presenters
         }
     }
 }
+

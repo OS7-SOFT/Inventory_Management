@@ -86,6 +86,7 @@
     <Compile Include="Logic\Presenters\CategoryPresenter.cs" />
     <Compile Include="Logic\Presenters\CustomerPresenter.cs" />
     <Compile Include="Logic\Presenters\InventoryPresenter.cs" />
+    <Compile Include="Logic\Presenters\ProductPresenter.cs" />
     <Compile Include="Logic\Presenters\SuppliersPresenter.cs" />
     <Compile Include="Logic\Services\CategoryServices.cs" />
     <Compile Include="Logic\Services\CustomerServices.cs" />
@@ -101,7 +102,7 @@
     <Compile Include="Models\CustomerModel.cs" />
     <Compile Include="Models\InventoryModel.cs" />
     <Compile Include="Models\OrderModel.cs" />
-    <Compile Include="Models\ProductClass.cs" />
+    <Compile Include="Models\ProductModel.cs" />
     <Compile Include="Models\SupplierModel.cs" />
     <Compile Include="Views\Forms\Accounts\AccountsManageFrm.cs">
       <SubType>Form</SubType>

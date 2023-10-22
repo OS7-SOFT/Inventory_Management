@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace inventory_management.Models
 {
-    public class ProductClass
+    public class ProductModel
     {
         public int Id { get; set; }
         public string Name { get; set; }
         public int Quantity { get; set; }
-        public int SellPrice { get; set; }
-        public int BuyPrice { get; set; }
+        public decimal SellPrice { get; set; }
+        public decimal BuyPrice { get; set; }
         public DateTime EntryDate { get; set; }
         public DateTime ExpirationDate { get; set; }
-        public int CategoryId { get; set; }
-        public int SupplierId { get; set; }
+        public string CategoryName { get; set; }
+        public string SupplierName { get; set; }
 
     }
 }

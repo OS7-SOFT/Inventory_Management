@@ -13,6 +13,7 @@ using DevExpress.XtraEditors;
 using inventory_management.Views.Forms.Inventories;
 using inventory_management.Views.Forms.Customers;
 using inventory_management.Views.Forms.Suppliers;
+using inventory_management.Views.Forms.Products;
 
 namespace inventory_management
 {
@@ -22,6 +23,7 @@ namespace inventory_management
         Inventory inventory = Inventory.Instance();
         Customer customer = Customer.Instance();
         Supplier supplier = Supplier.Instance();
+        Product product = Product.Instance();
         public mainForm()
         {
             InitializeComponent();
@@ -29,6 +31,7 @@ namespace inventory_management
             InventoryManagement();
             CustomerManagement();
             SuppliersManagement();
+            ProductManagement();
         }
 
 
@@ -87,6 +90,35 @@ namespace inventory_management
 
 
         }
+
+        //Inventory Management
+        private void ProductManagement()
+        {
+            dgvProducts.DataSource = product.ProductList.DataSource;
+            lblProductCounts.Text = product.Count;
+            lblProductSold.Text = product.Sold;
+            lblProductDefective.Text = product.Defective;
+
+            //Search
+            GetValueBySearch(gridViewProduct);
+            //Add
+            addProductBtn.ItemClick += delegate
+            {
+                product.Add();
+            };
+            //Edit
+            editProductBtn.ItemClick += delegate
+            {
+                product.Edit(GetIdToEdit(gridViewProduct));
+
+            };
+            //Delete
+            deleteProductBtn.ItemClick += delegate
+            {
+                product.Delete(GetIdToDelete(gridViewProduct));
+            };
+        }
+
 
         //Customer Management
         private void CustomerManagement()
@@ -147,7 +179,7 @@ namespace inventory_management
             int id = int.TryParse(gridView.FindFilterText, out id) ? Convert.ToInt32(gridView.FindFilterText) : 0;
             string name = gridView.FindFilterText;
             if (id !=0)
-                gridView.ActiveFilterString = $"[{1}] LIKE '%{id}%'";
+                gridView.ActiveFilterString = $"[{0}] LIKE '%{id}%'";
             else
                 gridView.ActiveFilterString = $"[{1}] LIKE '%{name}%'";
         }

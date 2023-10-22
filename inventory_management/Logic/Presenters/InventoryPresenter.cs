@@ -82,7 +82,7 @@ namespace inventory_management.Logic.Presenters
 
             //delete Inventory
             inventoryServices.DeleteData(model.Id);
-            view.Message = "Inventory deleted successfully";
+            view.Message = $"{view.InventoryName} deleted successfully";
             view.IsSuccessed = true;
             LoadData();
         }
@@ -107,7 +107,7 @@ namespace inventory_management.Logic.Presenters
                         Params[3] = model.Location;
                         Params[4] = model.Capacity;
                         inventoryServices.EditData(Params);
-                        view.Message = "Inventory Edited Successfully";
+                        view.Message = $"{view.InventoryName} Edited Successfully";
                     }
                     else
                     {
@@ -118,7 +118,7 @@ namespace inventory_management.Logic.Presenters
                         Params[2] = model.Location;
                         Params[3] = model.Capacity;
                         inventoryServices.AddData(Params);
-                        view.Message = "Inventory Added Successfully";
+                        view.Message = $"{view.InventoryName} Added Successfully";
                     }
 
                     view.IsSuccessed = true;

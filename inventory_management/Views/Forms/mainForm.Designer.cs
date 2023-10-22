@@ -231,12 +231,12 @@
             this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.lblProductSold = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.lblProductDefective = new DevExpress.XtraEditors.LabelControl();
             this.lblProductCounts = new DevExpress.XtraEditors.LabelControl();
             this.lblDefectiveProd = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.dgvProducts = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridViewProduct = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ribbonControl3 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.addProductBtn = new DevExpress.XtraBars.BarButtonItem();
             this.editProductBtn = new DevExpress.XtraBars.BarButtonItem();
@@ -366,7 +366,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
             this.groupControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewProduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox7)).BeginInit();
@@ -1032,7 +1032,7 @@
             this.groupControl6.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl6.CaptionImageOptions.Image")));
             this.groupControl6.Controls.Add(this.labelControl5);
             this.groupControl6.Controls.Add(this.lblProductSold);
-            this.groupControl6.Controls.Add(this.labelControl4);
+            this.groupControl6.Controls.Add(this.lblProductDefective);
             this.groupControl6.Controls.Add(this.lblProductCounts);
             this.groupControl6.Controls.Add(this.lblDefectiveProd);
             this.groupControl6.Controls.Add(this.labelControl1);
@@ -1062,15 +1062,15 @@
             this.lblProductSold.TabIndex = 4;
             this.lblProductSold.Text = "52";
             // 
-            // labelControl4
+            // lblProductDefective
             // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(17, 136);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(286, 22);
-            this.labelControl4.TabIndex = 3;
-            this.labelControl4.Text = "The number of defective  Products :";
+            this.lblProductDefective.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductDefective.Appearance.Options.UseFont = true;
+            this.lblProductDefective.Location = new System.Drawing.Point(17, 136);
+            this.lblProductDefective.Name = "lblProductDefective";
+            this.lblProductDefective.Size = new System.Drawing.Size(286, 22);
+            this.lblProductDefective.TabIndex = 3;
+            this.lblProductDefective.Text = "The number of defective  Products :";
             // 
             // lblProductCounts
             // 
@@ -1110,20 +1110,20 @@
             this.dgvProducts.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode3});
             this.dgvProducts.Location = new System.Drawing.Point(11, 13);
-            this.dgvProducts.MainView = this.gridView2;
+            this.dgvProducts.MainView = this.gridViewProduct;
             this.dgvProducts.MenuManager = this.ribbonControl1;
             this.dgvProducts.Name = "dgvProducts";
             this.dgvProducts.Size = new System.Drawing.Size(1236, 735);
             this.dgvProducts.TabIndex = 2;
             this.dgvProducts.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
+            this.gridViewProduct});
             // 
-            // gridView2
+            // gridViewProduct
             // 
-            this.gridView2.Appearance.GroupPanel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView2.Appearance.GroupPanel.Options.UseFont = true;
-            this.gridView2.GridControl = this.dgvProducts;
-            this.gridView2.Name = "gridView2";
+            this.gridViewProduct.Appearance.GroupPanel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewProduct.Appearance.GroupPanel.Options.UseFont = true;
+            this.gridViewProduct.GridControl = this.dgvProducts;
+            this.gridViewProduct.Name = "gridViewProduct";
             // 
             // ribbonControl3
             // 
@@ -1785,8 +1785,8 @@
             this.addSupplierBtn.Caption = "Add";
             this.addSupplierBtn.Hint = "Add new Customer";
             this.addSupplierBtn.Id = 1;
-            this.addSupplierBtn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.addSupplierBtn.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.addSupplierBtn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("addSupplierBtn.ImageOptions.Image")));
+            this.addSupplierBtn.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("addSupplierBtn.ImageOptions.LargeImage")));
             this.addSupplierBtn.Name = "addSupplierBtn";
             // 
             // editSupplierBtn
@@ -1794,8 +1794,8 @@
             this.editSupplierBtn.Caption = "Edit";
             this.editSupplierBtn.Hint = "Edit Customer";
             this.editSupplierBtn.Id = 2;
-            this.editSupplierBtn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.Image")));
-            this.editSupplierBtn.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem2.ImageOptions.LargeImage")));
+            this.editSupplierBtn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("editSupplierBtn.ImageOptions.Image")));
+            this.editSupplierBtn.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("editSupplierBtn.ImageOptions.LargeImage")));
             this.editSupplierBtn.Name = "editSupplierBtn";
             // 
             // deleteSupplierBtn
@@ -1803,8 +1803,8 @@
             this.deleteSupplierBtn.Caption = "Delete";
             this.deleteSupplierBtn.Hint = "Delete Customer";
             this.deleteSupplierBtn.Id = 3;
-            this.deleteSupplierBtn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.Image")));
-            this.deleteSupplierBtn.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem3.ImageOptions.LargeImage")));
+            this.deleteSupplierBtn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("deleteSupplierBtn.ImageOptions.Image")));
+            this.deleteSupplierBtn.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("deleteSupplierBtn.ImageOptions.LargeImage")));
             this.deleteSupplierBtn.Name = "deleteSupplierBtn";
             // 
             // barEditItem4
@@ -2522,7 +2522,7 @@
             this.groupControl6.ResumeLayout(false);
             this.groupControl6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProducts)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewProduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox7)).EndInit();
@@ -2613,9 +2613,9 @@
         private DevExpress.XtraBars.BarEditItem barEditItem1;
         private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl3;
         private DevExpress.XtraGrid.GridControl dgvProducts;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewProduct;
         private DevExpress.XtraEditors.GroupControl groupControl6;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl lblProductDefective;
         private DevExpress.XtraEditors.LabelControl lblProductCounts;
         private DevExpress.XtraEditors.LabelControl lblDefectiveProd;
         private DevExpress.XtraEditors.LabelControl labelControl1;

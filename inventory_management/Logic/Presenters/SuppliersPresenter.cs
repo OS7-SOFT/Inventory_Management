@@ -69,7 +69,7 @@ namespace inventory_management.Logic.Presenters
             model.Id = view.Id;
 
             //delete Inventory
-            view.Message = "Supplier deleted successfully";
+            view.Message = $"{view.SuppliersName} deleted successfully";
             view.IsSuccessed = true;
             LoadData();
         }
@@ -88,13 +88,13 @@ namespace inventory_management.Logic.Presenters
                         model.Id = view.Id;
                         //Edit InventoryMethod 
 
-                        view.Message = "Supplier Edited Successfully";
+                        view.Message = $"{view.SuppliersName} Edited Successfully";
                     }
                     else
                     {
                         //Add Category name Method 
 
-                        view.Message = "Supplier Added Successfully";
+                        view.Message = $"{view.SuppliersName} Added Successfully";
                     }
 
                     view.IsSuccessed = true;

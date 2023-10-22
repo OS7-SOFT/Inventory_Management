@@ -42,7 +42,6 @@ namespace inventory_management.Logic.Presenters
             categoryList.DataSource = categoryServices.GetData();
 
             //get Category Count 
-            //..use..view.CategoryCount;
             view.CategoryCount = categoryServices.GetCategoriesCount().Rows[0][0].ToString();
         }
 
@@ -67,7 +66,7 @@ namespace inventory_management.Logic.Presenters
 
             //delete Categroy
             categoryServices.DeleteData(model.Id);
-            view.Message = "Category deleted successfully";
+            view.Message = $"{view.CategoryName} deleted successfully";
             view.IsSuccessed = true;
             LoadData();
         }
@@ -89,7 +88,7 @@ namespace inventory_management.Logic.Presenters
                         Params[0] = model.Id;
                         Params[1] = model.Name;
                         categoryServices.EditData(Params);
-                        view.Message = "Category Edited Successfully";
+                        view.Message = $"{view.CategoryName} Edited Successfully";
                     }
                     else
                     {
@@ -97,7 +96,7 @@ namespace inventory_management.Logic.Presenters
                         Params = new object[1];
                         Params[0] = model.Name;
                         categoryServices.AddData(Params);
-                        view.Message = "Category Added Successfully";
+                        view.Message = $"{view.CategoryName} Added Successfully";
                     }
 
                     view.IsSuccessed = true;
