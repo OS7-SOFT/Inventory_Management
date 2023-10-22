@@ -1,5 +1,6 @@
 ﻿using DevExpress.DashboardWin.Native;
 using DevExpress.XtraEditors;
+using inventory_management.Logic.Presenters;
 using inventory_management.Views.Forms.Notification;
 using inventory_management.Views.Interfaces;
 using System;
@@ -14,6 +15,7 @@ namespace inventory_management.Views.Forms.Customers
     public class Customer : ICustomerView
     {
         NotificationManger notification = NotificationManger.Instance();
+        CustomerPresenter customerPresenter;
         CustomersManageFrm  CustomerCF;
 
         int id;
@@ -33,7 +35,7 @@ namespace inventory_management.Views.Forms.Customers
         //Constructor
         public Customer()
         {
-
+            customerPresenter = new CustomerPresenter(this);
         }
 
         //Properties

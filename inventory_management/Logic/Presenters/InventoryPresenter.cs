@@ -51,8 +51,8 @@ namespace inventory_management.Logic.Presenters
             inventoryList.DataSource = inventoryServices.GetData();
 
             //Set all Categories
-            //view.CategoryList.AddRange();
             CategoryList.DataSource = inventoryServices.GetComboBoxData();
+            view.CategoryList = CategoryList.Cast<string>().ToList();
             
         }
 

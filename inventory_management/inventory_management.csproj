@@ -145,11 +145,13 @@
       <DependentUpon>InventoryInfoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Forms\Orders\Order.cs" />
+    <Compile Include="Views\Forms\Products\Product.cs" />
     <Compile Include="Views\Forms\Suppliers\Supplier.cs" />
     <Compile Include="Views\Interfaces\IBaseInterface.cs" />
     <Compile Include="Views\Interfaces\ICustomerView.cs" />
     <Compile Include="Views\Interfaces\IInventoryView.cs" />
     <Compile Include="Views\Interfaces\IOrderView.cs" />
+    <Compile Include="Views\Interfaces\IProductView.cs" />
     <Compile Include="Views\Interfaces\ISuppliersView.cs" />
     <Compile Include="Views\Notification\NotificationManger.cs" />
     <Compile Include="Views\Forms\Orders\OrderManageFrm.cs">

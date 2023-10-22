@@ -97,18 +97,18 @@ namespace inventory_management
             //Search
             GetValueBySearch(gridViewCustomer);
             //Add
-            addInventoryBtn.ItemClick += delegate
+            addCustomerBtn.ItemClick += delegate
             {
                 customer.Add();
             };
             //Edit
-            editInventoryBtn.ItemClick += delegate
+            editCustomerBtn.ItemClick += delegate
             {
                 customer.Edit(GetIdToEdit(gridViewCustomer));
 
             };
             //Delete
-            deleteInventoryBtn.ItemClick += delegate
+            deleteCustomerBtn.ItemClick += delegate
             {
                 customer.Delete(GetIdToDelete(gridViewCustomer));
             };
