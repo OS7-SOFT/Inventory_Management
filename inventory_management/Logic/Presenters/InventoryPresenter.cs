@@ -1,7 +1,9 @@
-﻿using inventory_management.Models;
+﻿using inventory_management.Logic.Services;
+using inventory_management.Models;
 using inventory_management.Views.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,13 +16,16 @@ namespace inventory_management.Logic.Presenters
 
         IInventoryView view;
         BindingSource inventoryList;
+        BindingSource CategoryList;
+        private object[] Params;
 
         InventoryModel model = new InventoryModel();
-
+        InventoryServices inventoryServices = new InventoryServices();
         //Constructor
         public InventoryPresenter(IInventoryView view)
         {
             inventoryList = new BindingSource();
+            CategoryList = new BindingSource();
             this.view = view;
             this.view.AddEvent += AddMethod;
             this.view.EditEvent += LoadDataToEdit;
@@ -43,11 +48,12 @@ namespace inventory_management.Logic.Presenters
         private void LoadData()
         {
             //Set data in inventoryList from database
-
+            inventoryList.DataSource = inventoryServices.GetData();
 
             //Set all Categories
             //view.CategoryList.AddRange();
-
+            CategoryList.DataSource = inventoryServices.GetComboBoxData();
+            
         }
 
         
@@ -63,7 +69,11 @@ namespace inventory_management.Logic.Presenters
             model.Id = view.Id;
 
             //Get current inventory by id 
-           
+            DataTable dt= inventoryServices.GetDataByValue(model.Id);
+            view.InventoryName = dt.Rows[0][0].ToString();
+            view.InventoryLocation = dt.Rows[0][1].ToString();
+            view.CategoryName = dt.Rows[0][2].ToString();
+            view.InventoryCapacity = (double)dt.Rows[0][3];
         }
 
         private void DeleteInventory(object sender, EventArgs e)
@@ -71,6 +81,7 @@ namespace inventory_management.Logic.Presenters
             model.Id = view.Id;
 
             //delete Inventory
+            inventoryServices.DeleteData(model.Id);
             view.Message = "Inventory deleted successfully";
             view.IsSuccessed = true;
             LoadData();
@@ -89,13 +100,24 @@ namespace inventory_management.Logic.Presenters
                     {
                         model.Id = view.Id;
                         //Edit InventoryMethod 
-                       
+                        Params = new object[5];
+                        Params[0] = model.Id;
+                        Params[1] = model.Name;
+                        Params[2] = model.CategoryName;
+                        Params[3] = model.Location;
+                        Params[4] = model.Capacity;
+                        inventoryServices.EditData(Params);
                         view.Message = "Inventory Edited Successfully";
                     }
                     else
                     {
                         //Add Category name Method 
-                       
+                        Params = new object[4];
+                        Params[0] = model.Name;
+                        Params[1] = model.CategoryName;
+                        Params[2] = model.Location;
+                        Params[3] = model.Capacity;
+                        inventoryServices.AddData(Params);
                         view.Message = "Inventory Added Successfully";
                     }
 

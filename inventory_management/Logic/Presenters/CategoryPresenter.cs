@@ -43,6 +43,7 @@ namespace inventory_management.Logic.Presenters
 
             //get Category Count 
             //..use..view.CategoryCount;
+            view.CategoryCount = categoryServices.GetCategoriesCount().Rows[0][0].ToString();
         }
 
         private void AddMethod(object sender, EventArgs e)

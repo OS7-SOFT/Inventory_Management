@@ -20,7 +20,7 @@ namespace inventory_management.Logic.Services
             command.Parameters.Add("@inventoryName", SqlDbType.VarChar).Value = (string)Params[0];
             command.Parameters.Add("@categoriesId", SqlDbType.Int).Value = (int)Params[1];
             command.Parameters.Add("@inventoryLocation", SqlDbType.VarChar).Value = (string)Params[2];
-            command.Parameters.Add("@inventoryCapacity", SqlDbType.Int).Value = (int)Params[3];
+            command.Parameters.Add("@inventoryCapacity", SqlDbType.BigInt).Value = (int)Params[3];
         }
         // Delete method
         public void DeleteData(int id)
@@ -42,12 +42,26 @@ namespace inventory_management.Logic.Services
             command.Parameters.Add("@inventoryName", SqlDbType.VarChar).Value = (string)Params[1];
             command.Parameters.Add("@categoriesId", SqlDbType.Int).Value = (int)Params[2];
             command.Parameters.Add("@inventoryLocation", SqlDbType.VarChar).Value = (string)Params[3];
-            command.Parameters.Add("@inventoryCapacity", SqlDbType.Int).Value = (int)Params[4];
+            command.Parameters.Add("@inventoryCapacity", SqlDbType.BigInt).Value = (int)Params[4];
         }
-
+        //Method to get all inventory data
         public DataTable GetData()
         {
-            throw new NotImplementedException();
+            return DataBase.Select("selectInventory", () => { });
+        }
+        //Method to fill category combobox
+        public DataTable GetComboBoxData()
+        {
+            return DataBase.Select("categoryComboBox", () => { });
+        }
+        //GetData By Value method
+        public DataTable GetDataByValue(int id)
+        {
+            return DataBase.GetDataByValue("selectInventoryById", () => GetDataByValueParameters(id, DataBase.command));
+        }
+        public void GetDataByValueParameters(int id, SqlCommand command)
+        {
+            command.Parameters.Add("@id", SqlDbType.Int).Value = id;
         }
     }
 }

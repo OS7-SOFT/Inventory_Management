@@ -84,6 +84,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Logic\Presenters\CategoryPresenter.cs" />
+    <Compile Include="Logic\Presenters\CustomerPresenter.cs" />
     <Compile Include="Logic\Presenters\InventoryPresenter.cs" />
     <Compile Include="Logic\Services\CategoryServices.cs" />
     <Compile Include="Logic\Services\CustomerServices.cs" />

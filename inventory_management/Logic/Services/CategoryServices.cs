@@ -43,6 +43,11 @@ namespace inventory_management.Logic.Services
         {
             return DataBase.Select("selectCategory", () => { });
         }
+        //Get Categories Count method 
+        public DataTable GetCategoriesCount()
+        {
+            return DataBase.Select("CategoriesCount", () => { });
+        }
         //GetData By Value method
         public DataTable GetDataByValue(int id)
         {
