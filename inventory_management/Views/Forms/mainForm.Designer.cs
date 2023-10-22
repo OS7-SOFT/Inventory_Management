@@ -263,7 +263,7 @@
             this.lblCurrentOrder = new DevExpress.XtraEditors.LabelControl();
             this.labelControl10 = new DevExpress.XtraEditors.LabelControl();
             this.dgvOrders = new DevExpress.XtraGrid.GridControl();
-            this.gridView4 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridViewOrder = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.ribbonControl5 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.addOrderBtn = new DevExpress.XtraBars.BarButtonItem();
             this.editOrderBtn = new DevExpress.XtraBars.BarButtonItem();
@@ -377,7 +377,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).BeginInit();
             this.groupControl8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl5)).BeginInit();
             this.customerBtn.SuspendLayout();
             this.xtraScrollableControl6.SuspendLayout();
@@ -1383,20 +1383,20 @@
             this.dgvOrders.LevelTree.Nodes.AddRange(new DevExpress.XtraGrid.GridLevelNode[] {
             gridLevelNode4});
             this.dgvOrders.Location = new System.Drawing.Point(11, 14);
-            this.dgvOrders.MainView = this.gridView4;
+            this.dgvOrders.MainView = this.gridViewOrder;
             this.dgvOrders.MenuManager = this.ribbonControl1;
             this.dgvOrders.Name = "dgvOrders";
             this.dgvOrders.Size = new System.Drawing.Size(1236, 735);
             this.dgvOrders.TabIndex = 4;
             this.dgvOrders.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView4});
+            this.gridViewOrder});
             // 
-            // gridView4
+            // gridViewOrder
             // 
-            this.gridView4.Appearance.GroupPanel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gridView4.Appearance.GroupPanel.Options.UseFont = true;
-            this.gridView4.GridControl = this.dgvOrders;
-            this.gridView4.Name = "gridView4";
+            this.gridViewOrder.Appearance.GroupPanel.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gridViewOrder.Appearance.GroupPanel.Options.UseFont = true;
+            this.gridViewOrder.GridControl = this.dgvOrders;
+            this.gridViewOrder.Name = "gridViewOrder";
             // 
             // ribbonControl5
             // 
@@ -2535,7 +2535,7 @@
             this.groupControl8.ResumeLayout(false);
             this.groupControl8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridViewOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl5)).EndInit();
             this.customerBtn.ResumeLayout(false);
             this.customerBtn.PerformLayout();
@@ -2647,7 +2647,7 @@
         private DevExpress.XtraEditors.LabelControl lblCurrentOrder;
         private DevExpress.XtraEditors.LabelControl labelControl10;
         private DevExpress.XtraGrid.GridControl dgvOrders;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView4;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridViewOrder;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl5;
         private DevExpress.XtraBars.BarButtonItem addOrderBtn;
         private DevExpress.XtraBars.BarButtonItem editOrderBtn;

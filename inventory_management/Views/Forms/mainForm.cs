@@ -14,6 +14,7 @@ using inventory_management.Views.Forms.Inventories;
 using inventory_management.Views.Forms.Customers;
 using inventory_management.Views.Forms.Suppliers;
 using inventory_management.Views.Forms.Products;
+using inventory_management.Views.Forms.Orders;
 
 namespace inventory_management
 {
@@ -24,6 +25,8 @@ namespace inventory_management
         Customer customer = Customer.Instance();
         Supplier supplier = Supplier.Instance();
         Product product = Product.Instance();
+        Order order = Order.Instance();
+
         public mainForm()
         {
             InitializeComponent();
@@ -32,6 +35,7 @@ namespace inventory_management
             CustomerManagement();
             SuppliersManagement();
             ProductManagement();
+            OrderManagement();
         }
 
 
@@ -91,7 +95,7 @@ namespace inventory_management
 
         }
 
-        //Inventory Management
+        //Products Management
         private void ProductManagement()
         {
             dgvProducts.DataSource = product.ProductList.DataSource;
@@ -118,7 +122,6 @@ namespace inventory_management
                 product.Delete(GetIdToDelete(gridViewProduct));
             };
         }
-
 
         //Customer Management
         private void CustomerManagement()
@@ -171,6 +174,36 @@ namespace inventory_management
                 supplier.Delete(GetIdToDelete(gridViewSuppliers));
             };
         }
+
+        //Orders Management
+        private void OrderManagement()
+        {
+            dgvOrders.DataSource = order.OrderList.DataSource;
+            lblOrderCount.Text = order.Count;
+            lblCurrentOrder.Text = order.Current;
+            lblCompleteOrder.Text = order.Complete;
+            lblCanceledOrder.Text = order.Canceled;
+
+            //Search
+            GetValueBySearch(gridViewOrder);
+            //Add
+            addOrderBtn.ItemClick += delegate
+            {
+                order.Add();
+            };
+            //Edit
+            editOrderBtn.ItemClick += delegate
+            {
+                order.Edit(GetIdToEdit(gridViewOrder));
+
+            };
+            //Delete
+            deleteOrderBtn.ItemClick += delegate
+            {
+                order.Delete(GetIdToDelete(gridViewOrder));
+            };
+        }
+
 
 
         //Get Search result

@@ -34,9 +34,7 @@
             this.asa = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtProdName = new DevExpress.XtraEditors.TextEdit();
-            this.txtEntryDate = new DevExpress.XtraEditors.DateEdit();
             this.txtExDate = new DevExpress.XtraEditors.DateEdit();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
@@ -48,8 +46,6 @@
             this.categoryCbx = new DevExpress.XtraEditors.ComboBoxEdit();
             this.supplierCbx = new DevExpress.XtraEditors.ComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProdName.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEntryDate.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEntryDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtExDate.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtExDate.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.quantityProduct.Properties)).BeginInit();
@@ -89,7 +85,7 @@
             // 
             this.asa.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.asa.Appearance.Options.UseFont = true;
-            this.asa.Location = new System.Drawing.Point(22, 95);
+            this.asa.Location = new System.Drawing.Point(22, 105);
             this.asa.Name = "asa";
             this.asa.Size = new System.Drawing.Size(76, 24);
             this.asa.TabIndex = 28;
@@ -112,29 +108,14 @@
             this.txtProdName.Name = "txtProdName";
             this.txtProdName.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProdName.Properties.Appearance.Options.UseFont = true;
-            this.txtProdName.Properties.ContextImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("txtName.Properties.ContextImageOptions.Image")));
+            this.txtProdName.Properties.ContextImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("txtProdName.Properties.ContextImageOptions.Image")));
             this.txtProdName.Size = new System.Drawing.Size(281, 30);
             this.txtProdName.TabIndex = 24;
-            // 
-            // txtEntryDate
-            // 
-            this.txtEntryDate.EditValue = null;
-            this.txtEntryDate.Location = new System.Drawing.Point(176, 278);
-            this.txtEntryDate.Name = "txtEntryDate";
-            this.txtEntryDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEntryDate.Properties.Appearance.Options.UseFont = true;
-            this.txtEntryDate.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtEntryDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtEntryDate.Properties.ContextImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("dateEdit1.Properties.ContextImageOptions.Image")));
-            this.txtEntryDate.Size = new System.Drawing.Size(281, 30);
-            this.txtEntryDate.TabIndex = 34;
             // 
             // txtExDate
             // 
             this.txtExDate.EditValue = null;
-            this.txtExDate.Location = new System.Drawing.Point(176, 340);
+            this.txtExDate.Location = new System.Drawing.Point(176, 318);
             this.txtExDate.Name = "txtExDate";
             this.txtExDate.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtExDate.Properties.Appearance.Options.UseFont = true;
@@ -142,25 +123,15 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.txtExDate.Properties.CalendarTimeProperties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtExDate.Properties.ContextImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("dateEdit2.Properties.ContextImageOptions.Image")));
+            this.txtExDate.Properties.ContextImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("txtExDate.Properties.ContextImageOptions.Image")));
             this.txtExDate.Size = new System.Drawing.Size(281, 30);
             this.txtExDate.TabIndex = 35;
-            // 
-            // labelControl4
-            // 
-            this.labelControl4.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelControl4.Appearance.Options.UseFont = true;
-            this.labelControl4.Location = new System.Drawing.Point(22, 281);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(95, 24);
-            this.labelControl4.TabIndex = 36;
-            this.labelControl4.Text = "Entry Date";
             // 
             // labelControl5
             // 
             this.labelControl5.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl5.Appearance.Options.UseFont = true;
-            this.labelControl5.Location = new System.Drawing.Point(22, 343);
+            this.labelControl5.Location = new System.Drawing.Point(22, 321);
             this.labelControl5.Name = "labelControl5";
             this.labelControl5.Size = new System.Drawing.Size(138, 24);
             this.labelControl5.TabIndex = 37;
@@ -170,7 +141,7 @@
             // 
             this.labelControl6.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl6.Appearance.Options.UseFont = true;
-            this.labelControl6.Location = new System.Drawing.Point(22, 157);
+            this.labelControl6.Location = new System.Drawing.Point(22, 177);
             this.labelControl6.Name = "labelControl6";
             this.labelControl6.Size = new System.Drawing.Size(81, 24);
             this.labelControl6.TabIndex = 38;
@@ -180,7 +151,7 @@
             // 
             this.labelControl7.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl7.Appearance.Options.UseFont = true;
-            this.labelControl7.Location = new System.Drawing.Point(22, 219);
+            this.labelControl7.Location = new System.Drawing.Point(21, 249);
             this.labelControl7.Name = "labelControl7";
             this.labelControl7.Size = new System.Drawing.Size(82, 24);
             this.labelControl7.TabIndex = 39;
@@ -190,7 +161,7 @@
             // 
             this.labelControl8.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl8.Appearance.Options.UseFont = true;
-            this.labelControl8.Location = new System.Drawing.Point(22, 405);
+            this.labelControl8.Location = new System.Drawing.Point(22, 393);
             this.labelControl8.Name = "labelControl8";
             this.labelControl8.Size = new System.Drawing.Size(80, 24);
             this.labelControl8.TabIndex = 40;
@@ -200,7 +171,7 @@
             // 
             this.labelControl9.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelControl9.Appearance.Options.UseFont = true;
-            this.labelControl9.Location = new System.Drawing.Point(22, 467);
+            this.labelControl9.Location = new System.Drawing.Point(22, 465);
             this.labelControl9.Name = "labelControl9";
             this.labelControl9.Size = new System.Drawing.Size(72, 24);
             this.labelControl9.TabIndex = 41;
@@ -213,13 +184,13 @@
             0,
             0,
             0});
-            this.quantityProduct.Location = new System.Drawing.Point(176, 92);
+            this.quantityProduct.Location = new System.Drawing.Point(176, 102);
             this.quantityProduct.Name = "quantityProduct";
             this.quantityProduct.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.quantityProduct.Properties.Appearance.Options.UseFont = true;
             this.quantityProduct.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.quantityProduct.Properties.ContextImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("spinEdit1.Properties.ContextImageOptions.Image")));
+            this.quantityProduct.Properties.ContextImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("quantityProduct.Properties.ContextImageOptions.Image")));
             this.quantityProduct.Size = new System.Drawing.Size(281, 30);
             this.quantityProduct.TabIndex = 43;
             // 
@@ -230,13 +201,13 @@
             0,
             0,
             0});
-            this.txtBuyPrice.Location = new System.Drawing.Point(176, 216);
+            this.txtBuyPrice.Location = new System.Drawing.Point(176, 246);
             this.txtBuyPrice.Name = "txtBuyPrice";
             this.txtBuyPrice.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.txtBuyPrice.Properties.Appearance.Options.UseFont = true;
             this.txtBuyPrice.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtBuyPrice.Properties.ContextImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("spinEdit2.Properties.ContextImageOptions.Image")));
+            this.txtBuyPrice.Properties.ContextImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("txtBuyPrice.Properties.ContextImageOptions.Image")));
             this.txtBuyPrice.Size = new System.Drawing.Size(281, 30);
             this.txtBuyPrice.TabIndex = 44;
             // 
@@ -247,19 +218,19 @@
             0,
             0,
             0});
-            this.txtSellPrice.Location = new System.Drawing.Point(176, 154);
+            this.txtSellPrice.Location = new System.Drawing.Point(176, 174);
             this.txtSellPrice.Name = "txtSellPrice";
             this.txtSellPrice.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F);
             this.txtSellPrice.Properties.Appearance.Options.UseFont = true;
             this.txtSellPrice.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.txtSellPrice.Properties.ContextImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("spinEdit3.Properties.ContextImageOptions.Image")));
+            this.txtSellPrice.Properties.ContextImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("txtSellPrice.Properties.ContextImageOptions.Image")));
             this.txtSellPrice.Size = new System.Drawing.Size(281, 30);
             this.txtSellPrice.TabIndex = 45;
             // 
             // categoryCbx
             // 
-            this.categoryCbx.Location = new System.Drawing.Point(176, 402);
+            this.categoryCbx.Location = new System.Drawing.Point(176, 390);
             this.categoryCbx.Name = "categoryCbx";
             this.categoryCbx.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.categoryCbx.Properties.Appearance.Options.UseFont = true;
@@ -271,13 +242,13 @@
             // 
             // supplierCbx
             // 
-            this.supplierCbx.Location = new System.Drawing.Point(176, 464);
+            this.supplierCbx.Location = new System.Drawing.Point(176, 462);
             this.supplierCbx.Name = "supplierCbx";
             this.supplierCbx.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.supplierCbx.Properties.Appearance.Options.UseFont = true;
             this.supplierCbx.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.supplierCbx.Properties.ContextImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("comboBoxEdit1.Properties.ContextImageOptions.Image")));
+            this.supplierCbx.Properties.ContextImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("supplierCbx.Properties.ContextImageOptions.Image")));
             this.supplierCbx.Size = new System.Drawing.Size(281, 30);
             this.supplierCbx.TabIndex = 47;
             // 
@@ -296,9 +267,7 @@
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.labelControl5);
-            this.Controls.Add(this.labelControl4);
             this.Controls.Add(this.txtExDate);
-            this.Controls.Add(this.txtEntryDate);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.okBtn);
             this.Controls.Add(this.asa);
@@ -312,8 +281,6 @@
             this.Name = "ProductManageFrm";
             this.Text = "Add product";
             ((System.ComponentModel.ISupportInitialize)(this.txtProdName.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEntryDate.Properties.CalendarTimeProperties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtEntryDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtExDate.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtExDate.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.quantityProduct.Properties)).EndInit();
@@ -332,9 +299,7 @@
         private DevExpress.XtraEditors.LabelControl asa;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.TextEdit txtProdName;
-        private DevExpress.XtraEditors.DateEdit txtEntryDate;
         private DevExpress.XtraEditors.DateEdit txtExDate;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl7;

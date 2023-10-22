@@ -86,6 +86,7 @@
     <Compile Include="Logic\Presenters\CategoryPresenter.cs" />
     <Compile Include="Logic\Presenters\CustomerPresenter.cs" />
     <Compile Include="Logic\Presenters\InventoryPresenter.cs" />
+    <Compile Include="Logic\Presenters\OrderPresenter.cs" />
     <Compile Include="Logic\Presenters\ProductPresenter.cs" />
     <Compile Include="Logic\Presenters\SuppliersPresenter.cs" />
     <Compile Include="Logic\Services\CategoryServices.cs" />

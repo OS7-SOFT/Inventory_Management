@@ -27,7 +27,6 @@ namespace inventory_management.Views.Forms
             quantityProduct.Value = product.Quantity;
             txtSellPrice.Value = product.Sell;
             txtBuyPrice.Value = product.Buy;
-            txtEntryDate.DateTime = product.Entry;
             txtExDate.DateTime = product.Expiration;
             
             if (product.Categories.Count > 0)
@@ -55,10 +54,11 @@ namespace inventory_management.Views.Forms
                 product.Quantity = (int)quantityProduct.Value;
                 product.Sell = txtSellPrice.Value;
                 product.Buy = txtBuyPrice.Value;
-                product.Entry = txtEntryDate.DateTime;
+                product.Entry = DateTime.Now;
                 product.ExpirationDate = txtExDate.DateTime;
                 product.Category_name = categoryCbx.EditValue.ToString(); 
-                product.Supplier_name = supplierCbx.EditValue.ToString(); 
+                product.Supplier_name = supplierCbx.EditValue.ToString();
+                product.Save();
 
             };
             cancelBtn.Click += delegate
