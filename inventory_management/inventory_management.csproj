@@ -86,6 +86,7 @@
     <Compile Include="Logic\Presenters\CategoryPresenter.cs" />
     <Compile Include="Logic\Presenters\CustomerPresenter.cs" />
     <Compile Include="Logic\Presenters\InventoryPresenter.cs" />
+    <Compile Include="Logic\Presenters\SuppliersPresenter.cs" />
     <Compile Include="Logic\Services\CategoryServices.cs" />
     <Compile Include="Logic\Services\CustomerServices.cs" />
     <Compile Include="Logic\Services\DataBase.cs" />
@@ -144,10 +145,12 @@
       <DependentUpon>InventoryInfoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Forms\Orders\Order.cs" />
+    <Compile Include="Views\Forms\Suppliers\Supplier.cs" />
     <Compile Include="Views\Interfaces\IBaseInterface.cs" />
     <Compile Include="Views\Interfaces\ICustomerView.cs" />
     <Compile Include="Views\Interfaces\IInventoryView.cs" />
     <Compile Include="Views\Interfaces\IOrderView.cs" />
+    <Compile Include="Views\Interfaces\ISuppliersView.cs" />
     <Compile Include="Views\Notification\NotificationManger.cs" />
     <Compile Include="Views\Forms\Orders\OrderManageFrm.cs">
       <SubType>Form</SubType>
