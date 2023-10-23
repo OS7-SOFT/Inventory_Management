@@ -19,6 +19,10 @@ namespace inventory_management.Logic.Services
         // Delete method
         void DeleteData(int id);
         void DeleteDataParameters(int id, SqlCommand command);
+        //GetData method
         DataTable GetData();
+        //GetData By Value method
+        DataTable GetDataByValue(int id);
+        void GetDataByValueParameters(int id, SqlCommand command);
     }
 }

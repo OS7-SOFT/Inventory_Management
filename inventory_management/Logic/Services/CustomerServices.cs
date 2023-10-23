@@ -45,9 +45,24 @@ namespace inventory_management.Logic.Services
             command.Parameters.Add("@location", SqlDbType.VarChar).Value = (string)Params[4];
         }
 
+        //GetData method
         public DataTable GetData()
         {
-            throw new NotImplementedException();
+            return DataBase.Select("selectCustomer", () => { });
+        }
+        //Get Customer Count method 
+        public DataTable GetCustomersCount()
+        {
+            return DataBase.Select("customerCount", () => { });
+        }
+        //GetData By Value method
+        public DataTable GetDataByValue(int id)
+        {
+            return DataBase.GetDataByValue("selectCustomersById", () => GetDataByValueParameters(id, DataBase.command));
+        }
+        public void GetDataByValueParameters(int id, SqlCommand command)
+        {
+            command.Parameters.Add("@id", SqlDbType.Int).Value = id;
         }
     }
 }

@@ -1,7 +1,9 @@
-﻿using inventory_management.Models;
+﻿using inventory_management.Logic.Services;
+using inventory_management.Models;
 using inventory_management.Views.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,9 +15,10 @@ namespace inventory_management.Logic.Presenters
     {
         ISuppliersView view;
         BindingSource supplierList;
+        private object[] Params;
 
         SupplierModel model = new SupplierModel();
-
+        SupplierServices supplierServices = new SupplierServices();
         //Constructor
         public SuppliersPresenter(ISuppliersView view)
         {
@@ -23,7 +26,7 @@ namespace inventory_management.Logic.Presenters
             this.view = view;
             this.view.AddEvent += AddMethod;
             this.view.EditEvent += LoadDataToEdit;
-            this.view.DeleteEvent += DeleteInventory;
+            this.view.DeleteEvent += DeleteSupplier;
             this.view.SaveEvent += SaveChange;
             this.view.CancelEvent += CancelMethod;
             this.view.GetDataList = supplierList;
@@ -40,11 +43,11 @@ namespace inventory_management.Logic.Presenters
 
         private void LoadData()
         {
-            //Set data in inventoryList from database
-
+            //Set data in supplierList from database
+            supplierList.DataSource = supplierServices.GetData();
 
             //Get supplier Count
-
+            view.SuppliersCount = supplierServices.GetSupplierCount().Rows[0][0].ToString();
 
         }
 
@@ -61,15 +64,19 @@ namespace inventory_management.Logic.Presenters
             model.Id = view.Id;
 
             //Get current supplier by id 
-
+            DataTable dt = supplierServices.GetDataByValue(model.Id);
+            view.SuppliersName = dt.Rows[0][0].ToString();
+            view.SuppliersPhone = dt.Rows[0][1].ToString();
+            view.SuppliersEmail = dt.Rows[0][2].ToString();
         }
 
-        private void DeleteInventory(object sender, EventArgs e)
+        private void DeleteSupplier(object sender, EventArgs e)
         {
             model.Id = view.Id;
 
-            //delete Inventory
-            view.Message = $"{view.SuppliersName} deleted successfully";
+            //delete supplier
+            supplierServices.DeleteData(model.Id);
+            view.Message = "Supplier deleted successfully";
             view.IsSuccessed = true;
             LoadData();
         }
@@ -86,15 +93,24 @@ namespace inventory_management.Logic.Presenters
                     if (view.IsEdit)
                     {
                         model.Id = view.Id;
-                        //Edit InventoryMethod 
-
-                        view.Message = $"{view.SuppliersName} Edited Successfully";
+                        //Edit SupplierMethod 
+                        Params = new object[4];
+                        Params[0] = model.Id;
+                        Params[1] = model.Name;
+                        Params[2] = model.PhoneNumber;
+                        Params[3] = model.Email;
+                        supplierServices.EditData(Params);
+                        view.Message = "Supplier Edited Successfully";
                     }
                     else
                     {
-                        //Add Category name Method 
-
-                        view.Message = $"{view.SuppliersName} Added Successfully";
+                        //Add Supplier name Method 
+                        Params = new object[3];
+                        Params[0] = model.Name;
+                        Params[1] = model.PhoneNumber;
+                        Params[2] = model.Email;
+                        supplierServices.AddData(Params);
+                        view.Message = "Supplier Added Successfully";
                     }
 
                     view.IsSuccessed = true;

@@ -18,7 +18,7 @@ namespace inventory_management.Logic.Services
         public void AddDataParameters(object[] Params, SqlCommand command)
         {
             command.Parameters.Add("@name", SqlDbType.VarChar).Value = (string)Params[0];
-            command.Parameters.Add("@phoneNum", SqlDbType.Int).Value = (int)Params[1];
+            command.Parameters.Add("@phoneNum", SqlDbType.VarChar).Value = (string)Params[1];
             command.Parameters.Add("@email", SqlDbType.VarChar).Value = (string)Params[2];
         }
         // Delete method
@@ -41,13 +41,28 @@ namespace inventory_management.Logic.Services
         {
             command.Parameters.Add("@id", SqlDbType.Int).Value = (int)Params[0];
             command.Parameters.Add("@name", SqlDbType.VarChar).Value = (string)Params[1];
-            command.Parameters.Add("@phoneNum", SqlDbType.Int).Value = (int)Params[2];
+            command.Parameters.Add("@phoneNum", SqlDbType.VarChar).Value = (string)Params[2];
             command.Parameters.Add("@email", SqlDbType.VarChar).Value = (string)Params[3];
         }
 
+        //GetData method
         public DataTable GetData()
         {
-            throw new NotImplementedException();
+            return DataBase.Select("selectSuppliers", () => { });
+        }
+        //Get Supplier Count method 
+        public DataTable GetSupplierCount()
+        {
+            return DataBase.Select("suppliersCount", () => { });
+        }
+        //GetData By Value method
+        public DataTable GetDataByValue(int id)
+        {
+            return DataBase.GetDataByValue("selectSupplierById", () => GetDataByValueParameters(id, DataBase.command));
+        }
+        public void GetDataByValueParameters(int id, SqlCommand command)
+        {
+            command.Parameters.Add("@id", SqlDbType.Int).Value = id;
         }
     }
 }

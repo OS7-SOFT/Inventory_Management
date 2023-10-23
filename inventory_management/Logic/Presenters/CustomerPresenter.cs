@@ -1,7 +1,9 @@
-﻿using inventory_management.Models;
+﻿using inventory_management.Logic.Services;
+using inventory_management.Models;
 using inventory_management.Views.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -13,9 +15,10 @@ namespace inventory_management.Logic.Presenters
     {
         ICustomerView view;
         BindingSource customerList;
+        private object[] Params;
 
         CustomerModel model = new CustomerModel();
-
+        CustomerServices customerServices = new CustomerServices();
         //Constructor
         public CustomerPresenter(ICustomerView view)
         {
@@ -23,7 +26,7 @@ namespace inventory_management.Logic.Presenters
             this.view = view;
             this.view.AddEvent += AddMethod;
             this.view.EditEvent += LoadDataToEdit;
-            this.view.DeleteEvent += DeleteInventory;
+            this.view.DeleteEvent += DeleteCustomer;
             this.view.SaveEvent += SaveChange;
             this.view.CancelEvent += CancelMethod;
             this.view.GetDataList = customerList;
@@ -41,11 +44,11 @@ namespace inventory_management.Logic.Presenters
 
         private void LoadData()
         {
-            //Set data in inventoryList from database
-
+            //Set data in customerList from database
+            customerList.DataSource = customerServices.GetData();
 
             //Get Customer Count
-
+            view.CustomersCount = customerServices.GetCustomersCount().Rows[0][0].ToString();
             //Get best Customer
 
         }
@@ -63,15 +66,20 @@ namespace inventory_management.Logic.Presenters
             model.Id = view.Id;
 
             //Get current Customer by id 
-
+            DataTable dt = customerServices.GetDataByValue(model.Id);
+            view.CustomerName = dt.Rows[0][0].ToString();
+            view.CustomerPhone = dt.Rows[0][1].ToString();
+            view.CustomerEmail = dt.Rows[0][2].ToString();
+            view.CustomerLocation = dt.Rows[0][3].ToString();
         }
 
-        private void DeleteInventory(object sender, EventArgs e)
+        private void DeleteCustomer(object sender, EventArgs e)
         {
             model.Id = view.Id;
 
-            //delete Inventory
-            view.Message = $"{view.CustomerName} deleted successfully";
+            //delete Customer
+            customerServices.DeleteData(model.Id);
+            view.Message = "Customer deleted successfully";
             view.IsSuccessed = true;
             LoadData();
         }
@@ -88,15 +96,26 @@ namespace inventory_management.Logic.Presenters
                     if (view.IsEdit)
                     {
                         model.Id = view.Id;
-                        //Edit InventoryMethod 
-
-                        view.Message = $"{view.CustomerName} Edited Successfully";
+                        //Edit CustomerMethod 
+                        Params = new object[5];
+                        Params[0] = model.Id;
+                        Params[1] = model.Name;
+                        Params[2] = model.Phone;
+                        Params[3] = model.Email;
+                        Params[4] = model.Location;
+                        customerServices.EditData(Params);
+                        view.Message = "Customer Edited Successfully";
                     }
                     else
                     {
-                        //Add Category name Method 
-
-                        view.Message = $"{view.CustomerName} Added Successfully";
+                        //Add Customer name Method 
+                        Params = new object[4];
+                        Params[0] = model.Name;
+                        Params[1] = model.Phone;
+                        Params[2] = model.Email;
+                        Params[3] = model.Location;
+                        customerServices.AddData(Params);
+                        view.Message = "Customer Added Successfully";
                     }
 
                     view.IsSuccessed = true;
@@ -121,7 +140,7 @@ namespace inventory_management.Logic.Presenters
 
         private bool CheckInput()
         {
-            if (view.CustomerName.Trim() == "" || view.CustomerPhone == "" || view.CustomerEmail == "" || view.CustomerLocation =="")
+            if (view.CustomerName.Trim() == "" || view.CustomerPhone == "" || view.CustomerEmail == "" || view.CustomerLocation == "")
             {
 
                 return false;

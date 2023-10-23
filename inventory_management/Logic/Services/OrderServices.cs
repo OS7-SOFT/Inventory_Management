@@ -22,6 +22,7 @@ namespace inventory_management.Logic.Services
             command.Parameters.Add("@orderDate", SqlDbType.Date).Value = (DateTime)Params[2];
             command.Parameters.Add("@deliveryStatus", SqlDbType.VarChar).Value = (string)Params[3];
             command.Parameters.Add("@customerId", SqlDbType.Int).Value = (int)Params[4];
+            command.Parameters.Add("@totalPrice", SqlDbType.Money).Value = (decimal)Params[5];
         }
         // Delete method
         public void DeleteData(int id)
@@ -45,11 +46,41 @@ namespace inventory_management.Logic.Services
             command.Parameters.Add("@orderDate", SqlDbType.Date).Value = (DateTime)Params[3];
             command.Parameters.Add("@deliveryStatus", SqlDbType.VarChar).Value = (string)Params[4];
             command.Parameters.Add("@customerId", SqlDbType.Int).Value = (int)Params[5];
+            command.Parameters.Add("@totalPrice", SqlDbType.Money).Value = (decimal)Params[6];
         }
 
+        //GetData method
         public DataTable GetData()
         {
-            throw new NotImplementedException();
+            return DataBase.Select("selectOrders", () => { });
+        }
+        //Get Order Count method 
+        public DataTable GetOrderCount()
+        {
+            return DataBase.Select("OrdersCount", () => { });
+        }
+        //GetData By Value method
+        public DataTable GetDataByValue(int id)
+        {
+            return DataBase.GetDataByValue("selectOrdersById", () => GetDataByValueParameters(id, DataBase.command));
+        }
+        public void GetDataByValueParameters(int id, SqlCommand command)
+        {
+            command.Parameters.Add("@id", SqlDbType.Int).Value = id;
+        }
+        //Get order id by order name
+        public DataTable GetDataByValue(string name,string storedProcedure)
+        {
+            return DataBase.GetDataByValue(storedProcedure, () => GetDataByValueParameters(name, DataBase.command));
+        }
+        public void GetDataByValueParameters(string name, SqlCommand command)
+        {
+            command.Parameters.Add("@name", SqlDbType.VarChar).Value = name;
+        }
+        //Method to fill  combobox
+        public DataTable GetComboBoxData(string storedProcedure)
+        {
+            return DataBase.Select(storedProcedure, () => { });
         }
     }
 }

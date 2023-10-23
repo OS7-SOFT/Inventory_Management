@@ -50,13 +50,18 @@ namespace inventory_management.Logic.Presenters
             //Set data in inventoryList from database
             inventoryList.DataSource = inventoryServices.GetData();
 
-            //Set all Categories
-            CategoryList.DataSource = inventoryServices.GetComboBoxData();
-            view.CategoryList = CategoryList.Cast<string>().ToList();
-            
+            //Set all inventories
+            DataTable dt = inventoryServices.GetComboBoxData();
+            List<string> data = new List<string>();
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                data.Add(dt.Rows[i][0].ToString());
+            }
+            view.CategoryList = data.ToList();
+
         }
 
-        
+
 
         private void AddMethod(object sender, EventArgs e)
         {
@@ -69,11 +74,11 @@ namespace inventory_management.Logic.Presenters
             model.Id = view.Id;
 
             //Get current inventory by id 
-            DataTable dt= inventoryServices.GetDataByValue(model.Id);
+            DataTable dt = inventoryServices.GetDataByValue(model.Id);
             view.InventoryName = dt.Rows[0][0].ToString();
             view.InventoryLocation = dt.Rows[0][1].ToString();
             view.CategoryName = dt.Rows[0][2].ToString();
-            view.InventoryCapacity = (double)dt.Rows[0][3];
+            view.InventoryCapacity = Convert.ToDouble(dt.Rows[0][3]);
         }
 
         private void DeleteInventory(object sender, EventArgs e)
@@ -82,7 +87,7 @@ namespace inventory_management.Logic.Presenters
 
             //delete Inventory
             inventoryServices.DeleteData(model.Id);
-            view.Message = $"{view.InventoryName} deleted successfully";
+            view.Message = "Inventory deleted successfully";
             view.IsSuccessed = true;
             LoadData();
         }
@@ -103,22 +108,22 @@ namespace inventory_management.Logic.Presenters
                         Params = new object[5];
                         Params[0] = model.Id;
                         Params[1] = model.Name;
-                        Params[2] = model.CategoryName;
+                        Params[2] = inventoryServices.GetDataByValue(model.CategoryName).Rows[0][0]; ;
                         Params[3] = model.Location;
                         Params[4] = model.Capacity;
                         inventoryServices.EditData(Params);
-                        view.Message = $"{view.InventoryName} Edited Successfully";
+                        view.Message = "Inventory Edited Successfully";
                     }
                     else
                     {
-                        //Add Category name Method 
+                        //Add inventory name Method 
                         Params = new object[4];
                         Params[0] = model.Name;
-                        Params[1] = model.CategoryName;
+                        Params[1] = inventoryServices.GetDataByValue(model.CategoryName).Rows[0][0];
                         Params[2] = model.Location;
                         Params[3] = model.Capacity;
                         inventoryServices.AddData(Params);
-                        view.Message = $"{view.InventoryName} Added Successfully";
+                        view.Message = "Inventory Added Successfully";
                     }
 
                     view.IsSuccessed = true;
@@ -143,9 +148,9 @@ namespace inventory_management.Logic.Presenters
 
         private bool CheckInput()
         {
-            if (view.InventoryName.Trim() == "" || view.InventoryLocation == "" || view.InventoryCapacity == 0) 
+            if (view.InventoryName.Trim() == "" || view.InventoryLocation == "" || view.InventoryCapacity == 0)
             {
-                
+
                 return false;
             }
 

@@ -628,7 +628,7 @@
             this.dgvInventory.MainView = this.gridViewInventory;
             this.dgvInventory.MenuManager = this.ribbonControl1;
             this.dgvInventory.Name = "dgvInventory";
-            this.dgvInventory.Size = new System.Drawing.Size(1018, 796);
+            this.dgvInventory.Size = new System.Drawing.Size(1018, 969);
             this.dgvInventory.TabIndex = 5;
             this.dgvInventory.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewInventory});
@@ -649,7 +649,7 @@
             this.groupControl5.Controls.Add(this.chartControl3);
             this.groupControl5.Location = new System.Drawing.Point(1046, 427);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(469, 393);
+            this.groupControl5.Size = new System.Drawing.Size(448, 393);
             this.groupControl5.TabIndex = 2;
             this.groupControl5.Text = "groupControl5";
             // 
@@ -688,7 +688,7 @@
             series3.View = sideBySideBarSeriesView1;
             this.chartControl3.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series3};
-            this.chartControl3.Size = new System.Drawing.Size(465, 363);
+            this.chartControl3.Size = new System.Drawing.Size(444, 363);
             this.chartControl3.TabIndex = 0;
             chartTitle1.Text = "Inventories Sales";
             chartTitle1.TitleID = 0;
@@ -702,7 +702,7 @@
             this.groupControl4.Controls.Add(this.chartControl2);
             this.groupControl4.Location = new System.Drawing.Point(1044, 13);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(469, 393);
+            this.groupControl4.Size = new System.Drawing.Size(448, 393);
             this.groupControl4.TabIndex = 1;
             this.groupControl4.Text = "groupControl4";
             // 
@@ -741,7 +741,7 @@
             series4.View = sideBySideBarSeriesView2;
             this.chartControl2.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series4};
-            this.chartControl2.Size = new System.Drawing.Size(465, 363);
+            this.chartControl2.Size = new System.Drawing.Size(444, 363);
             this.chartControl2.TabIndex = 0;
             chartTitle2.Text = "Inventories Sales";
             chartTitle2.TitleID = 0;
