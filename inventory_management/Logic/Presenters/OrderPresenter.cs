@@ -98,7 +98,7 @@ namespace inventory_management.Logic.Presenters
 
             //delete order
             orderServices.DeleteData(model.Id);
-            view.Message = $"{view.Id} deleted successfully";
+            view.Message = $"Order {view.Id} deleted successfully";
             view.IsSuccessed = true;
             LoadData();
         }
@@ -123,7 +123,7 @@ namespace inventory_management.Logic.Presenters
                         Params[3] = orderServices.GetDataByValue(model.CustomerName, "selectCustomerComboBoxId");
                         Params[4] = model.DeliveryStatus;
                         orderServices.EditData(Params);
-                        view.Message = $"{view.Id} Edited Successfully";
+                        view.Message = $"Order {view.Id} Edited Successfully";
                     }
                     else
                     {
@@ -134,7 +134,7 @@ namespace inventory_management.Logic.Presenters
                         Params[2] = orderServices.GetDataByValue(model.CustomerName, "selectCustomerComboBoxId").Rows[0][0];
                         Params[3] = model.DeliveryStatus;
                         orderServices.AddData(Params);
-                        view.Message = $"{view.Id}  Added Successfully";
+                        view.Message = $"Order {view.Id}  Added Successfully";
                     }
 
                     view.IsSuccessed = true;
@@ -151,13 +151,15 @@ namespace inventory_management.Logic.Presenters
         private void CancelMethod(object sender, EventArgs e)
         {
             view.OrderedQuantity = 0;
+            view.CustomerName = "";
+            view.ProductName = "";
 
         }
 
 
         private bool CheckInput()
         {
-            if (view.OrderedQuantity == 0)
+            if (view.OrderedQuantity == 0 || view.CustomerName == "" || view.ProductName == "" || view.DeliveryStatus == "")
             {
 
                 return false;

@@ -102,7 +102,7 @@ namespace inventory_management.Logic.Presenters
 
             //delete product
             productServices.DeleteData(model.Id);
-            view.Message = $"{view.ProductName} deleted successfully";
+            view.Message = $"{view.ProductName} product deleted successfully";
             view.IsSuccessed = true;
             LoadData();
         }
@@ -131,7 +131,7 @@ namespace inventory_management.Logic.Presenters
                         Params[7] = productServices.GetDataByValue(model.CategoryName, "selectCategoryComboBoxId").Rows[0][0];
                         Params[8] = productServices.GetDataByValue(model.SupplierName, "supplierComboBoxId").Rows[0][0];
                         productServices.EditData(Params);
-                        view.Message = $"{view.ProductName} Edited Successfully";
+                        view.Message = $"{view.ProductName} product Edited Successfully";
                     }
                     else
                     {
@@ -146,7 +146,7 @@ namespace inventory_management.Logic.Presenters
                         Params[6] = productServices.GetDataByValue(model.CategoryName, "selectCategoryComboBoxId").Rows[0][0];
                         Params[7] = productServices.GetDataByValue(model.SupplierName, "supplierComboBoxId").Rows[0][0];
                         productServices.AddData(Params);
-                        view.Message = $"{view.ProductName} Added Successfully";
+                        view.Message = $"{view.ProductName} product Added Successfully";
                     }
 
                     view.IsSuccessed = true;
@@ -164,6 +164,8 @@ namespace inventory_management.Logic.Presenters
         {
             view.ProductName = "";
             view.ProductQuantity = 0;
+            view.CategoryName = "";
+            view.SupplierName = "";
             view.BuyPrice = 0;
             view.SellPrice = 0;
         }
@@ -171,7 +173,7 @@ namespace inventory_management.Logic.Presenters
 
         private bool CheckInput()
         {
-            if (view.ProductName.Trim() == "" || view.ProductQuantity == 0 || view.BuyPrice == 0 || view.SellPrice == 0)
+            if (view.ProductName.Trim() == "" || view.ProductQuantity == 0 || view.BuyPrice == 0 || view.SellPrice == 0 || view.SupplierName == "" || view.CategoryName == "" )
             {
 
                 return false;

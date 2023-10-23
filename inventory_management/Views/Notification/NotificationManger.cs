@@ -29,7 +29,7 @@ namespace inventory_management.Views.Forms.Notification
         {
 
 
-            notification.Template = ToastNotificationTemplate.ImageAndText01;
+            notification.Template = ToastNotificationTemplate.ImageAndText03;
             notification.Header = header;
             notification.Body = message;
             notification.Sound = ToastNotificationSound.IM;

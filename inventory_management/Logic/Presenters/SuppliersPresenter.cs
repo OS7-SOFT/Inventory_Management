@@ -76,7 +76,7 @@ namespace inventory_management.Logic.Presenters
 
             //delete supplier
             supplierServices.DeleteData(model.Id);
-            view.Message = "Supplier deleted successfully";
+            view.Message = $"{view.SuppliersName} supplier deleted successfully";
             view.IsSuccessed = true;
             LoadData();
         }
@@ -100,7 +100,7 @@ namespace inventory_management.Logic.Presenters
                         Params[2] = model.PhoneNumber;
                         Params[3] = model.Email;
                         supplierServices.EditData(Params);
-                        view.Message = "Supplier Edited Successfully";
+                        view.Message = $"{view.SuppliersName} Supplier Edited Successfully";
                     }
                     else
                     {
@@ -110,7 +110,7 @@ namespace inventory_management.Logic.Presenters
                         Params[1] = model.PhoneNumber;
                         Params[2] = model.Email;
                         supplierServices.AddData(Params);
-                        view.Message = "Supplier Added Successfully";
+                        view.Message = $"{view.SuppliersName} Supplier Added Successfully";
                     }
 
                     view.IsSuccessed = true;

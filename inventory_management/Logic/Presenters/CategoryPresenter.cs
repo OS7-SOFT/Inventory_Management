@@ -66,7 +66,7 @@ namespace inventory_management.Logic.Presenters
 
             //delete Categroy
             categoryServices.DeleteData(model.Id);
-            view.Message = $"{view.CategoryName} deleted successfully";
+            view.Message = $"{view.CategoryName} category deleted successfully";
             view.IsSuccessed = true;
             LoadData();
         }
@@ -88,7 +88,7 @@ namespace inventory_management.Logic.Presenters
                         Params[0] = model.Id;
                         Params[1] = model.Name;
                         categoryServices.EditData(Params);
-                        view.Message = $"{view.CategoryName} Edited Successfully";
+                        view.Message = $"{view.CategoryName} category Edited Successfully";
                     }
                     else
                     {
@@ -96,7 +96,7 @@ namespace inventory_management.Logic.Presenters
                         Params = new object[1];
                         Params[0] = model.Name;
                         categoryServices.AddData(Params);
-                        view.Message = $"{view.CategoryName} Added Successfully";
+                        view.Message = $"{view.CategoryName} category Added Successfully";
                     }
 
                     view.IsSuccessed = true;

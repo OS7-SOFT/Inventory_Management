@@ -56,8 +56,8 @@ namespace inventory_management.Views.Forms
                 product.Buy = txtBuyPrice.Value;
                 product.Entry = DateTime.Now;
                 product.ExpirationDate = txtExDate.DateTime;
-                product.Category_name = categoryCbx.EditValue.ToString(); 
-                product.Supplier_name = supplierCbx.EditValue.ToString();
+                product.Category_name = categoryCbx.EditValue != null ? categoryCbx.EditValue.ToString() : ""; 
+                product.Supplier_name = supplierCbx.EditValue != null ? supplierCbx.EditValue.ToString() : "";
                 product.Save();
 
             };

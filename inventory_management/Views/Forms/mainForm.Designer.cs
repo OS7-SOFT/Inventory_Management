@@ -179,7 +179,7 @@
             DevExpress.XtraCharts.UI.CreateBoxPlotChartItem createBoxPlotChartItem1 = new DevExpress.XtraCharts.UI.CreateBoxPlotChartItem();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.directXFormContainerControl1 = new DevExpress.XtraEditors.DirectXFormContainerControl();
-            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
+            this.ProductTab = new DevExpress.XtraTab.XtraTabControl();
             this.homeBtn = new DevExpress.XtraTab.XtraTabPage();
             this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
@@ -318,8 +318,8 @@
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             this.directXFormContainerControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
-            this.xtraTabControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProductTab)).BeginInit();
+            this.ProductTab.SuspendLayout();
             this.homeBtn.SuspendLayout();
             this.xtraScrollableControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
@@ -411,7 +411,7 @@
             // 
             // directXFormContainerControl1
             // 
-            this.directXFormContainerControl1.Controls.Add(this.xtraTabControl1);
+            this.directXFormContainerControl1.Controls.Add(this.ProductTab);
             this.directXFormContainerControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.directXFormContainerControl1.Location = new System.Drawing.Point(0, 40);
             this.directXFormContainerControl1.Margin = new System.Windows.Forms.Padding(4);
@@ -419,15 +419,15 @@
             this.directXFormContainerControl1.Size = new System.Drawing.Size(1700, 860);
             this.directXFormContainerControl1.TabIndex = 0;
             // 
-            // xtraTabControl1
+            // ProductTab
             // 
-            this.xtraTabControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.xtraTabControl1.Location = new System.Drawing.Point(0, 0);
-            this.xtraTabControl1.Name = "xtraTabControl1";
-            this.xtraTabControl1.SelectedTabPage = this.homeBtn;
-            this.xtraTabControl1.Size = new System.Drawing.Size(1700, 860);
-            this.xtraTabControl1.TabIndex = 0;
-            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.ProductTab.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProductTab.Location = new System.Drawing.Point(0, 0);
+            this.ProductTab.Name = "ProductTab";
+            this.ProductTab.SelectedTabPage = this.homeBtn;
+            this.ProductTab.Size = new System.Drawing.Size(1700, 860);
+            this.ProductTab.TabIndex = 0;
+            this.ProductTab.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.homeBtn,
             this.inventoryBtn,
             this.categoryBtn,
@@ -628,7 +628,7 @@
             this.dgvInventory.MainView = this.gridViewInventory;
             this.dgvInventory.MenuManager = this.ribbonControl1;
             this.dgvInventory.Name = "dgvInventory";
-            this.dgvInventory.Size = new System.Drawing.Size(1018, 969);
+            this.dgvInventory.Size = new System.Drawing.Size(1018, 1142);
             this.dgvInventory.TabIndex = 5;
             this.dgvInventory.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewInventory});
@@ -641,6 +641,7 @@
             this.gridViewInventory.AppearancePrint.HeaderPanel.Options.UseFont = true;
             this.gridViewInventory.GridControl = this.dgvInventory;
             this.gridViewInventory.Name = "gridViewInventory";
+            this.gridViewInventory.OptionsBehavior.Editable = false;
             // 
             // groupControl5
             // 
@@ -649,7 +650,7 @@
             this.groupControl5.Controls.Add(this.chartControl3);
             this.groupControl5.Location = new System.Drawing.Point(1046, 427);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(448, 393);
+            this.groupControl5.Size = new System.Drawing.Size(427, 393);
             this.groupControl5.TabIndex = 2;
             this.groupControl5.Text = "groupControl5";
             // 
@@ -688,7 +689,7 @@
             series3.View = sideBySideBarSeriesView1;
             this.chartControl3.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series3};
-            this.chartControl3.Size = new System.Drawing.Size(444, 363);
+            this.chartControl3.Size = new System.Drawing.Size(423, 363);
             this.chartControl3.TabIndex = 0;
             chartTitle1.Text = "Inventories Sales";
             chartTitle1.TitleID = 0;
@@ -702,7 +703,7 @@
             this.groupControl4.Controls.Add(this.chartControl2);
             this.groupControl4.Location = new System.Drawing.Point(1044, 13);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(448, 393);
+            this.groupControl4.Size = new System.Drawing.Size(427, 393);
             this.groupControl4.TabIndex = 1;
             this.groupControl4.Text = "groupControl4";
             // 
@@ -741,7 +742,7 @@
             series4.View = sideBySideBarSeriesView2;
             this.chartControl2.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series4};
-            this.chartControl2.Size = new System.Drawing.Size(444, 363);
+            this.chartControl2.Size = new System.Drawing.Size(423, 363);
             this.chartControl2.TabIndex = 0;
             chartTitle2.Text = "Inventories Sales";
             chartTitle2.TitleID = 0;
@@ -886,6 +887,7 @@
             this.gridViewCategory.AppearancePrint.HeaderPanel.Options.UseFont = true;
             this.gridViewCategory.GridControl = this.dgvCategory;
             this.gridViewCategory.Name = "gridViewCategory";
+            this.gridViewCategory.OptionsBehavior.Editable = false;
             // 
             // ribbonControl4
             // 
@@ -1124,6 +1126,7 @@
             this.gridViewProduct.Appearance.GroupPanel.Options.UseFont = true;
             this.gridViewProduct.GridControl = this.dgvProducts;
             this.gridViewProduct.Name = "gridViewProduct";
+            this.gridViewProduct.OptionsBehavior.Editable = false;
             // 
             // ribbonControl3
             // 
@@ -2468,8 +2471,8 @@
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
             this.directXFormContainerControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
-            this.xtraTabControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ProductTab)).EndInit();
+            this.ProductTab.ResumeLayout(false);
             this.homeBtn.ResumeLayout(false);
             this.homeBtn.PerformLayout();
             this.xtraScrollableControl1.ResumeLayout(false);
@@ -2569,7 +2572,7 @@
         #endregion
 
         private DevExpress.XtraEditors.DirectXFormContainerControl directXFormContainerControl1;
-        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
+        private DevExpress.XtraTab.XtraTabControl ProductTab;
         private DevExpress.XtraTab.XtraTabPage homeBtn;
         private DevExpress.XtraTab.XtraTabPage inventoryBtn;
         private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl1;

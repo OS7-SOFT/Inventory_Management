@@ -140,10 +140,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Views\Forms\InventoryInfoForm.cs">
+    <Compile Include="Views\Forms\Inventories\InventoryInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Forms\InventoryInfoForm.Designer.cs">
+    <Compile Include="Views\Forms\Inventories\InventoryInfoForm.Designer.cs">
       <DependentUpon>InventoryInfoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Forms\Orders\Order.cs" />
@@ -174,10 +174,10 @@
     <Compile Include="Views\Forms\Suppliers\SuppliersManageFrm.Designer.cs">
       <DependentUpon>SuppliersManageFrm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Forms\TransFormFrm.cs">
+    <Compile Include="Views\Forms\Inventories\TransFormFrm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Forms\TransFormFrm.Designer.cs">
+    <Compile Include="Views\Forms\Inventories\TransFormFrm.Designer.cs">
       <DependentUpon>TransFormFrm.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Interfaces\ICategoryView.cs" />
@@ -206,7 +206,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Views\Forms\InventoryInfoForm.resx">
+    <EmbeddedResource Include="Views\Forms\Inventories\InventoryInfoForm.resx">
       <DependentUpon>InventoryInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\Orders\OrderManageFrm.resx">
@@ -218,7 +218,7 @@
     <EmbeddedResource Include="Views\Forms\Suppliers\SuppliersManageFrm.resx">
       <DependentUpon>SuppliersManageFrm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Forms\TransFormFrm.resx">
+    <EmbeddedResource Include="Views\Forms\Inventories\TransFormFrm.resx">
       <DependentUpon>TransFormFrm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="App.config" />

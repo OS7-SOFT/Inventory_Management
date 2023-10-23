@@ -94,7 +94,7 @@ namespace inventory_management.Views.Forms.Products
         public string ProductSold { set { Sold = value; } }
         public string ProductDefective { set { Defective = value; } }
         public string Message { set { message = value; } }
-        public bool IsSuccessed { set { IsSuccessed = value; } }
+        public bool IsSuccessed { set { isSuccessed = value; } }
         public bool IsEdit 
         {
             get { return isEdit; }

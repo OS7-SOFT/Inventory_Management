@@ -42,7 +42,7 @@ namespace inventory_management.Views.Forms
                 inventory.Name = txtNameInvent.Text;
                 inventory.Location = txtLocation.Text;
                 inventory.Capacity = (double)capacityInvent.Value;
-                inventory.Category_name = categoryCbx.EditValue.ToString();
+                inventory.Category_name = categoryCbx.EditValue !=null ? categoryCbx.EditValue.ToString() : "";
                 inventory.Save();
             };
             cancelBtn.Click += delegate

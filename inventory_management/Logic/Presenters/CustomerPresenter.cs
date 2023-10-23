@@ -79,7 +79,7 @@ namespace inventory_management.Logic.Presenters
 
             //delete Customer
             customerServices.DeleteData(model.Id);
-            view.Message = "Customer deleted successfully";
+            view.Message = $"{view.CustomerName} Customer deleted successfully";
             view.IsSuccessed = true;
             LoadData();
         }
@@ -104,7 +104,7 @@ namespace inventory_management.Logic.Presenters
                         Params[3] = model.Email;
                         Params[4] = model.Location;
                         customerServices.EditData(Params);
-                        view.Message = "Customer Edited Successfully";
+                        view.Message = $"{view.CustomerName} Customer Edited Successfully";
                     }
                     else
                     {
@@ -115,7 +115,7 @@ namespace inventory_management.Logic.Presenters
                         Params[2] = model.Email;
                         Params[3] = model.Location;
                         customerServices.AddData(Params);
-                        view.Message = "Customer Added Successfully";
+                        view.Message = $"{view.CustomerName} Customer Added Successfully";
                     }
 
                     view.IsSuccessed = true;

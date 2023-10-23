@@ -70,6 +70,7 @@ namespace inventory_management
         {
             //Set Data in dataGridView
             dgvCategory.DataSource = category.CategoryList.DataSource;
+            
             //Set Category Count
             lblCategoriesCount.Text = category.Count;
 
@@ -90,6 +91,7 @@ namespace inventory_management
             deleteCategoryBtn.ItemClick += delegate
             {
                 category.Delete(GetIdToDelete(gridViewCategory));
+                dgvCategory.Update();
             };
 
 
@@ -102,6 +104,7 @@ namespace inventory_management
             lblProductCounts.Text = product.Count;
             lblProductSold.Text = product.Sold;
             lblProductDefective.Text = product.Defective;
+
 
             //Search
             GetValueBySearch(gridViewProduct);

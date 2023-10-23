@@ -41,9 +41,9 @@ namespace inventory_management.Views.Forms
             okBtn.Click += delegate
             {
                 order.Quantity = (int)txtQuantity.Value; 
-                order.Product_name = ProductCbx.EditValue.ToString();
-                order.Customer_name = customerCbx.EditValue.ToString();
-                order.Status = statusCbx.EditValue.ToString();
+                order.Product_name = ProductCbx.EditValue != null ? ProductCbx.EditValue.ToString() : "";
+                order.Customer_name = customerCbx.EditValue != null ? customerCbx.EditValue.ToString() : "";
+                order.Status = statusCbx.EditValue != null ? statusCbx.EditValue.ToString() : "";
                 order.Date = DateTime.Now;
                 order.Save();
             };
