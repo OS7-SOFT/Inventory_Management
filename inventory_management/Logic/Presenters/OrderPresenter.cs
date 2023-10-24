@@ -85,10 +85,11 @@ namespace inventory_management.Logic.Presenters
 
             //Get current order by id 
             DataTable dt = orderServices.GetDataByValue(model.Id);
-            model.ProductName =dt.Rows[0][0].ToString();
-            model.OrderedQuantity = Convert.ToInt32(dt.Rows[0][1]);
-            model.CustomerName = dt.Rows[0][2].ToString();
-            model.DeliveryStatus = dt.Rows[0][3].ToString();
+            view.ProductName =dt.Rows[0][0].ToString();
+            view.OrderedQuantity = Convert.ToInt32(dt.Rows[0][1]);
+            view.CustomerName = dt.Rows[0][2].ToString();
+            view.DeliveryStatus = dt.Rows[0][3].ToString();
+            view.OrderDate =Convert.ToDateTime(dt.Rows[0][4]);
 
         }
 
@@ -116,23 +117,25 @@ namespace inventory_management.Logic.Presenters
                     {
                         model.Id = view.Id;
                         //Edit orderMethod 
-                        Params = new object[5];
+                        Params = new object[6];
                         Params[0] = model.Id;
                         Params[1] = orderServices.GetDataByValue(model.ProductName, "selectProductComboBoxId").Rows[0][0];
                         Params[2] = model.OrderedQuantity;
-                        Params[3] = orderServices.GetDataByValue(model.CustomerName, "selectCustomerComboBoxId");
+                        Params[3] = model.OrderDate;
                         Params[4] = model.DeliveryStatus;
+                        Params[5] = orderServices.GetDataByValue(model.CustomerName, "selectCustomerComboBoxId").Rows[0][0];
                         orderServices.EditData(Params);
                         view.Message = $"Order {view.Id} Edited Successfully";
                     }
                     else
                     {
                         //Add order name Method 
-                        Params = new object[4];
+                        Params = new object[5];
                         Params[0] = orderServices.GetDataByValue(model.ProductName, "selectProductComboBoxId").Rows[0][0];
                         Params[1] = model.OrderedQuantity;
-                        Params[2] = orderServices.GetDataByValue(model.CustomerName, "selectCustomerComboBoxId").Rows[0][0];
+                        Params[2] = model.OrderDate;
                         Params[3] = model.DeliveryStatus;
+                        Params[4] = orderServices.GetDataByValue(model.CustomerName, "selectCustomerComboBoxId").Rows[0][0];                     
                         orderServices.AddData(Params);
                         view.Message = $"Order {view.Id}  Added Successfully";
                     }

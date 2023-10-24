@@ -22,7 +22,6 @@ namespace inventory_management.Logic.Services
             command.Parameters.Add("@orderDate", SqlDbType.Date).Value = (DateTime)Params[2];
             command.Parameters.Add("@deliveryStatus", SqlDbType.VarChar).Value = (string)Params[3];
             command.Parameters.Add("@customerId", SqlDbType.Int).Value = (int)Params[4];
-            command.Parameters.Add("@totalPrice", SqlDbType.Money).Value = (decimal)Params[5];
         }
         // Delete method
         public void DeleteData(int id)
@@ -46,7 +45,6 @@ namespace inventory_management.Logic.Services
             command.Parameters.Add("@orderDate", SqlDbType.Date).Value = (DateTime)Params[3];
             command.Parameters.Add("@deliveryStatus", SqlDbType.VarChar).Value = (string)Params[4];
             command.Parameters.Add("@customerId", SqlDbType.Int).Value = (int)Params[5];
-            command.Parameters.Add("@totalPrice", SqlDbType.Money).Value = (decimal)Params[6];
         }
 
         //GetData method

@@ -88,11 +88,14 @@ namespace inventory_management.Logic.Presenters
 
             //Get current product by id 
             DataTable dt = productServices.GetDataByValue(model.Id);
-            model.Name = dt.Rows[0][0].ToString();
-            model.Quantity = Convert.ToInt32(dt.Rows[0][1]);
-            model.SellPrice = Convert.ToDecimal(dt.Rows[0][2]);
-            model.BuyPrice = Convert.ToDecimal(dt.Rows[0][3]);
-            model.ExpirationDate = Convert.ToDateTime(dt.Rows[0][4]);
+            view.ProductName = dt.Rows[0][0].ToString();
+            view.ProductQuantity = Convert.ToInt32(dt.Rows[0][1]);
+            view.SellPrice = Convert.ToDecimal(dt.Rows[0][2]);
+            view.BuyPrice = Convert.ToDecimal(dt.Rows[0][3]);
+            view.EntryDate = Convert.ToDateTime(dt.Rows[0][4]);
+            view.ExpirationDate = Convert.ToDateTime(dt.Rows[0][5]);
+            view.CategoryName = dt.Rows[0][6].ToString();
+            view.SupplierName = dt.Rows[0][7].ToString();
 
         }
 
