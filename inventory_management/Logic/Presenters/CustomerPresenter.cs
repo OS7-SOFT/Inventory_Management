@@ -29,9 +29,7 @@ namespace inventory_management.Logic.Presenters
             this.view.DeleteEvent += DeleteCustomer;
             this.view.SaveEvent += SaveChange;
             this.view.CancelEvent += CancelMethod;
-            this.view.GetDataList = customerList;
-            //load all data
-            LoadData();
+            this.view.LoadDataEvent += LoadData;
         }
 
         private void ConnectionModelWithView()
@@ -42,17 +40,15 @@ namespace inventory_management.Logic.Presenters
             model.Location = view.CustomerLocation;
         }
 
-        private void LoadData()
+        private void LoadData(object sender, EventArgs e)
         {
             //Set data in customerList from database
             customerList.DataSource = customerServices.GetData();
-
+            view.GetDataList = customerList;
             //Get Customer Count
             view.CustomersCount = customerServices.GetCustomersCount().Rows[0][0].ToString();
             //Get best Customer
-
         }
-
 
 
         private void AddMethod(object sender, EventArgs e)
@@ -81,7 +77,6 @@ namespace inventory_management.Logic.Presenters
             customerServices.DeleteData(model.Id);
             view.Message = $"{view.CustomerName} Customer deleted successfully";
             view.IsSuccessed = true;
-            LoadData();
         }
 
         private void SaveChange(object sender, EventArgs e)
@@ -119,7 +114,6 @@ namespace inventory_management.Logic.Presenters
                     }
 
                     view.IsSuccessed = true;
-                    LoadData();
                 }
                 catch (Exception ex)
                 {

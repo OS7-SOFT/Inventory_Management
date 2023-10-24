@@ -13,6 +13,6 @@ namespace inventory_management.Views.Interfaces
         string CategoryName { get; set; }
         string CategoryCount { set; }
 
-     
+        
     }
 }

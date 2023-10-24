@@ -179,7 +179,7 @@
             DevExpress.XtraCharts.UI.CreateBoxPlotChartItem createBoxPlotChartItem1 = new DevExpress.XtraCharts.UI.CreateBoxPlotChartItem();
             this.repositoryItemComboBox1 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.directXFormContainerControl1 = new DevExpress.XtraEditors.DirectXFormContainerControl();
-            this.ProductTab = new DevExpress.XtraTab.XtraTabControl();
+            this.tabPage = new DevExpress.XtraTab.XtraTabControl();
             this.homeBtn = new DevExpress.XtraTab.XtraTabPage();
             this.xtraScrollableControl1 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
@@ -193,7 +193,7 @@
             this.deleteAccountBtn = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.inventoryBtn = new DevExpress.XtraTab.XtraTabPage();
+            this.inventoryTab = new DevExpress.XtraTab.XtraTabPage();
             this.xtraScrollableControl2 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.dgvInventory = new DevExpress.XtraGrid.GridControl();
             this.gridViewInventory = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -207,7 +207,7 @@
             this.deleteInventoryBtn = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.categoryBtn = new DevExpress.XtraTab.XtraTabPage();
+            this.categoryTab = new DevExpress.XtraTab.XtraTabPage();
             this.xtraScrollableControl4 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.groupControl7 = new DevExpress.XtraEditors.GroupControl();
             this.lblCategoriesCount = new DevExpress.XtraEditors.LabelControl();
@@ -226,7 +226,7 @@
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.productBtn = new DevExpress.XtraTab.XtraTabPage();
+            this.productTab = new DevExpress.XtraTab.XtraTabPage();
             this.xtraScrollableControl3 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
@@ -251,7 +251,7 @@
             this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemComboBox3 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.repositoryItemComboBox4 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
-            this.orderBtn = new DevExpress.XtraTab.XtraTabPage();
+            this.orderTab = new DevExpress.XtraTab.XtraTabPage();
             this.xtraScrollableControl5 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.groupControl8 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
@@ -274,7 +274,7 @@
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.customerBtn = new DevExpress.XtraTab.XtraTabPage();
+            this.customerTab = new DevExpress.XtraTab.XtraTabPage();
             this.xtraScrollableControl6 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.groupControl9 = new DevExpress.XtraEditors.GroupControl();
             this.labelControl17 = new DevExpress.XtraEditors.LabelControl();
@@ -292,7 +292,7 @@
             this.barEditItem6 = new DevExpress.XtraBars.BarEditItem();
             this.ribbonPage6 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup10 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.suppliers = new DevExpress.XtraTab.XtraTabPage();
+            this.supplierTab = new DevExpress.XtraTab.XtraTabPage();
             this.xtraScrollableControl7 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.groupControl10 = new DevExpress.XtraEditors.GroupControl();
             this.lblSuppliersCount = new DevExpress.XtraEditors.LabelControl();
@@ -318,8 +318,8 @@
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             this.directXFormContainerControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ProductTab)).BeginInit();
-            this.ProductTab.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tabPage)).BeginInit();
+            this.tabPage.SuspendLayout();
             this.homeBtn.SuspendLayout();
             this.xtraScrollableControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
@@ -333,7 +333,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
-            this.inventoryBtn.SuspendLayout();
+            this.inventoryTab.SuspendLayout();
             this.xtraScrollableControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewInventory)).BeginInit();
@@ -352,7 +352,7 @@
             ((System.ComponentModel.ISupportInitialize)(series4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(sideBySideBarSeriesView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl2)).BeginInit();
-            this.categoryBtn.SuspendLayout();
+            this.categoryTab.SuspendLayout();
             this.xtraScrollableControl4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).BeginInit();
             this.groupControl7.SuspendLayout();
@@ -361,7 +361,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox5)).BeginInit();
-            this.productBtn.SuspendLayout();
+            this.productTab.SuspendLayout();
             this.xtraScrollableControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
             this.groupControl6.SuspendLayout();
@@ -372,21 +372,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox4)).BeginInit();
-            this.orderBtn.SuspendLayout();
+            this.orderTab.SuspendLayout();
             this.xtraScrollableControl5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).BeginInit();
             this.groupControl8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl5)).BeginInit();
-            this.customerBtn.SuspendLayout();
+            this.customerTab.SuspendLayout();
             this.xtraScrollableControl6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl9)).BeginInit();
             this.groupControl9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl6)).BeginInit();
-            this.suppliers.SuspendLayout();
+            this.supplierTab.SuspendLayout();
             this.xtraScrollableControl7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl10)).BeginInit();
             this.groupControl10.SuspendLayout();
@@ -411,7 +411,7 @@
             // 
             // directXFormContainerControl1
             // 
-            this.directXFormContainerControl1.Controls.Add(this.ProductTab);
+            this.directXFormContainerControl1.Controls.Add(this.tabPage);
             this.directXFormContainerControl1.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.directXFormContainerControl1.Location = new System.Drawing.Point(0, 40);
             this.directXFormContainerControl1.Margin = new System.Windows.Forms.Padding(4);
@@ -419,22 +419,22 @@
             this.directXFormContainerControl1.Size = new System.Drawing.Size(1700, 860);
             this.directXFormContainerControl1.TabIndex = 0;
             // 
-            // ProductTab
+            // tabPage
             // 
-            this.ProductTab.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ProductTab.Location = new System.Drawing.Point(0, 0);
-            this.ProductTab.Name = "ProductTab";
-            this.ProductTab.SelectedTabPage = this.homeBtn;
-            this.ProductTab.Size = new System.Drawing.Size(1700, 860);
-            this.ProductTab.TabIndex = 0;
-            this.ProductTab.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
+            this.tabPage.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabPage.Location = new System.Drawing.Point(0, 0);
+            this.tabPage.Name = "tabPage";
+            this.tabPage.SelectedTabPage = this.homeBtn;
+            this.tabPage.Size = new System.Drawing.Size(1700, 860);
+            this.tabPage.TabIndex = 0;
+            this.tabPage.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.homeBtn,
-            this.inventoryBtn,
-            this.categoryBtn,
-            this.productBtn,
-            this.orderBtn,
-            this.customerBtn,
-            this.suppliers});
+            this.inventoryTab,
+            this.categoryTab,
+            this.productTab,
+            this.orderTab,
+            this.customerTab,
+            this.supplierTab});
             // 
             // homeBtn
             // 
@@ -597,14 +597,14 @@
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.Text = "Accounts Management";
             // 
-            // inventoryBtn
+            // inventoryTab
             // 
-            this.inventoryBtn.Controls.Add(this.xtraScrollableControl2);
-            this.inventoryBtn.Controls.Add(this.ribbonControl2);
-            this.inventoryBtn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("inventoryBtn.ImageOptions.Image")));
-            this.inventoryBtn.Name = "inventoryBtn";
-            this.inventoryBtn.Size = new System.Drawing.Size(1698, 830);
-            this.inventoryBtn.Text = "Inventories";
+            this.inventoryTab.Controls.Add(this.xtraScrollableControl2);
+            this.inventoryTab.Controls.Add(this.ribbonControl2);
+            this.inventoryTab.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("inventoryBtn.ImageOptions.Image")));
+            this.inventoryTab.Name = "inventoryTab";
+            this.inventoryTab.Size = new System.Drawing.Size(1698, 830);
+            this.inventoryTab.Text = "Inventories";
             // 
             // xtraScrollableControl2
             // 
@@ -628,7 +628,7 @@
             this.dgvInventory.MainView = this.gridViewInventory;
             this.dgvInventory.MenuManager = this.ribbonControl1;
             this.dgvInventory.Name = "dgvInventory";
-            this.dgvInventory.Size = new System.Drawing.Size(1018, 1142);
+            this.dgvInventory.Size = new System.Drawing.Size(1018, 1488);
             this.dgvInventory.TabIndex = 5;
             this.dgvInventory.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewInventory});
@@ -650,7 +650,7 @@
             this.groupControl5.Controls.Add(this.chartControl3);
             this.groupControl5.Location = new System.Drawing.Point(1046, 427);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(427, 393);
+            this.groupControl5.Size = new System.Drawing.Size(385, 393);
             this.groupControl5.TabIndex = 2;
             this.groupControl5.Text = "groupControl5";
             // 
@@ -689,7 +689,7 @@
             series3.View = sideBySideBarSeriesView1;
             this.chartControl3.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series3};
-            this.chartControl3.Size = new System.Drawing.Size(423, 363);
+            this.chartControl3.Size = new System.Drawing.Size(381, 363);
             this.chartControl3.TabIndex = 0;
             chartTitle1.Text = "Inventories Sales";
             chartTitle1.TitleID = 0;
@@ -703,7 +703,7 @@
             this.groupControl4.Controls.Add(this.chartControl2);
             this.groupControl4.Location = new System.Drawing.Point(1044, 13);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(427, 393);
+            this.groupControl4.Size = new System.Drawing.Size(385, 393);
             this.groupControl4.TabIndex = 1;
             this.groupControl4.Text = "groupControl4";
             // 
@@ -742,7 +742,7 @@
             series4.View = sideBySideBarSeriesView2;
             this.chartControl2.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series4};
-            this.chartControl2.Size = new System.Drawing.Size(423, 363);
+            this.chartControl2.Size = new System.Drawing.Size(381, 363);
             this.chartControl2.TabIndex = 0;
             chartTitle2.Text = "Inventories Sales";
             chartTitle2.TitleID = 0;
@@ -807,14 +807,14 @@
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Inventory Management";
             // 
-            // categoryBtn
+            // categoryTab
             // 
-            this.categoryBtn.Controls.Add(this.xtraScrollableControl4);
-            this.categoryBtn.Controls.Add(this.ribbonControl4);
-            this.categoryBtn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("categoryBtn.ImageOptions.Image")));
-            this.categoryBtn.Name = "categoryBtn";
-            this.categoryBtn.Size = new System.Drawing.Size(1698, 830);
-            this.categoryBtn.Text = "Categories";
+            this.categoryTab.Controls.Add(this.xtraScrollableControl4);
+            this.categoryTab.Controls.Add(this.ribbonControl4);
+            this.categoryTab.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("categoryBtn.ImageOptions.Image")));
+            this.categoryTab.Name = "categoryTab";
+            this.categoryTab.Size = new System.Drawing.Size(1698, 830);
+            this.categoryTab.Text = "Categories";
             // 
             // xtraScrollableControl4
             // 
@@ -1004,14 +1004,14 @@
             this.ribbonPageGroup6.Name = "ribbonPageGroup6";
             this.ribbonPageGroup6.Text = "Filter category by inventories";
             // 
-            // productBtn
+            // productTab
             // 
-            this.productBtn.Controls.Add(this.xtraScrollableControl3);
-            this.productBtn.Controls.Add(this.ribbonControl3);
-            this.productBtn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("productBtn.ImageOptions.Image")));
-            this.productBtn.Name = "productBtn";
-            this.productBtn.Size = new System.Drawing.Size(1698, 830);
-            this.productBtn.Text = "Products";
+            this.productTab.Controls.Add(this.xtraScrollableControl3);
+            this.productTab.Controls.Add(this.ribbonControl3);
+            this.productTab.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("productBtn.ImageOptions.Image")));
+            this.productTab.Name = "productTab";
+            this.productTab.Size = new System.Drawing.Size(1698, 830);
+            this.productTab.Text = "Products";
             // 
             // xtraScrollableControl3
             // 
@@ -1256,14 +1256,14 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repositoryItemComboBox4.Name = "repositoryItemComboBox4";
             // 
-            // orderBtn
+            // orderTab
             // 
-            this.orderBtn.Controls.Add(this.xtraScrollableControl5);
-            this.orderBtn.Controls.Add(this.ribbonControl5);
-            this.orderBtn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("orderBtn.ImageOptions.Image")));
-            this.orderBtn.Name = "orderBtn";
-            this.orderBtn.Size = new System.Drawing.Size(1698, 830);
-            this.orderBtn.Text = "Orders";
+            this.orderTab.Controls.Add(this.xtraScrollableControl5);
+            this.orderTab.Controls.Add(this.ribbonControl5);
+            this.orderTab.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("orderBtn.ImageOptions.Image")));
+            this.orderTab.Name = "orderTab";
+            this.orderTab.Size = new System.Drawing.Size(1698, 830);
+            this.orderTab.Text = "Orders";
             // 
             // xtraScrollableControl5
             // 
@@ -1497,14 +1497,14 @@
             this.ribbonPageGroup9.Name = "ribbonPageGroup9";
             this.ribbonPageGroup9.Text = "Filter by Customer";
             // 
-            // customerBtn
+            // customerTab
             // 
-            this.customerBtn.Controls.Add(this.xtraScrollableControl6);
-            this.customerBtn.Controls.Add(this.ribbonControl6);
-            this.customerBtn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("customerBtn.ImageOptions.Image")));
-            this.customerBtn.Name = "customerBtn";
-            this.customerBtn.Size = new System.Drawing.Size(1698, 830);
-            this.customerBtn.Text = "Customers";
+            this.customerTab.Controls.Add(this.xtraScrollableControl6);
+            this.customerTab.Controls.Add(this.ribbonControl6);
+            this.customerTab.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("customerBtn.ImageOptions.Image")));
+            this.customerTab.Name = "customerTab";
+            this.customerTab.Size = new System.Drawing.Size(1698, 830);
+            this.customerTab.Text = "Customers";
             // 
             // xtraScrollableControl6
             // 
@@ -1684,14 +1684,14 @@
             this.ribbonPageGroup10.Name = "ribbonPageGroup10";
             this.ribbonPageGroup10.Text = "Customers Management";
             // 
-            // suppliers
+            // supplierTab
             // 
-            this.suppliers.Controls.Add(this.xtraScrollableControl7);
-            this.suppliers.Controls.Add(this.ribbonControl7);
-            this.suppliers.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("suppliers.ImageOptions.Image")));
-            this.suppliers.Name = "suppliers";
-            this.suppliers.Size = new System.Drawing.Size(1698, 830);
-            this.suppliers.Text = "Suppliers";
+            this.supplierTab.Controls.Add(this.xtraScrollableControl7);
+            this.supplierTab.Controls.Add(this.ribbonControl7);
+            this.supplierTab.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("supplierBtn.ImageOptions.Image")));
+            this.supplierTab.Name = "supplierTab";
+            this.supplierTab.Size = new System.Drawing.Size(1698, 830);
+            this.supplierTab.Text = "Suppliers";
             // 
             // xtraScrollableControl7
             // 
@@ -2471,8 +2471,8 @@
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).EndInit();
             this.directXFormContainerControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.ProductTab)).EndInit();
-            this.ProductTab.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tabPage)).EndInit();
+            this.tabPage.ResumeLayout(false);
             this.homeBtn.ResumeLayout(false);
             this.homeBtn.PerformLayout();
             this.xtraScrollableControl1.ResumeLayout(false);
@@ -2487,8 +2487,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
-            this.inventoryBtn.ResumeLayout(false);
-            this.inventoryBtn.PerformLayout();
+            this.inventoryTab.ResumeLayout(false);
+            this.inventoryTab.PerformLayout();
             this.xtraScrollableControl2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewInventory)).EndInit();
@@ -2507,8 +2507,8 @@
             ((System.ComponentModel.ISupportInitialize)(series4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl2)).EndInit();
-            this.categoryBtn.ResumeLayout(false);
-            this.categoryBtn.PerformLayout();
+            this.categoryTab.ResumeLayout(false);
+            this.categoryTab.PerformLayout();
             this.xtraScrollableControl4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl7)).EndInit();
             this.groupControl7.ResumeLayout(false);
@@ -2518,8 +2518,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox5)).EndInit();
-            this.productBtn.ResumeLayout(false);
-            this.productBtn.PerformLayout();
+            this.productTab.ResumeLayout(false);
+            this.productTab.PerformLayout();
             this.xtraScrollableControl3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).EndInit();
             this.groupControl6.ResumeLayout(false);
@@ -2531,8 +2531,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox4)).EndInit();
-            this.orderBtn.ResumeLayout(false);
-            this.orderBtn.PerformLayout();
+            this.orderTab.ResumeLayout(false);
+            this.orderTab.PerformLayout();
             this.xtraScrollableControl5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl8)).EndInit();
             this.groupControl8.ResumeLayout(false);
@@ -2540,8 +2540,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrders)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl5)).EndInit();
-            this.customerBtn.ResumeLayout(false);
-            this.customerBtn.PerformLayout();
+            this.customerTab.ResumeLayout(false);
+            this.customerTab.PerformLayout();
             this.xtraScrollableControl6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl9)).EndInit();
             this.groupControl9.ResumeLayout(false);
@@ -2549,8 +2549,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridViewCustomer)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl6)).EndInit();
-            this.suppliers.ResumeLayout(false);
-            this.suppliers.PerformLayout();
+            this.supplierTab.ResumeLayout(false);
+            this.supplierTab.PerformLayout();
             this.xtraScrollableControl7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl10)).EndInit();
             this.groupControl10.ResumeLayout(false);
@@ -2572,9 +2572,9 @@
         #endregion
 
         private DevExpress.XtraEditors.DirectXFormContainerControl directXFormContainerControl1;
-        private DevExpress.XtraTab.XtraTabControl ProductTab;
+        private DevExpress.XtraTab.XtraTabControl tabPage;
         private DevExpress.XtraTab.XtraTabPage homeBtn;
-        private DevExpress.XtraTab.XtraTabPage inventoryBtn;
+        private DevExpress.XtraTab.XtraTabPage inventoryTab;
         private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl1;
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraEditors.GroupControl groupControl2;
@@ -2605,8 +2605,8 @@
         private DevExpress.XtraBars.Commands.CommandBarGalleryDropDown commandBarGalleryDropDown7;
         private DevExpress.XtraEditors.GroupControl groupControl5;
         private DevExpress.XtraCharts.ChartControl chartControl3;
-        private DevExpress.XtraTab.XtraTabPage categoryBtn;
-        private DevExpress.XtraTab.XtraTabPage productBtn;
+        private DevExpress.XtraTab.XtraTabPage categoryTab;
+        private DevExpress.XtraTab.XtraTabPage productTab;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl3;
         private DevExpress.XtraBars.BarButtonItem addProductBtn;
         private DevExpress.XtraBars.BarButtonItem editProductBtn;
@@ -2638,7 +2638,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl9;
         private DevExpress.XtraGrid.GridControl dgvCategory;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewCategory;
-        private DevExpress.XtraTab.XtraTabPage orderBtn;
+        private DevExpress.XtraTab.XtraTabPage orderTab;
         private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl5;
         private DevExpress.XtraEditors.GroupControl groupControl8;
         private DevExpress.XtraEditors.LabelControl labelControl11;
@@ -2662,7 +2662,7 @@
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
-        private DevExpress.XtraTab.XtraTabPage customerBtn;
+        private DevExpress.XtraTab.XtraTabPage customerTab;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl6;
         private DevExpress.XtraBars.BarButtonItem addCustomerBtn;
         private DevExpress.XtraBars.BarButtonItem editCustomerBtn;
@@ -2684,7 +2684,7 @@
         private DevExpress.XtraBars.BarEditItem inventroyCbx;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox2;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox3;
-        private DevExpress.XtraTab.XtraTabPage suppliers;
+        private DevExpress.XtraTab.XtraTabPage supplierTab;
         private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl7;
         private DevExpress.XtraEditors.GroupControl groupControl10;
         private DevExpress.XtraEditors.LabelControl lblSuppliersCount;

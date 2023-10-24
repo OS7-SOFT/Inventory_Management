@@ -108,9 +108,16 @@ namespace inventory_management.Views.Forms.Orders
         public event EventHandler EditEvent;
         public event EventHandler DeleteEvent;
         public event EventHandler CancelEvent;
+        public event EventHandler LoadDataEvent;
 
 
         //----------Methods----------------------------
+
+        //load data
+        public void LoadData()
+        {
+            LoadDataEvent?.Invoke(this, EventArgs.Empty);
+        }
 
         //Add
         public void Add()
@@ -139,7 +146,10 @@ namespace inventory_management.Views.Forms.Orders
                 this.id = id;
                 DeleteEvent?.Invoke(this, EventArgs.Empty);
                 if (isSuccessed)
+                {
                     notification.SuccessedNotification("Delete Order", message, "2653SADFA");
+                    LoadData();
+                }
                 else
                     XtraMessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -155,6 +165,7 @@ namespace inventory_management.Views.Forms.Orders
                 Cancel();
                 string title = isEdit == true ? "Edit Order" : "Add Order";
                 notification.SuccessedNotification(title, message, "2653SA1231DFA");
+                LoadData();
             }
             else
                 XtraMessageBox.Show(message, "Error in input", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -20,6 +20,7 @@ namespace inventory_management.Views.Interfaces
         event EventHandler AddEvent;
         event EventHandler EditEvent;
         event EventHandler DeleteEvent;
+        event EventHandler LoadDataEvent;
         event EventHandler CancelEvent;
 
         //Get Data

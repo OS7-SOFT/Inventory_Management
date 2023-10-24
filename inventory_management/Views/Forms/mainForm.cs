@@ -15,6 +15,7 @@ using inventory_management.Views.Forms.Customers;
 using inventory_management.Views.Forms.Suppliers;
 using inventory_management.Views.Forms.Products;
 using inventory_management.Views.Forms.Orders;
+using DevExpress.XtraTab;
 
 namespace inventory_management
 {
@@ -36,6 +37,7 @@ namespace inventory_management
             SuppliersManagement();
             ProductManagement();
             OrderManagement();
+           
         }
 
 
@@ -43,8 +45,14 @@ namespace inventory_management
         //Inventory Management
         private void InventoryManagement()
         {
-            dgvInventory.DataSource = inventory.InventoryList.DataSource;
+            UpdateData(inventoryTab, inventory.LoadData);
 
+            inventory.LoadData();
+            dgvInventory.DataSource = inventory.InventoryList.DataSource;
+            inventory.InventoryList.ListChanged += delegate
+            {
+                dgvInventory.DataSource = inventory.InventoryList.DataSource;
+            };
             //Search
             GetValueBySearch(gridViewInventory);
             //Add
@@ -68,9 +76,14 @@ namespace inventory_management
         //Category Management
         private void CategoryManagement()
         {
+            UpdateData(categoryTab , category.LoadData);
+            category.LoadData();
             //Set Data in dataGridView
             dgvCategory.DataSource = category.CategoryList.DataSource;
-            
+            category.CategoryList.ListChanged += delegate
+            {
+                dgvCategory.DataSource = category.CategoryList.DataSource;
+            };
             //Set Category Count
             lblCategoriesCount.Text = category.Count;
 
@@ -91,7 +104,6 @@ namespace inventory_management
             deleteCategoryBtn.ItemClick += delegate
             {
                 category.Delete(GetIdToDelete(gridViewCategory));
-                dgvCategory.Update();
             };
 
 
@@ -100,7 +112,15 @@ namespace inventory_management
         //Products Management
         private void ProductManagement()
         {
+            UpdateData(productTab, product.LoadData);
+            product.LoadData();
             dgvProducts.DataSource = product.ProductList.DataSource;
+            product.ProductList.ListChanged += delegate
+            {
+                dgvProducts.DataSource = product.ProductList.DataSource;
+            };
+
+
             lblProductCounts.Text = product.Count;
             lblProductSold.Text = product.Sold;
             lblProductDefective.Text = product.Defective;
@@ -129,7 +149,10 @@ namespace inventory_management
         //Customer Management
         private void CustomerManagement()
         {
-            dgvCustomer.DataSource = customer.CustomersList.DataSource;
+            UpdateData(customerTab, customer.LoadData);
+            customer.LoadData();
+            dgvCustomer.DataSource = customer.CustomersList.DataSource;         
+       
             lblCustomersCount.Text = customer.Count;
             lblBestCustomer.Text = customer.Best;
             //Search
@@ -155,7 +178,15 @@ namespace inventory_management
         //Suppliers Management
         private void SuppliersManagement()
         {
+            UpdateData(supplierTab, supplier.LoadData);
+            supplier.LoadData();    
             dgvSuppliers.DataSource = supplier.SuppliersList.DataSource;
+            supplier.SuppliersList.ListChanged += delegate
+            {
+                dgvSuppliers.DataSource = supplier.SuppliersList.DataSource;
+            };
+
+
             lblSuppliersCount.Text = supplier.Count;
 
             //Search
@@ -181,7 +212,15 @@ namespace inventory_management
         //Orders Management
         private void OrderManagement()
         {
+            UpdateData(orderTab,order.LoadData);
+            order.LoadData();
             dgvOrders.DataSource = order.OrderList.DataSource;
+            order.OrderList.ListChanged += delegate
+            {
+                dgvOrders.DataSource = order.OrderList.DataSource;
+            };
+
+
             lblOrderCount.Text = order.Count;
             lblCurrentOrder.Text = order.Current;
             lblCompleteOrder.Text = order.Complete;
@@ -207,6 +246,16 @@ namespace inventory_management
             };
         }
 
+
+        //Update date when open tab
+        private void UpdateData(XtraTabPage namePage,Action loadData)
+        {
+            tabPage.SelectedPageChanged += delegate
+            {
+                if (tabPage.SelectedTabPage == namePage)
+                    loadData();
+            };
+        }
 
 
         //Get Search result

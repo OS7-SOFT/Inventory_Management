@@ -29,11 +29,10 @@ namespace inventory_management.Logic.Presenters
             this.view.DeleteEvent += DeleteSupplier;
             this.view.SaveEvent += SaveChange;
             this.view.CancelEvent += CancelMethod;
-            this.view.GetDataList = supplierList;
-            //load all data
-            LoadData();
+            this.view.LoadDataEvent += LoadData;
         }
 
+       
         private void ConnectionModelWithView()
         {
             model.Name = view.SuppliersName;
@@ -41,17 +40,14 @@ namespace inventory_management.Logic.Presenters
             model.Email = view.SuppliersEmail;
         }
 
-        private void LoadData()
+        private void LoadData(object sender, EventArgs e)
         {
             //Set data in supplierList from database
             supplierList.DataSource = supplierServices.GetData();
-
+            view.GetDataList = supplierList;
             //Get supplier Count
             view.SuppliersCount = supplierServices.GetSupplierCount().Rows[0][0].ToString();
-
         }
-
-
 
         private void AddMethod(object sender, EventArgs e)
         {
@@ -78,7 +74,6 @@ namespace inventory_management.Logic.Presenters
             supplierServices.DeleteData(model.Id);
             view.Message = $"{view.SuppliersName} supplier deleted successfully";
             view.IsSuccessed = true;
-            LoadData();
         }
 
         private void SaveChange(object sender, EventArgs e)
@@ -114,7 +109,6 @@ namespace inventory_management.Logic.Presenters
                     }
 
                     view.IsSuccessed = true;
-                    LoadData();
                 }
                 catch (Exception ex)
                 {

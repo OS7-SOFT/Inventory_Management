@@ -32,11 +32,10 @@ namespace inventory_management.Logic.Presenters
             this.view.DeleteEvent += DeleteInventory;
             this.view.SaveEvent += SaveChange;
             this.view.CancelEvent += CancelMethod;
-            this.view.GetDataList = inventoryList;
-            //load all data
-            LoadData();
+            this.view.LoadDataEvent += LoadData;
         }
 
+    
         private void ConnectionModelWithView()
         {
             model.Name = view.InventoryName;
@@ -45,11 +44,11 @@ namespace inventory_management.Logic.Presenters
             model.CategoryName = view.CategoryName;
         }
 
-        private void LoadData()
+        private void LoadData(object sender, EventArgs e)
         {
             //Set data in inventoryList from database
             inventoryList.DataSource = inventoryServices.GetData();
-
+            view.GetDataList = inventoryList; 
             //Set all inventories
             DataTable dt = inventoryServices.GetComboBoxData();
             List<string> data = new List<string>();
@@ -60,7 +59,6 @@ namespace inventory_management.Logic.Presenters
             view.CategoryList = data.ToList();
 
         }
-
 
 
         private void AddMethod(object sender, EventArgs e)
@@ -89,7 +87,7 @@ namespace inventory_management.Logic.Presenters
             inventoryServices.DeleteData(model.Id);
             view.Message = $"{view.InventoryName} Inventory deleted successfully";
             view.IsSuccessed = true;
-            LoadData();
+       
         }
 
         private void SaveChange(object sender, EventArgs e)
@@ -127,7 +125,6 @@ namespace inventory_management.Logic.Presenters
                     }
 
                     view.IsSuccessed = true;
-                    LoadData();
                 }
                 catch (Exception ex)
                 {
@@ -143,6 +140,7 @@ namespace inventory_management.Logic.Presenters
             view.InventoryLocation = "";
             view.InventoryCapacity = 0;
             view.CategoryName = "";
+           
         }
 
 

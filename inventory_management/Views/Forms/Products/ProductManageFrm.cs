@@ -34,12 +34,9 @@ namespace inventory_management.Views.Forms
             else
                 categoryCbx.Properties.Items.Add("No there any suppliers");
             if (product.Suppliers.Count > 0)
-                categoryCbx.Properties.Items.AddRange(product.Suppliers);
+                supplierCbx.Properties.Items.AddRange(product.Suppliers);
             else
-                categoryCbx.Properties.Items.Add("No there any suppliers");
-            
-            categoryCbx.Properties.Items.AddRange(product.Categories);
-            supplierCbx.Properties.Items.AddRange(product.Suppliers);
+                supplierCbx.Properties.Items.Add("No there any suppliers");
 
             //Get Current Category in edit
             if (product.Category_name != "" || product.Category_name != null)

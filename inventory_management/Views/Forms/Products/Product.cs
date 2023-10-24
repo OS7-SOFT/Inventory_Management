@@ -108,8 +108,15 @@ namespace inventory_management.Views.Forms.Products
         public event EventHandler EditEvent;
         public event EventHandler DeleteEvent;
         public event EventHandler CancelEvent;
+        public event EventHandler LoadDataEvent;
 
         //----------Methods----------------------------
+
+        //load data
+        public void LoadData()
+        {
+            LoadDataEvent?.Invoke(this, EventArgs.Empty);
+        }
 
         //Add
         public void Add()
@@ -138,7 +145,10 @@ namespace inventory_management.Views.Forms.Products
                 this.id = id;
                 DeleteEvent?.Invoke(this, EventArgs.Empty);
                 if (isSuccessed)
+                {
                     notification.SuccessedNotification("Delete Product", message, "2653SADFA");
+                    LoadData();
+                }
                 else
                     XtraMessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -154,6 +164,7 @@ namespace inventory_management.Views.Forms.Products
                 Cancel();
                 string title = isEdit == true ? "Edit Product" : "Add Product";
                 notification.SuccessedNotification(title, message, "2653SA1231DFA");
+                LoadData();
             }
             else
                 XtraMessageBox.Show(message, "Error in input", MessageBoxButtons.OK, MessageBoxIcon.Error);

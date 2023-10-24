@@ -31,20 +31,17 @@ namespace inventory_management.Logic.Presenters
             this.view.DeleteEvent += DeleteCategory;
             this.view.SaveEvent += SaveChange;
             this.view.CancelEvent += CancelMethod;
-            this.view.GetDataList =  categoryList;
-            //load all data
-            LoadData();
+            this.view.LoadDataEvent += LoadDatad;
         }
 
-        private void LoadData()
+        private void LoadDatad(object sender, EventArgs e)
         {
             //Set data in categoryList from database
             categoryList.DataSource = categoryServices.GetData();
-
+            view.GetDataList = categoryList;
             //get Category Count 
             view.CategoryCount = categoryServices.GetCategoriesCount().Rows[0][0].ToString();
         }
-
         private void AddMethod(object sender, EventArgs e)
         {
             view.IsEdit = false;
@@ -68,7 +65,6 @@ namespace inventory_management.Logic.Presenters
             categoryServices.DeleteData(model.Id);
             view.Message = $"{view.CategoryName} category deleted successfully";
             view.IsSuccessed = true;
-            LoadData();
         }
 
         private void SaveChange(object sender, EventArgs e)
@@ -100,7 +96,6 @@ namespace inventory_management.Logic.Presenters
                     }
 
                     view.IsSuccessed = true;
-                    LoadData();
                 }
                 catch(Exception ex)
                 {

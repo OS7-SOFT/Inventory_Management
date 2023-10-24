@@ -29,9 +29,8 @@ namespace inventory_management.Logic.Presenters
             this.view.DeleteEvent += DeleteOrder;
             this.view.SaveEvent += SaveChange;
             this.view.CancelEvent += CancelMethod;
-            this.view.GetDataList = orderList;
-            //load all data
-            LoadData();
+            this.view.LoadDataEvent += LoadData;
+       
         }
 
         private void ConnectionModelWithView()
@@ -43,12 +42,11 @@ namespace inventory_management.Logic.Presenters
             model.ProductName = view.ProductName;
           
         }
-
-        private void LoadData()
+        private void LoadData(object sender, EventArgs e)
         {
             //Set data in orderList from database
             orderList.DataSource = orderServices.GetData();
-
+            view.GetDataList = orderList;
             //Set all order
             //get .Order Count 
             view.OrderCount = orderServices.GetOrderCount().Rows[0][0].ToString();
@@ -70,8 +68,6 @@ namespace inventory_management.Logic.Presenters
             }
             view.ProductsList = ProData.ToList();
         }
-
-
 
         private void AddMethod(object sender, EventArgs e)
         {
@@ -101,7 +97,6 @@ namespace inventory_management.Logic.Presenters
             orderServices.DeleteData(model.Id);
             view.Message = $"Order {view.Id} deleted successfully";
             view.IsSuccessed = true;
-            LoadData();
         }
 
         private void SaveChange(object sender, EventArgs e)
@@ -141,7 +136,6 @@ namespace inventory_management.Logic.Presenters
                     }
 
                     view.IsSuccessed = true;
-                    LoadData();
                 }
                 catch (Exception ex)
                 {

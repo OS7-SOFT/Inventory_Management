@@ -56,8 +56,14 @@ namespace inventory_management.Views.Forms.Categories
         public event EventHandler EditEvent;
         public event EventHandler DeleteEvent;
         public event EventHandler CancelEvent;
-
+        public event EventHandler LoadDataEvent;
         //--------------methods-----------------------
+
+        //Load data
+        public void LoadData()
+        {
+            LoadDataEvent?.Invoke(this, EventArgs.Empty);
+        }
 
         //Add
         public void Add()
@@ -87,7 +93,10 @@ namespace inventory_management.Views.Forms.Categories
                 this.id = id;
                 DeleteEvent?.Invoke(this, EventArgs.Empty);
                 if (isSuccessed)
+                {
                     notification.SuccessedNotification("Delete Category", message, "2653SADFA");
+                    LoadData();
+                }
                 else
                     XtraMessageBox.Show(message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -103,6 +112,7 @@ namespace inventory_management.Views.Forms.Categories
                 Cancel();
                 string title = isEdit == true ? "Edit Category" : "Add Category";
                 notification.SuccessedNotification(title, message, "2653SA1231DFA");
+                LoadData();
             }
             else
                 XtraMessageBox.Show(message, "Error in input", MessageBoxButtons.OK, MessageBoxIcon.Error);
