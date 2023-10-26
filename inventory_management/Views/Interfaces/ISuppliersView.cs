@@ -11,7 +11,6 @@ namespace inventory_management.Views.Interfaces
         string SuppliersName { get; set; }
         string SuppliersPhone { get; set; }
         string SuppliersEmail { get; set; }
-        string SuppliersCount {  set; }
 
     }
 }

@@ -15,6 +15,12 @@ namespace inventory_management.Views.Interfaces
         double InventoryCapacity { get; set; }
         string CategoryName { get; set; }
         List<string> CategoryList { set; }
+       
+        //event 
+        event EventHandler TransformEvent;
+        event EventHandler GetInventoryInfoEvent;
+
+        BindingSource GetProducts { set; }
 
     }
 }

@@ -29,7 +29,6 @@ namespace inventory_management.Views.Forms.Suppliers
         public string Name;
         public string Phone;
         public string Email;
-        public string Count;
     
         //Constructor
         public Supplier()
@@ -53,10 +52,6 @@ namespace inventory_management.Views.Forms.Suppliers
         {
             get { return Email; }
             set { Email = value; }
-        }
-        public string SuppliersCount
-        {
-            set { Count = value; }
         }
         public string Message { set { message = value; } }
         public bool IsSuccessed { set { isSuccessed = value; } }

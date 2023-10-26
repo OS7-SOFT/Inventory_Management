@@ -45,8 +45,6 @@ namespace inventory_management.Logic.Presenters
             //Set data in customerList from database
             customerList.DataSource = customerServices.GetData();
             view.GetDataList = customerList;
-            //Get Customer Count
-            view.CustomersCount = customerServices.GetCustomersCount().Rows[0][0].ToString();
             //Get best Customer
         }
 

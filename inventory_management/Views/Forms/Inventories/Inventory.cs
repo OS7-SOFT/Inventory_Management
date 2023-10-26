@@ -17,6 +17,7 @@ namespace inventory_management.Views.Forms.Inventories
         NotificationManger notification = NotificationManger.Instance();
         InventoryManageFrm IMF;
         InventoryPresenter inventoryPresenter;
+        InventoryInfoForm infoForm;
 
         int id;
         string message;
@@ -25,12 +26,13 @@ namespace inventory_management.Views.Forms.Inventories
 
         //fildes 
         public BindingSource InventoryList;
+        public BindingSource Products;
         public List<string> Categories;
         public string Name;
         public string Location;
         public double Capacity;
         public string Category_name;
-        public string Count;
+
 
         //Constructor
         public Inventory()
@@ -74,6 +76,7 @@ namespace inventory_management.Views.Forms.Inventories
             set { isEdit = value; }
         }
         public BindingSource GetDataList {  set{ InventoryList = value; } }
+        public BindingSource GetProducts {  set{ Products = value; } }
 
         //event
         public event EventHandler SaveEvent;
@@ -82,6 +85,8 @@ namespace inventory_management.Views.Forms.Inventories
         public event EventHandler DeleteEvent;
         public event EventHandler CancelEvent;
         public event EventHandler LoadDataEvent;
+        public event EventHandler TransformEvent;
+        public event EventHandler GetInventoryInfoEvent;
 
         //----------Methods----------------------------
 
@@ -89,6 +94,15 @@ namespace inventory_management.Views.Forms.Inventories
         public void LoadData()
         {
             LoadDataEvent?.Invoke(this, EventArgs.Empty);
+        }
+
+        //Show Inventory info Forms
+        public void ShowInfo(int id)
+        {
+            this.id = id;
+            GetInventoryInfoEvent?.Invoke(this, EventArgs.Empty);
+            infoForm = new InventoryInfoForm();
+            infoForm.ShowDialog();
         }
 
         //Add
@@ -141,6 +155,12 @@ namespace inventory_management.Views.Forms.Inventories
             }
             else
                 XtraMessageBox.Show(message, "Error in input", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        //Transform
+        public void Transform()
+        {
+
         }
 
         //Cancel

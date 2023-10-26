@@ -20,6 +20,7 @@ namespace inventory_management.Views.Forms
             InitializeComponent();
 
             performedMethod();
+
         }
 
         private void performedMethod()
@@ -30,9 +31,9 @@ namespace inventory_management.Views.Forms
             capacityInvent.Value = (decimal)inventory.Capacity;
             if (inventory.Categories.Count > 0)
                 categoryCbx.Properties.Items.AddRange(inventory.Categories);
-            else
-                categoryCbx.Properties.Items.Add("No there any Category");
-
+             
+             
+            
             //Get Current Category in edit
             if (inventory.Category_name != "" || inventory.Category_name != null)
                 categoryCbx.EditValue = inventory.Category_name;

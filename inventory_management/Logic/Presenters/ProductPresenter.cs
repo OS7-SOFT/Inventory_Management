@@ -50,9 +50,7 @@ namespace inventory_management.Logic.Presenters
             //Set data in productList from database
             productList.DataSource = productServices.GetData();
             view.GetDataList = productList;
-            //get .Product Count 
-            view.ProductCount = productServices.GetProductCount().Rows[0][0].ToString();
-            //Set all product
+           
             //Set Category comboBox
             DataTable dt = productServices.GetComboBoxData("categoryComboBox");
             List<string> Custdata = new List<string>();

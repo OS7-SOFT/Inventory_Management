@@ -31,7 +31,6 @@ namespace inventory_management.Views.Forms.Orders
         public decimal Total;
         public DateTime Date;
         public string Status;
-        public string Count;
         public string Current;
         public string Complete;
         public string Canceled;
@@ -57,11 +56,6 @@ namespace inventory_management.Views.Forms.Orders
         {
             get { return Status; }
             set { Status = value; }
-        }
-        public string OrderCount
-        {
-            get { return Count; }
-            set { Count = value; }
         }
         public string CurrentOrderCount
         {

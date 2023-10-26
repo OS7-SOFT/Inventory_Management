@@ -45,16 +45,15 @@ namespace inventory_management
         //Inventory Management
         private void InventoryManagement()
         {
-            UpdateData(inventoryTab, inventory.LoadData);
-
-            inventory.LoadData();
-            dgvInventory.DataSource = inventory.InventoryList.DataSource;
+            //load inventory Data
+            inventory.LoadData(); 
             inventory.InventoryList.ListChanged += delegate
             {
                 dgvInventory.DataSource = inventory.InventoryList.DataSource;
             };
-            //Search
-            GetValueBySearch(gridViewInventory);
+            //to update data
+            UpdateData(inventoryTab, inventory.LoadData);
+    
             //Add
             addInventoryBtn.ItemClick += delegate
             {
@@ -71,24 +70,28 @@ namespace inventory_management
             {
                 inventory.Delete(GetIdToDelete(gridViewInventory));
             };
+            //Show info current inventory
+            gridViewInventory.RowClick += delegate
+            {
+                int id = Convert.ToInt32(gridViewInventory.GetRowCellValue(gridViewInventory.FocusedRowHandle, gridViewInventory.Columns[0]));
+                inventory.ShowInfo(id); 
+            };
         }
 
         //Category Management
         private void CategoryManagement()
         {
-            UpdateData(categoryTab , category.LoadData);
+            //load data
             category.LoadData();
-            //Set Data in dataGridView
-            dgvCategory.DataSource = category.CategoryList.DataSource;
             category.CategoryList.ListChanged += delegate
             {
                 dgvCategory.DataSource = category.CategoryList.DataSource;
+                //Set category Count in label
+                lblCategoriesCount.Text = category.CategoryList.Count.ToString();
             };
-            //Set Category Count
-            lblCategoriesCount.Text = category.Count;
+            //to update data
+            UpdateData(categoryTab , category.LoadData);
 
-            //Search
-            GetValueBySearch(gridViewCategory);
             //Add
             addCategoryBtn.ItemClick += delegate
             {
@@ -112,22 +115,20 @@ namespace inventory_management
         //Products Management
         private void ProductManagement()
         {
-            UpdateData(productTab, product.LoadData);
+            //to load data
             product.LoadData();
-            dgvProducts.DataSource = product.ProductList.DataSource;
             product.ProductList.ListChanged += delegate
             {
                 dgvProducts.DataSource = product.ProductList.DataSource;
+                lblProductCounts.Text = product.ProductList.Count.ToString();
             };
+            //to update data
+            UpdateData(productTab, product.LoadData);
 
-
-            lblProductCounts.Text = product.Count;
+           
             lblProductSold.Text = product.Sold;
             lblProductDefective.Text = product.Defective;
 
-
-            //Search
-            GetValueBySearch(gridViewProduct);
             //Add
             addProductBtn.ItemClick += delegate
             {
@@ -149,14 +150,18 @@ namespace inventory_management
         //Customer Management
         private void CustomerManagement()
         {
-            UpdateData(customerTab, customer.LoadData);
+            //to load data
             customer.LoadData();
-            dgvCustomer.DataSource = customer.CustomersList.DataSource;         
-       
-            lblCustomersCount.Text = customer.Count;
+            customer.CustomersList.ListChanged += delegate
+            {
+                dgvCustomer.DataSource = customer.CustomersList.DataSource;
+                lblCustomersCount.Text = customer.CustomersList.Count.ToString();
+            };
+            //update data
+            UpdateData(customerTab, customer.LoadData);
+            
             lblBestCustomer.Text = customer.Best;
-            //Search
-            GetValueBySearch(gridViewCustomer);
+
             //Add
             addCustomerBtn.ItemClick += delegate
             {
@@ -178,19 +183,16 @@ namespace inventory_management
         //Suppliers Management
         private void SuppliersManagement()
         {
-            UpdateData(supplierTab, supplier.LoadData);
+            //to load data
             supplier.LoadData();    
-            dgvSuppliers.DataSource = supplier.SuppliersList.DataSource;
             supplier.SuppliersList.ListChanged += delegate
             {
                 dgvSuppliers.DataSource = supplier.SuppliersList.DataSource;
+                lblSuppliersCount.Text = supplier.SuppliersList.Count.ToString();
             };
+            //update data
+            UpdateData(supplierTab, supplier.LoadData);
 
-
-            lblSuppliersCount.Text = supplier.Count;
-
-            //Search
-            GetValueBySearch(gridViewSuppliers);
             //Add
             addSupplierBtn.ItemClick += delegate
             {
@@ -212,22 +214,20 @@ namespace inventory_management
         //Orders Management
         private void OrderManagement()
         {
-            UpdateData(orderTab,order.LoadData);
+            //load data
             order.LoadData();
-            dgvOrders.DataSource = order.OrderList.DataSource;
             order.OrderList.ListChanged += delegate
             {
                 dgvOrders.DataSource = order.OrderList.DataSource;
+                lblOrderCount.Text = order.OrderList.Count.ToString();
             };
+            //update data
+            UpdateData(orderTab,order.LoadData);
 
-
-            lblOrderCount.Text = order.Count;
             lblCurrentOrder.Text = order.Current;
             lblCompleteOrder.Text = order.Complete;
             lblCanceledOrder.Text = order.Canceled;
 
-            //Search
-            GetValueBySearch(gridViewOrder);
             //Add
             addOrderBtn.ItemClick += delegate
             {
@@ -255,18 +255,6 @@ namespace inventory_management
                 if (tabPage.SelectedTabPage == namePage)
                     loadData();
             };
-        }
-
-
-        //Get Search result
-        private void GetValueBySearch(GridView gridView)
-        {
-            int id = int.TryParse(gridView.FindFilterText, out id) ? Convert.ToInt32(gridView.FindFilterText) : 0;
-            string name = gridView.FindFilterText;
-            if (id !=0)
-                gridView.ActiveFilterString = $"[{0}] LIKE '%{id}%'";
-            else
-                gridView.ActiveFilterString = $"[{1}] LIKE '%{name}%'";
         }
 
         //Get Id to Edit

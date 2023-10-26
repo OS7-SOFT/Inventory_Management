@@ -48,8 +48,6 @@ namespace inventory_management.Logic.Presenters
             orderList.DataSource = orderServices.GetData();
             view.GetDataList = orderList;
             //Set all order
-            //get .Order Count 
-            view.OrderCount = orderServices.GetOrderCount().Rows[0][0].ToString();
             //Set Customer comboBox
             DataTable dt = orderServices.GetComboBoxData("customerComboBox");
             List<string> Custdata = new List<string>();

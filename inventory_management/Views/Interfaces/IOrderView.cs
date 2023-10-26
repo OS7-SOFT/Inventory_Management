@@ -13,7 +13,6 @@ namespace inventory_management.Views.Interfaces
         int OrderedQuantity { get; set; }
         DateTime OrderDate { set; get; }
         string DeliveryStatus { get; set; }
-        string OrderCount { get; set; }
         string CurrentOrderCount {  set; }
         string CompleteOrderCount {  set; }
         string CanceledOrderCount {  set; }

@@ -29,7 +29,6 @@ namespace inventory_management.Views.Forms.Customers
         public string Phone;
         public string Email;
         public string Location;
-        public string Count;
         public string Best;
 
         //Constructor
@@ -60,7 +59,6 @@ namespace inventory_management.Views.Forms.Customers
             get { return Location; }
             set { Location = value; }
         }
-        public string CustomersCount { set { Count = value; } }
         public string BestCustomer { set { Best = value; } }
 
 

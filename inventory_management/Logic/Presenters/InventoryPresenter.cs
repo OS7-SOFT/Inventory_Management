@@ -16,7 +16,7 @@ namespace inventory_management.Logic.Presenters
 
         IInventoryView view;
         BindingSource inventoryList;
-        BindingSource CategoryList;
+        BindingSource categoryList;
         private object[] Params;
 
         InventoryModel model = new InventoryModel();
@@ -25,7 +25,7 @@ namespace inventory_management.Logic.Presenters
         public InventoryPresenter(IInventoryView view)
         {
             inventoryList = new BindingSource();
-            CategoryList = new BindingSource();
+            categoryList = new BindingSource();
             this.view = view;
             this.view.AddEvent += AddMethod;
             this.view.EditEvent += LoadDataToEdit;
@@ -33,9 +33,9 @@ namespace inventory_management.Logic.Presenters
             this.view.SaveEvent += SaveChange;
             this.view.CancelEvent += CancelMethod;
             this.view.LoadDataEvent += LoadData;
+            this.view.GetInventoryInfoEvent += GetCurrentInventoryInfo;
         }
 
-    
         private void ConnectionModelWithView()
         {
             model.Name = view.InventoryName;
@@ -60,6 +60,14 @@ namespace inventory_management.Logic.Presenters
 
         }
 
+        private void GetCurrentInventoryInfo(object sender, EventArgs e)
+        {
+            model.Id = view.Id;
+            //Set All products in current inventory 
+            //...view.GetProducts
+
+            //Set current inventory information
+        }
 
         private void AddMethod(object sender, EventArgs e)
         {
@@ -146,7 +154,7 @@ namespace inventory_management.Logic.Presenters
 
         private bool CheckInput()
         {
-            if (view.InventoryName.Trim() == "" || view.InventoryLocation == "" || view.InventoryCapacity == 0 || view.CategoryName == "")
+            if (view.InventoryName.Trim() == "" || view.InventoryLocation == "" || view.InventoryCapacity == 0)
             {
 
                 return false;

@@ -225,15 +225,14 @@
             this.repositoryItemComboBox5 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.ribbonPage4 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup5 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup6 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.productTab = new DevExpress.XtraTab.XtraTabPage();
             this.xtraScrollableControl3 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
+            this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.lblProductSold = new DevExpress.XtraEditors.LabelControl();
-            this.lblProductDefective = new DevExpress.XtraEditors.LabelControl();
             this.lblProductCounts = new DevExpress.XtraEditors.LabelControl();
-            this.lblDefectiveProd = new DevExpress.XtraEditors.LabelControl();
+            this.lblProductDefective = new DevExpress.XtraEditors.LabelControl();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.dgvProducts = new DevExpress.XtraGrid.GridControl();
             this.gridViewProduct = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -248,7 +247,6 @@
             this.repositoryItemComboBox7 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.ribbonPage3 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup4 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.repositoryItemComboBox3 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.repositoryItemComboBox4 = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.orderTab = new DevExpress.XtraTab.XtraTabPage();
@@ -273,7 +271,6 @@
             this.customerCbx = new DevExpress.XtraBars.BarEditItem();
             this.ribbonPage5 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup7 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.ribbonPageGroup9 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.customerTab = new DevExpress.XtraTab.XtraTabPage();
             this.xtraScrollableControl6 = new DevExpress.XtraEditors.XtraScrollableControl();
             this.groupControl9 = new DevExpress.XtraEditors.GroupControl();
@@ -316,6 +313,7 @@
             this.commandBarGalleryDropDown6 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
             this.commandBarGalleryDropDown7 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.transformBtn = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             this.directXFormContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabPage)).BeginInit();
@@ -601,7 +599,7 @@
             // 
             this.inventoryTab.Controls.Add(this.xtraScrollableControl2);
             this.inventoryTab.Controls.Add(this.ribbonControl2);
-            this.inventoryTab.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("inventoryBtn.ImageOptions.Image")));
+            this.inventoryTab.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("inventoryTab.ImageOptions.Image")));
             this.inventoryTab.Name = "inventoryTab";
             this.inventoryTab.Size = new System.Drawing.Size(1698, 830);
             this.inventoryTab.Text = "Inventories";
@@ -628,7 +626,7 @@
             this.dgvInventory.MainView = this.gridViewInventory;
             this.dgvInventory.MenuManager = this.ribbonControl1;
             this.dgvInventory.Name = "dgvInventory";
-            this.dgvInventory.Size = new System.Drawing.Size(1018, 1488);
+            this.dgvInventory.Size = new System.Drawing.Size(1018, 1834);
             this.dgvInventory.TabIndex = 5;
             this.dgvInventory.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridViewInventory});
@@ -650,7 +648,7 @@
             this.groupControl5.Controls.Add(this.chartControl3);
             this.groupControl5.Location = new System.Drawing.Point(1046, 427);
             this.groupControl5.Name = "groupControl5";
-            this.groupControl5.Size = new System.Drawing.Size(385, 393);
+            this.groupControl5.Size = new System.Drawing.Size(343, 393);
             this.groupControl5.TabIndex = 2;
             this.groupControl5.Text = "groupControl5";
             // 
@@ -689,7 +687,7 @@
             series3.View = sideBySideBarSeriesView1;
             this.chartControl3.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series3};
-            this.chartControl3.Size = new System.Drawing.Size(381, 363);
+            this.chartControl3.Size = new System.Drawing.Size(339, 363);
             this.chartControl3.TabIndex = 0;
             chartTitle1.Text = "Inventories Sales";
             chartTitle1.TitleID = 0;
@@ -703,7 +701,7 @@
             this.groupControl4.Controls.Add(this.chartControl2);
             this.groupControl4.Location = new System.Drawing.Point(1044, 13);
             this.groupControl4.Name = "groupControl4";
-            this.groupControl4.Size = new System.Drawing.Size(385, 393);
+            this.groupControl4.Size = new System.Drawing.Size(343, 393);
             this.groupControl4.TabIndex = 1;
             this.groupControl4.Text = "groupControl4";
             // 
@@ -742,7 +740,7 @@
             series4.View = sideBySideBarSeriesView2;
             this.chartControl2.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series4};
-            this.chartControl2.Size = new System.Drawing.Size(381, 363);
+            this.chartControl2.Size = new System.Drawing.Size(339, 363);
             this.chartControl2.TabIndex = 0;
             chartTitle2.Text = "Inventories Sales";
             chartTitle2.TitleID = 0;
@@ -756,9 +754,10 @@
             this.ribbonControl2.ExpandCollapseItem,
             this.addInventoryBtn,
             this.editInventoryBtn,
-            this.deleteInventoryBtn});
+            this.deleteInventoryBtn,
+            this.transformBtn});
             this.ribbonControl2.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl2.MaxItemId = 4;
+            this.ribbonControl2.MaxItemId = 5;
             this.ribbonControl2.Name = "ribbonControl2";
             this.ribbonControl2.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonPage2});
@@ -804,6 +803,7 @@
             this.ribbonPageGroup2.ItemLinks.Add(this.addInventoryBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.editInventoryBtn);
             this.ribbonPageGroup2.ItemLinks.Add(this.deleteInventoryBtn);
+            this.ribbonPageGroup2.ItemLinks.Add(this.transformBtn);
             this.ribbonPageGroup2.Name = "ribbonPageGroup2";
             this.ribbonPageGroup2.Text = "Inventory Management";
             // 
@@ -811,7 +811,7 @@
             // 
             this.categoryTab.Controls.Add(this.xtraScrollableControl4);
             this.categoryTab.Controls.Add(this.ribbonControl4);
-            this.categoryTab.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("categoryBtn.ImageOptions.Image")));
+            this.categoryTab.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("categoryTab.ImageOptions.Image")));
             this.categoryTab.Name = "categoryTab";
             this.categoryTab.Size = new System.Drawing.Size(1698, 830);
             this.categoryTab.Text = "Categories";
@@ -984,8 +984,7 @@
             // ribbonPage4
             // 
             this.ribbonPage4.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup5,
-            this.ribbonPageGroup6});
+            this.ribbonPageGroup5});
             this.ribbonPage4.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage4.ImageOptions.Image")));
             this.ribbonPage4.Name = "ribbonPage4";
             this.ribbonPage4.Text = "Manage";
@@ -998,17 +997,11 @@
             this.ribbonPageGroup5.Name = "ribbonPageGroup5";
             this.ribbonPageGroup5.Text = "Products Management";
             // 
-            // ribbonPageGroup6
-            // 
-            this.ribbonPageGroup6.ItemLinks.Add(this.inventoryCbx);
-            this.ribbonPageGroup6.Name = "ribbonPageGroup6";
-            this.ribbonPageGroup6.Text = "Filter category by inventories";
-            // 
             // productTab
             // 
             this.productTab.Controls.Add(this.xtraScrollableControl3);
             this.productTab.Controls.Add(this.ribbonControl3);
-            this.productTab.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("productBtn.ImageOptions.Image")));
+            this.productTab.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("productTab.ImageOptions.Image")));
             this.productTab.Name = "productTab";
             this.productTab.Size = new System.Drawing.Size(1698, 830);
             this.productTab.Text = "Products";
@@ -1032,17 +1025,27 @@
             this.groupControl6.AppearanceCaption.BackColor = System.Drawing.Color.White;
             this.groupControl6.AppearanceCaption.Options.UseBackColor = true;
             this.groupControl6.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl6.CaptionImageOptions.Image")));
+            this.groupControl6.Controls.Add(this.labelControl3);
             this.groupControl6.Controls.Add(this.labelControl5);
             this.groupControl6.Controls.Add(this.lblProductSold);
-            this.groupControl6.Controls.Add(this.lblProductDefective);
             this.groupControl6.Controls.Add(this.lblProductCounts);
-            this.groupControl6.Controls.Add(this.lblDefectiveProd);
+            this.groupControl6.Controls.Add(this.lblProductDefective);
             this.groupControl6.Controls.Add(this.labelControl1);
             this.groupControl6.Location = new System.Drawing.Point(1262, 13);
             this.groupControl6.Name = "groupControl6";
             this.groupControl6.Size = new System.Drawing.Size(425, 339);
             this.groupControl6.TabIndex = 3;
             this.groupControl6.Text = "Statices";
+            // 
+            // labelControl3
+            // 
+            this.labelControl3.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl3.Appearance.Options.UseFont = true;
+            this.labelControl3.Location = new System.Drawing.Point(17, 135);
+            this.labelControl3.Name = "labelControl3";
+            this.labelControl3.Size = new System.Drawing.Size(286, 22);
+            this.labelControl3.TabIndex = 6;
+            this.labelControl3.Text = "The number of defective  Products :";
             // 
             // labelControl5
             // 
@@ -1064,16 +1067,6 @@
             this.lblProductSold.TabIndex = 4;
             this.lblProductSold.Text = "52";
             // 
-            // lblProductDefective
-            // 
-            this.lblProductDefective.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductDefective.Appearance.Options.UseFont = true;
-            this.lblProductDefective.Location = new System.Drawing.Point(17, 136);
-            this.lblProductDefective.Name = "lblProductDefective";
-            this.lblProductDefective.Size = new System.Drawing.Size(286, 22);
-            this.lblProductDefective.TabIndex = 3;
-            this.lblProductDefective.Text = "The number of defective  Products :";
-            // 
             // lblProductCounts
             // 
             this.lblProductCounts.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1084,15 +1077,15 @@
             this.lblProductCounts.TabIndex = 2;
             this.lblProductCounts.Text = "15240";
             // 
-            // lblDefectiveProd
+            // lblProductDefective
             // 
-            this.lblDefectiveProd.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDefectiveProd.Appearance.Options.UseFont = true;
-            this.lblDefectiveProd.Location = new System.Drawing.Point(17, 174);
-            this.lblDefectiveProd.Name = "lblDefectiveProd";
-            this.lblDefectiveProd.Size = new System.Drawing.Size(20, 22);
-            this.lblDefectiveProd.TabIndex = 1;
-            this.lblDefectiveProd.Text = "52";
+            this.lblProductDefective.Appearance.Font = new System.Drawing.Font("Tahoma", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblProductDefective.Appearance.Options.UseFont = true;
+            this.lblProductDefective.Location = new System.Drawing.Point(17, 174);
+            this.lblProductDefective.Name = "lblProductDefective";
+            this.lblProductDefective.Size = new System.Drawing.Size(20, 22);
+            this.lblProductDefective.TabIndex = 1;
+            this.lblProductDefective.Text = "52";
             // 
             // labelControl1
             // 
@@ -1222,8 +1215,7 @@
             // ribbonPage3
             // 
             this.ribbonPage3.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup3,
-            this.ribbonPageGroup4});
+            this.ribbonPageGroup3});
             this.ribbonPage3.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage3.ImageOptions.Image")));
             this.ribbonPage3.Name = "ribbonPage3";
             this.ribbonPage3.Text = "Manage";
@@ -1235,12 +1227,6 @@
             this.ribbonPageGroup3.ItemLinks.Add(this.deleteProductBtn);
             this.ribbonPageGroup3.Name = "ribbonPageGroup3";
             this.ribbonPageGroup3.Text = "Products Management";
-            // 
-            // ribbonPageGroup4
-            // 
-            this.ribbonPageGroup4.ItemLinks.Add(this.categoryCbx);
-            this.ribbonPageGroup4.Name = "ribbonPageGroup4";
-            this.ribbonPageGroup4.Text = "ribbonPageGroup4";
             // 
             // repositoryItemComboBox3
             // 
@@ -1260,7 +1246,7 @@
             // 
             this.orderTab.Controls.Add(this.xtraScrollableControl5);
             this.orderTab.Controls.Add(this.ribbonControl5);
-            this.orderTab.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("orderBtn.ImageOptions.Image")));
+            this.orderTab.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("orderTab.ImageOptions.Image")));
             this.orderTab.Name = "orderTab";
             this.orderTab.Size = new System.Drawing.Size(1698, 830);
             this.orderTab.Text = "Orders";
@@ -1477,8 +1463,7 @@
             // ribbonPage5
             // 
             this.ribbonPage5.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup7,
-            this.ribbonPageGroup9});
+            this.ribbonPageGroup7});
             this.ribbonPage5.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("ribbonPage5.ImageOptions.Image")));
             this.ribbonPage5.Name = "ribbonPage5";
             this.ribbonPage5.Text = "Manage";
@@ -1491,17 +1476,11 @@
             this.ribbonPageGroup7.Name = "ribbonPageGroup7";
             this.ribbonPageGroup7.Text = "Orders Management";
             // 
-            // ribbonPageGroup9
-            // 
-            this.ribbonPageGroup9.ItemLinks.Add(this.customerCbx);
-            this.ribbonPageGroup9.Name = "ribbonPageGroup9";
-            this.ribbonPageGroup9.Text = "Filter by Customer";
-            // 
             // customerTab
             // 
             this.customerTab.Controls.Add(this.xtraScrollableControl6);
             this.customerTab.Controls.Add(this.ribbonControl6);
-            this.customerTab.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("customerBtn.ImageOptions.Image")));
+            this.customerTab.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("customerTab.ImageOptions.Image")));
             this.customerTab.Name = "customerTab";
             this.customerTab.Size = new System.Drawing.Size(1698, 830);
             this.customerTab.Text = "Customers";
@@ -1688,7 +1667,7 @@
             // 
             this.supplierTab.Controls.Add(this.xtraScrollableControl7);
             this.supplierTab.Controls.Add(this.ribbonControl7);
-            this.supplierTab.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("supplierBtn.ImageOptions.Image")));
+            this.supplierTab.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("supplierTab.ImageOptions.Image")));
             this.supplierTab.Name = "supplierTab";
             this.supplierTab.Size = new System.Drawing.Size(1698, 830);
             this.supplierTab.Text = "Suppliers";
@@ -2458,6 +2437,15 @@
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             this.ribbonPageGroup8.Text = "Filter products by category";
             // 
+            // transformBtn
+            // 
+            this.transformBtn.Caption = "Transform";
+            this.transformBtn.Hint = "transform products from inventory to another";
+            this.transformBtn.Id = 4;
+            this.transformBtn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
+            this.transformBtn.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
+            this.transformBtn.Name = "transformBtn";
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -2618,9 +2606,8 @@
         private DevExpress.XtraGrid.GridControl dgvProducts;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewProduct;
         private DevExpress.XtraEditors.GroupControl groupControl6;
-        private DevExpress.XtraEditors.LabelControl lblProductDefective;
         private DevExpress.XtraEditors.LabelControl lblProductCounts;
-        private DevExpress.XtraEditors.LabelControl lblDefectiveProd;
+        private DevExpress.XtraEditors.LabelControl lblProductDefective;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl lblProductSold;
@@ -2632,7 +2619,6 @@
         private DevExpress.XtraBars.BarEditItem barEditItem2;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage4;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup5;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup6;
         private DevExpress.XtraEditors.GroupControl groupControl7;
         private DevExpress.XtraEditors.LabelControl lblCategoriesCount;
         private DevExpress.XtraEditors.LabelControl labelControl9;
@@ -2661,7 +2647,6 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage5;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup7;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup9;
         private DevExpress.XtraTab.XtraTabPage customerTab;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl6;
         private DevExpress.XtraBars.BarButtonItem addCustomerBtn;
@@ -2706,10 +2691,11 @@
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox6;
         private DevExpress.XtraBars.BarEditItem categoryCbx;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox7;
-        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup4;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox repositoryItemComboBox4;
         private DevExpress.XtraGrid.GridControl dgvInventory;
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewInventory;
+        private DevExpress.XtraEditors.LabelControl labelControl3;
+        private DevExpress.XtraBars.BarButtonItem transformBtn;
     }
 }
 

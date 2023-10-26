@@ -45,8 +45,6 @@ namespace inventory_management.Logic.Presenters
             //Set data in supplierList from database
             supplierList.DataSource = supplierServices.GetData();
             view.GetDataList = supplierList;
-            //Get supplier Count
-            view.SuppliersCount = supplierServices.GetSupplierCount().Rows[0][0].ToString();
         }
 
         private void AddMethod(object sender, EventArgs e)

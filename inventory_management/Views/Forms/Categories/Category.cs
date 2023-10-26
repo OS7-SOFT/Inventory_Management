@@ -27,7 +27,6 @@ namespace inventory_management.Views.Forms.Categories
         //fildes 
         public BindingSource CategoryList;
         public string Name;
-        public string Count;
 
         //Constructor
         public Category()
@@ -41,7 +40,6 @@ namespace inventory_management.Views.Forms.Categories
             get { return Name; }
             set { Name = value; }
         }
-        public string CategoryCount { set { Count = value; } }
         public int Id { get { return id; }}
         public string Message { set { message = value; } }
         public bool IsSuccessed { set { isSuccessed = value; } }

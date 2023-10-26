@@ -39,8 +39,7 @@ namespace inventory_management.Logic.Presenters
             //Set data in categoryList from database
             categoryList.DataSource = categoryServices.GetData();
             view.GetDataList = categoryList;
-            //get Category Count 
-            view.CategoryCount = categoryServices.GetCategoriesCount().Rows[0][0].ToString();
+           
         }
         private void AddMethod(object sender, EventArgs e)
         {

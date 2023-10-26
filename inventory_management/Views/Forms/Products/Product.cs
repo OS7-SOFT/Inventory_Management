@@ -36,7 +36,6 @@ namespace inventory_management.Views.Forms.Products
         public DateTime Expiration;
         public string Category_name;
         public string Supplier_name;
-        public string Count;
         public string Sold;
         public string Defective;
 
@@ -90,7 +89,6 @@ namespace inventory_management.Views.Forms.Products
         }
         public List<string> SupplierList { set{ Suppliers = value; } }
         public List<string> CategoryList { set{ Categories = value; } }
-        public string ProductCount { set { Count = value; } }
         public string ProductSold { set { Sold = value; } }
         public string ProductDefective { set { Defective = value; } }
         public string Message { set { message = value; } }

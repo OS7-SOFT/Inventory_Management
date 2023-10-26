@@ -14,7 +14,6 @@ namespace inventory_management.Views.Interfaces
         string CustomerPhone { get; set; }
         string CustomerEmail { get; set; }
         string CustomerLocation { get; set; }
-        string CustomersCount { set; }
         string BestCustomer { set; }
  
 

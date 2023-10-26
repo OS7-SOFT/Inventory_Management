@@ -16,6 +16,13 @@ namespace inventory_management.Views.Forms
         public TransFormFrm()
         {
             InitializeComponent();
+
+            PerformedMethod();
+        }
+
+        private void PerformedMethod()
+        {
+            
         }
     }
 }
