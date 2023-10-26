@@ -31,19 +31,22 @@ namespace inventory_management.Views.Forms
             capacityInvent.Value = (decimal)inventory.Capacity;
             if (inventory.Categories.Count > 0)
                 categoryCbx.Properties.Items.AddRange(inventory.Categories);
-             
-             
-            
+
+
+
             //Get Current Category in edit
             if (inventory.Category_name != "" || inventory.Category_name != null)
                 categoryCbx.EditValue = inventory.Category_name;
+            else
+                categoryCbx.EditValue = "";
 
             okBtn.Click += delegate
             {
+                
                 inventory.Name = txtNameInvent.Text;
                 inventory.Location = txtLocation.Text;
                 inventory.Capacity = (double)capacityInvent.Value;
-                inventory.Category_name = categoryCbx.EditValue !=null ? categoryCbx.EditValue.ToString() : "";
+                inventory.Category_name = categoryCbx.EditValue !=null ? categoryCbx.EditValue.ToString() : null;
                 inventory.Save();
             };
             cancelBtn.Click += delegate

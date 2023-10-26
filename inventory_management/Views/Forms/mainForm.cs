@@ -16,17 +16,21 @@ using inventory_management.Views.Forms.Suppliers;
 using inventory_management.Views.Forms.Products;
 using inventory_management.Views.Forms.Orders;
 using DevExpress.XtraTab;
+using inventory_management.Views.Forms;
 
 namespace inventory_management
 {
     public partial class mainForm : DevExpress.XtraEditors.DirectXForm
     {
+        
+
         Category category = Category.Instance();
         Inventory inventory = Inventory.Instance();
         Customer customer = Customer.Instance();
         Supplier supplier = Supplier.Instance();
         Product product = Product.Instance();
         Order order = Order.Instance();
+
 
         public mainForm()
         {
@@ -75,6 +79,12 @@ namespace inventory_management
             {
                 int id = Convert.ToInt32(gridViewInventory.GetRowCellValue(gridViewInventory.FocusedRowHandle, gridViewInventory.Columns[0]));
                 inventory.ShowInfo(id); 
+            };
+            //open form
+            transformBtn.ItemClick += delegate
+            {
+                TransFormFrm TFF = new TransFormFrm();
+                TFF.ShowDialog();
             };
         }
 

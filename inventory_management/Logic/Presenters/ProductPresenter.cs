@@ -15,6 +15,8 @@ namespace inventory_management.Logic.Presenters
     {
         IProductView view;
         BindingSource productList;
+        BindingSource categoryList;
+        BindingSource suppliersList;
         private object[] Params;
 
         ProductModel model = new ProductModel();
@@ -23,6 +25,8 @@ namespace inventory_management.Logic.Presenters
         public ProductPresenter(IProductView view)
         {
             productList = new BindingSource();
+            categoryList = new BindingSource();
+            suppliersList = new BindingSource();
             this.view = view;
             this.view.AddEvent += AddMethod;
             this.view.EditEvent += LoadDataToEdit;
@@ -52,22 +56,18 @@ namespace inventory_management.Logic.Presenters
             view.GetDataList = productList;
            
             //Set Category comboBox
-            DataTable dt = productServices.GetComboBoxData("categoryComboBox");
-            List<string> Custdata = new List<string>();
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                Custdata.Add(dt.Rows[i][0].ToString());
-            }
-            view.CategoryList = Custdata.ToList();
+            categoryList.DataSource = productServices.GetComboBoxData("categoryComboBox");
+            view.CategoryList =((DataTable)categoryList.DataSource).AsEnumerable()
+                .SelectMany(row => row.ItemArray
+                .Select(cell => cell.ToString()))
+                .ToList();
 
             //Set Supplier comboBox
-            DataTable dataTable = productServices.GetComboBoxData("supplierComboBox");
-            List<string> ProData = new List<string>();
-            for (int i = 0; i < dataTable.Rows.Count; i++)
-            {
-                ProData.Add(dataTable.Rows[i][0].ToString());
-            }
-            view.SupplierList = ProData.ToList();
+            suppliersList.DataSource = productServices.GetComboBoxData("supplierComboBox");
+            view.SupplierList = ((DataTable)suppliersList.DataSource).AsEnumerable()
+                .SelectMany(row => row.ItemArray
+                .Select(cell => cell.ToString()))
+                .ToList();
         }
 
 

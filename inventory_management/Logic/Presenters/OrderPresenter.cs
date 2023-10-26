@@ -15,6 +15,8 @@ namespace inventory_management.Logic.Presenters
     {
         IOrderView view;
         BindingSource orderList;
+        BindingSource productList;
+        BindingSource customerList;
         private object[] Params;
 
         OrderModel model = new OrderModel();
@@ -23,6 +25,8 @@ namespace inventory_management.Logic.Presenters
         public OrderPresenter(IOrderView view)
         {
             orderList = new BindingSource();
+            productList = new BindingSource();
+            customerList = new BindingSource();
             this.view = view;
             this.view.AddEvent += AddMethod;
             this.view.EditEvent += LoadDataToEdit;
@@ -49,22 +53,18 @@ namespace inventory_management.Logic.Presenters
             view.GetDataList = orderList;
             //Set all order
             //Set Customer comboBox
-            DataTable dt = orderServices.GetComboBoxData("customerComboBox");
-            List<string> Custdata = new List<string>();
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                Custdata.Add(dt.Rows[i][0].ToString());
-            }
-            view.CustomersList = Custdata.ToList();
+            customerList.DataSource= orderServices.GetComboBoxData("customerComboBox");
+            view.CustomersList =((DataTable)customerList.DataSource).AsEnumerable()
+                .SelectMany(row => row.ItemArray
+                .Select(cell => cell.ToString()))
+                .ToList();
 
             //Set Product comboBox
-            DataTable dataTable = orderServices.GetComboBoxData("productComboBox");
-            List<string> ProData = new List<string>();
-            for (int i = 0; i < dataTable.Rows.Count; i++)
-            {
-                ProData.Add(dataTable.Rows[i][0].ToString());
-            }
-            view.ProductsList = ProData.ToList();
+            productList.DataSource = orderServices.GetComboBoxData("productComboBox");
+            view.ProductsList = ((DataTable)productList.DataSource).AsEnumerable()
+                .SelectMany(row => row.ItemArray
+                .Select(cell => cell.ToString()))
+                .ToList();
         }
 
         private void AddMethod(object sender, EventArgs e)

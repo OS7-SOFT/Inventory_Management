@@ -18,6 +18,7 @@ namespace inventory_management.Views.Forms.Inventories
         InventoryManageFrm IMF;
         InventoryPresenter inventoryPresenter;
         InventoryInfoForm infoForm;
+        
 
         int id;
         string message;

@@ -217,3 +217,4 @@ D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\
 D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.csproj.CopyComplete
 D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.exe
 D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.pdb
+D:\My_Portfolio\Github_Repo\inventory_management\inventory_management\obj\Debug\inventory_management.csproj.AssemblyReference.cache

@@ -49,14 +49,11 @@ namespace inventory_management.Logic.Presenters
             //Set data in inventoryList from database
             inventoryList.DataSource = inventoryServices.GetData();
             view.GetDataList = inventoryList; 
-            //Set all inventories
-            DataTable dt = inventoryServices.GetComboBoxData();
-            List<string> data = new List<string>();
-            for (int i = 0; i < dt.Rows.Count; i++)
-            {
-                data.Add(dt.Rows[i][0].ToString());
-            }
-            view.CategoryList = data.ToList();
+            categoryList.DataSource = inventoryServices.GetComboBoxData();
+            view.CategoryList = ((DataTable)categoryList.DataSource).AsEnumerable()
+                .SelectMany(row => row.ItemArray
+                .Select(cell => cell.ToString()))
+                .ToList();
 
         }
 
