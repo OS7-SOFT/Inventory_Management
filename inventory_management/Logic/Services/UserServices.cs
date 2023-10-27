@@ -58,6 +58,11 @@ namespace inventory_management.Logic.Services
             throw new NotImplementedException();
         }
 
+        public DataTable GetDataByValue(int id, string storedProcedure)
+        {
+            throw new NotImplementedException();
+        }
+
         public void GetDataByValueParameters(int id, SqlCommand command)
         {
             throw new NotImplementedException();

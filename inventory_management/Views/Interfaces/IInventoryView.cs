@@ -14,6 +14,12 @@ namespace inventory_management.Views.Interfaces
         string InventoryLocation { get; set; }
         double InventoryCapacity { get; set; }
         string CategoryName { get; set; }
+        int ProductId { get; }
+        int Quantity { get; }
+        int From { get; }
+        int To { get; }
+
+
         List<string> CategoryList { set; }
        
         //event 

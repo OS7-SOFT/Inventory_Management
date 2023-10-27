@@ -26,10 +26,18 @@ namespace inventory_management.Views.Forms
 
         private void GetInventoryInfo()
         {
-            lblInvertoyName.Text = inventory.Name;
-            lblCapacity.Text = inventory.Capacity.ToString();
-            lblLocationInvent.Text = inventory.Location;
-            lblProductsCount.Text = inventory.Products.Count.ToString();
+            //Get info current Inventory
+            List<object> info = ((DataTable)inventory.InventoryList.DataSource)
+                .AsEnumerable()
+                .Where(x => Convert.ToInt32(x[0]) == inventory.Id)
+                .FirstOrDefault().ItemArray.ToList();
+
+            lblInvertoyName.Text = info[1].ToString();
+            lblCapacity.Text = info[3].ToString();
+            lblAvailable.Text = info[4].ToString();
+            lblLocationInvent.Text =info[2].ToString();
+            lblProductsCount.Text = info[5].ToString();
+            lblCategory.Text = info[6].ToString();
 
             //Get all products in curren inventory
             dgvCurrentInventory.DataSource = inventory.Products.DataSource;

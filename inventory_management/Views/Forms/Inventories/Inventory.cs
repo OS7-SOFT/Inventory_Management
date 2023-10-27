@@ -17,10 +17,14 @@ namespace inventory_management.Views.Forms.Inventories
         NotificationManger notification = NotificationManger.Instance();
         InventoryManageFrm IMF;
         InventoryPresenter inventoryPresenter;
-        InventoryInfoForm infoForm;
+        
         
 
         int id;
+        int productId;
+        int quantity;
+        int from;
+        int to;
         string message;
         bool isSuccessed;
         bool isEdit;
@@ -44,6 +48,10 @@ namespace inventory_management.Views.Forms.Inventories
 
         //properties
         public int Id { get { return id; } }
+        public int ProductId { get { return productId; } }
+        public int Quantity { get { return quantity; } }
+        public int From { get { return from; } }
+        public int To { get { return to; } }
         public string InventoryName
         {
             get { return Name; }
@@ -99,12 +107,17 @@ namespace inventory_management.Views.Forms.Inventories
         }
 
         //Show Inventory info Forms
-        public void ShowInfo(int id)
+        public void GetInfoInventory(int id)
         {
             this.id = id;
             GetInventoryInfoEvent?.Invoke(this, EventArgs.Empty);
-            infoForm = new InventoryInfoForm();
-            infoForm.ShowDialog();
+        }
+
+        //Show Transform form
+        public void OpenTransformFrm()
+        {
+            TransFormFrm TFF = new TransFormFrm();
+            TFF.ShowDialog();
         }
 
         //Add
@@ -160,9 +173,15 @@ namespace inventory_management.Views.Forms.Inventories
         }
 
         //Transform
-        public void Transform()
+        public void Transform(int from , int to, int productId,int quantity)
         {
-
+            this.from = from;
+            this.to = to;
+            this.productId = productId;
+            this.quantity = quantity;
+            TransformEvent?.Invoke(this, EventArgs.Empty);
+            notification.SuccessedNotification("Transferd Products", message, "2653SADFA");
+            LoadData();
         }
 
         //Cancel

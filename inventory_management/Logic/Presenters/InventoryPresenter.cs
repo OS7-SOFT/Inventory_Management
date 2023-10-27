@@ -34,6 +34,7 @@ namespace inventory_management.Logic.Presenters
             this.view.EditEvent += LoadDataToEdit;
             this.view.DeleteEvent += DeleteInventory;
             this.view.SaveEvent += SaveChange;
+            this.view.TransformEvent += TransferMethod;
             this.view.CancelEvent += CancelMethod;
             this.view.LoadDataEvent += LoadData;
             this.view.GetInventoryInfoEvent += GetCurrentInventoryInfo;
@@ -64,11 +65,9 @@ namespace inventory_management.Logic.Presenters
         {
             model.Id = view.Id;
             //Set All products in current inventory 
-            //...view.GetProducts
             productsList.DataSource = inventoryServices.GetDataByValue(model.Id, "selectInventoryProducts");
             view.GetProducts = productsList;
-            //Set current inventory information
-
+            
         }
 
         private void AddMethod(object sender, EventArgs e)
@@ -98,6 +97,14 @@ namespace inventory_management.Logic.Presenters
             view.Message = $"{view.InventoryName} Inventory deleted successfully";
             view.IsSuccessed = true;
        
+        }
+
+        private void TransferMethod(object sender, EventArgs e)
+        {
+            //set operation
+            //--here--
+
+            view.Message = "Products Transferd Successfully";
         }
 
         private void SaveChange(object sender, EventArgs e)

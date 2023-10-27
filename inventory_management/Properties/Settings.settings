@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="DbServer" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">ALI_OWN_PC</Value>
+      <Value Profile="(Default)">OS7_SOFT\OS7DATABASE</Value>
     </Setting>
     <Setting Name="DbName" Type="System.String" Scope="Application">
       <Value Profile="(Default)">Inventory_system</Value>

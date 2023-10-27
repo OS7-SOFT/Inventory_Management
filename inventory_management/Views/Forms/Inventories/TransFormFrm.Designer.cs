@@ -41,7 +41,7 @@
             this.labelControl5 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl6 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.productCbx = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl11 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl12 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl8 = new DevExpress.XtraEditors.LabelControl();
@@ -59,7 +59,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.toInventCbx.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodCount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fromInventCbx.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productCbx.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // labelControl1
@@ -199,16 +199,16 @@
             this.labelControl7.TabIndex = 13;
             this.labelControl7.Text = "Available :";
             // 
-            // comboBoxEdit1
+            // productCbx
             // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(107, 352);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBoxEdit1.Properties.Appearance.Options.UseFont = true;
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.productCbx.Location = new System.Drawing.Point(107, 352);
+            this.productCbx.Name = "productCbx";
+            this.productCbx.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.productCbx.Properties.Appearance.Options.UseFont = true;
+            this.productCbx.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(229, 30);
-            this.comboBoxEdit1.TabIndex = 17;
+            this.productCbx.Size = new System.Drawing.Size(229, 30);
+            this.productCbx.TabIndex = 17;
             // 
             // labelControl11
             // 
@@ -369,7 +369,7 @@
             this.Controls.Add(this.labelControl13);
             this.Controls.Add(this.labelControl12);
             this.Controls.Add(this.labelControl11);
-            this.Controls.Add(this.comboBoxEdit1);
+            this.Controls.Add(this.productCbx);
             this.Controls.Add(this.labelControl7);
             this.Controls.Add(this.labelControl6);
             this.Controls.Add(this.labelControl5);
@@ -391,7 +391,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.toInventCbx.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.prodCount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fromInventCbx.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productCbx.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -411,7 +411,7 @@
         private DevExpress.XtraEditors.LabelControl labelControl5;
         private DevExpress.XtraEditors.LabelControl labelControl6;
         private DevExpress.XtraEditors.LabelControl labelControl7;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
+        private DevExpress.XtraEditors.ComboBoxEdit productCbx;
         private DevExpress.XtraEditors.LabelControl labelControl11;
         private DevExpress.XtraEditors.LabelControl labelControl12;
         private DevExpress.XtraEditors.LabelControl labelControl8;

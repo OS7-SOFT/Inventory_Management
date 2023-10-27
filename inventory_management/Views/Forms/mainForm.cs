@@ -22,7 +22,7 @@ namespace inventory_management
 {
     public partial class mainForm : DevExpress.XtraEditors.DirectXForm
     {
-        
+        InventoryInfoForm infoForm;
 
         Category category = Category.Instance();
         Inventory inventory = Inventory.Instance();
@@ -77,14 +77,15 @@ namespace inventory_management
             //Show info current inventory
             gridViewInventory.RowClick += delegate
             {
-                //int id = Convert.ToInt32(gridViewInventory.GetRowCellValue(gridViewInventory.FocusedRowHandle, gridViewInventory.Columns[0]));
-                //inventory.ShowInfo(id); 
+                int id = Convert.ToInt32(gridViewInventory.GetRowCellValue(gridViewInventory.FocusedRowHandle, gridViewInventory.Columns[0]));
+                inventory.GetInfoInventory(id);
+                infoForm = new InventoryInfoForm();
+                infoForm.ShowDialog();
             };
             //open form
             transformBtn.ItemClick += delegate
             {
-                TransFormFrm TFF = new TransFormFrm();
-                TFF.ShowDialog();
+                inventory.OpenTransformFrm();
             };
         }
 
