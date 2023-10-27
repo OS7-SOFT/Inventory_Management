@@ -77,8 +77,8 @@ namespace inventory_management
             //Show info current inventory
             gridViewInventory.RowClick += delegate
             {
-                int id = Convert.ToInt32(gridViewInventory.GetRowCellValue(gridViewInventory.FocusedRowHandle, gridViewInventory.Columns[0]));
-                inventory.ShowInfo(id); 
+                //int id = Convert.ToInt32(gridViewInventory.GetRowCellValue(gridViewInventory.FocusedRowHandle, gridViewInventory.Columns[0]));
+                //inventory.ShowInfo(id); 
             };
             //open form
             transformBtn.ItemClick += delegate

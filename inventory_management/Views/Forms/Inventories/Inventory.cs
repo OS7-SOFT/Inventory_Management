@@ -59,6 +59,7 @@ namespace inventory_management.Views.Forms.Inventories
             get { return Capacity; }
             set { Capacity = value; }
         }
+       
         public List<string> CategoryList
         {
             

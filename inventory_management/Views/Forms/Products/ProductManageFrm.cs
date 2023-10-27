@@ -28,15 +28,12 @@ namespace inventory_management.Views.Forms
             txtSellPrice.Value = product.Sell;
             txtBuyPrice.Value = product.Buy;
             txtExDate.DateTime = product.Expiration;
-            
+            if (txtExDate.DateTime < DateTime.Now)
+                txtExDate.DateTime = DateTime.Now; 
             if (product.Categories.Count > 0)
                 categoryCbx.Properties.Items.AddRange(product.Categories);
-            else
-                categoryCbx.Properties.Items.Add("No there any suppliers");
             if (product.Suppliers.Count > 0)
                 supplierCbx.Properties.Items.AddRange(product.Suppliers);
-            else
-                supplierCbx.Properties.Items.Add("No there any suppliers");
 
             //Get Current Category in edit
             if (product.Category_name != "" || product.Category_name != null)

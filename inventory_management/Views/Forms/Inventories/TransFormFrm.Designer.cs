@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TransFormFrm));
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.toInventCbx = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.prodCountSpin = new DevExpress.XtraEditors.SpinEdit();
+            this.prodCount = new DevExpress.XtraEditors.SpinEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.fromInventCbx = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -57,7 +57,7 @@
             this.lblfromLocation = new DevExpress.XtraEditors.LabelControl();
             this.lblfromCapacity = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.toInventCbx.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prodCountSpin.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prodCount.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fromInventCbx.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             this.SuspendLayout();
@@ -83,21 +83,21 @@
             this.toInventCbx.Size = new System.Drawing.Size(229, 30);
             this.toInventCbx.TabIndex = 3;
             // 
-            // prodCountSpin
+            // prodCount
             // 
-            this.prodCountSpin.EditValue = new decimal(new int[] {
+            this.prodCount.EditValue = new decimal(new int[] {
             0,
             0,
             0,
             0});
-            this.prodCountSpin.Location = new System.Drawing.Point(107, 404);
-            this.prodCountSpin.Name = "prodCountSpin";
-            this.prodCountSpin.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prodCountSpin.Properties.Appearance.Options.UseFont = true;
-            this.prodCountSpin.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.prodCount.Location = new System.Drawing.Point(107, 404);
+            this.prodCount.Name = "prodCount";
+            this.prodCount.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prodCount.Properties.Appearance.Options.UseFont = true;
+            this.prodCount.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.prodCountSpin.Size = new System.Drawing.Size(229, 30);
-            this.prodCountSpin.TabIndex = 4;
+            this.prodCount.Size = new System.Drawing.Size(229, 30);
+            this.prodCount.TabIndex = 4;
             // 
             // labelControl2
             // 
@@ -379,7 +379,7 @@
             this.Controls.Add(this.fromInventCbx);
             this.Controls.Add(this.labelControl3);
             this.Controls.Add(this.labelControl2);
-            this.Controls.Add(this.prodCountSpin);
+            this.Controls.Add(this.prodCount);
             this.Controls.Add(this.toInventCbx);
             this.Controls.Add(this.labelControl1);
             this.IconOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("TransFormFrm.IconOptions.LargeImage")));
@@ -389,7 +389,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Transform Products";
             ((System.ComponentModel.ISupportInitialize)(this.toInventCbx.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.prodCountSpin.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.prodCount.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fromInventCbx.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             this.ResumeLayout(false);
@@ -401,7 +401,7 @@
 
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.ComboBoxEdit toInventCbx;
-        private DevExpress.XtraEditors.SpinEdit prodCountSpin;
+        private DevExpress.XtraEditors.SpinEdit prodCount;
         private DevExpress.XtraEditors.LabelControl labelControl2;
         private DevExpress.XtraEditors.ComboBoxEdit fromInventCbx;
         private DevExpress.XtraEditors.LabelControl labelControl3;
