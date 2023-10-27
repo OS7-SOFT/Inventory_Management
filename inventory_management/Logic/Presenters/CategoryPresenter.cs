@@ -52,7 +52,7 @@ namespace inventory_management.Logic.Presenters
             model.Id = view.Id;
 
             //Get current Category by id 
-            DataTable CategoryName =  categoryServices.GetDataByValue(model.Id);
+            DataTable CategoryName =  categoryServices.GetDataByValue(model.Id, "selectCategoriesById");
             view.CategoryName = CategoryName.Rows[0][0].ToString();
         }
 

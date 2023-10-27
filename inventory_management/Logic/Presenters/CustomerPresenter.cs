@@ -60,7 +60,7 @@ namespace inventory_management.Logic.Presenters
             model.Id = view.Id;
 
             //Get current Customer by id 
-            DataTable dt = customerServices.GetDataByValue(model.Id);
+            DataTable dt = customerServices.GetDataByValue(model.Id, "selectCustomersById");
             view.CustomerName = dt.Rows[0][0].ToString();
             view.CustomerPhone = dt.Rows[0][1].ToString();
             view.CustomerEmail = dt.Rows[0][2].ToString();

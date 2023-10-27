@@ -18,7 +18,14 @@ namespace inventory_management.Logic.Services
         public void AddDataParameters(object[] Params, SqlCommand command)
         {
             command.Parameters.Add("@inventoryName", SqlDbType.VarChar).Value = (string)Params[0];
-            command.Parameters.Add("@categoriesId", SqlDbType.Int).Value = (int)Params[1];
+            if (Params[1] == null)
+            {
+                command.Parameters.Add("@categoriesId", SqlDbType.Int).Value = DBNull.Value;
+            }
+            else
+            {
+                command.Parameters.Add("@categoriesId", SqlDbType.Int).Value = (int)Params[1];
+            }
             command.Parameters.Add("@inventoryLocation", SqlDbType.VarChar).Value = (string)Params[2];
             command.Parameters.Add("@inventoryCapacity", SqlDbType.BigInt).Value = (double)Params[3];
         }
@@ -40,7 +47,14 @@ namespace inventory_management.Logic.Services
         {
             command.Parameters.Add("@id", SqlDbType.Int).Value = (int)Params[0];
             command.Parameters.Add("@inventoryName", SqlDbType.VarChar).Value = (string)Params[1];
-            command.Parameters.Add("@categoriesId", SqlDbType.Int).Value = (int)Params[2];
+            if (Params[2] == null)
+            {
+                command.Parameters.Add("@categoriesId", SqlDbType.Int).Value = DBNull.Value;
+            }
+            else
+            {
+                command.Parameters.Add("@categoriesId", SqlDbType.Int).Value = (int)Params[2];
+            }
             command.Parameters.Add("@inventoryLocation", SqlDbType.VarChar).Value = (string)Params[3];
             command.Parameters.Add("@inventoryCapacity", SqlDbType.BigInt).Value = (double)Params[4];
         }
@@ -55,9 +69,9 @@ namespace inventory_management.Logic.Services
             return DataBase.Select("categoryComboBox", () => { });
         }
         //GetData By Value method
-        public DataTable GetDataByValue(int id)
+        public DataTable GetDataByValue(int id,string storedProcedure)
         {
-            return DataBase.GetDataByValue("selectInventoryById", () => GetDataByValueParameters(id, DataBase.command));
+            return DataBase.GetDataByValue(storedProcedure, () => GetDataByValueParameters(id, DataBase.command));
         }
         public void GetDataByValueParameters(int id, SqlCommand command)
         {
@@ -66,7 +80,14 @@ namespace inventory_management.Logic.Services
         //Get category id by category name
         public DataTable GetDataByValue(string name)
         {
-            return DataBase.GetDataByValue("selectCategoryComboBoxId", () => GetDataByValueParameters(name, DataBase.command));
+            if(name == null)
+            {
+                return null; 
+            }
+            else
+            {
+                return DataBase.GetDataByValue("selectCategoryComboBoxId", () => GetDataByValueParameters(name, DataBase.command));
+            }
         }
         public void GetDataByValueParameters(string name, SqlCommand command)
         {

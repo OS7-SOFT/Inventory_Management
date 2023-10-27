@@ -82,7 +82,7 @@ namespace inventory_management.Logic.Presenters
             model.Id = view.Id;
 
             //Get current product by id 
-            DataTable dt = productServices.GetDataByValue(model.Id);
+            DataTable dt = productServices.GetDataByValue(model.Id, "selectProductsById");
             view.ProductName = dt.Rows[0][0].ToString();
             view.ProductQuantity = Convert.ToInt32(dt.Rows[0][1]);
             view.SellPrice = Convert.ToDecimal(dt.Rows[0][2]);

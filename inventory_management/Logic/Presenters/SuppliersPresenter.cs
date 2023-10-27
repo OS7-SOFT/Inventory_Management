@@ -58,7 +58,7 @@ namespace inventory_management.Logic.Presenters
             model.Id = view.Id;
 
             //Get current supplier by id 
-            DataTable dt = supplierServices.GetDataByValue(model.Id);
+            DataTable dt = supplierServices.GetDataByValue(model.Id, "selectSupplierById");
             view.SuppliersName = dt.Rows[0][0].ToString();
             view.SuppliersPhone = dt.Rows[0][1].ToString();
             view.SuppliersEmail = dt.Rows[0][2].ToString();

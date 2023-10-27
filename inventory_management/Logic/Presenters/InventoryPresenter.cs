@@ -17,6 +17,8 @@ namespace inventory_management.Logic.Presenters
         IInventoryView view;
         BindingSource inventoryList;
         BindingSource categoryList;
+        BindingSource productsList;
+
         private object[] Params;
 
         InventoryModel model = new InventoryModel();
@@ -26,6 +28,7 @@ namespace inventory_management.Logic.Presenters
         {
             inventoryList = new BindingSource();
             categoryList = new BindingSource();
+            productsList = new BindingSource();
             this.view = view;
             this.view.AddEvent += AddMethod;
             this.view.EditEvent += LoadDataToEdit;
@@ -62,8 +65,10 @@ namespace inventory_management.Logic.Presenters
             model.Id = view.Id;
             //Set All products in current inventory 
             //...view.GetProducts
-
+            productsList.DataSource = inventoryServices.GetDataByValue(model.Id, "selectInventoryProducts");
+            view.GetProducts = productsList;
             //Set current inventory information
+
         }
 
         private void AddMethod(object sender, EventArgs e)
@@ -77,7 +82,7 @@ namespace inventory_management.Logic.Presenters
             model.Id = view.Id;
 
             //Get current inventory by id 
-            DataTable dt = inventoryServices.GetDataByValue(model.Id);
+            DataTable dt = inventoryServices.GetDataByValue(model.Id, "selectInventoryById");
             view.InventoryName = dt.Rows[0][0].ToString();
             view.InventoryLocation = dt.Rows[0][1].ToString();
             view.CategoryName = dt.Rows[0][2].ToString();
@@ -111,7 +116,14 @@ namespace inventory_management.Logic.Presenters
                         Params = new object[5];
                         Params[0] = model.Id;
                         Params[1] = model.Name;
-                        Params[2] = inventoryServices.GetDataByValue(model.CategoryName).Rows[0][0]; ;
+                        if (inventoryServices.GetDataByValue(model.CategoryName) == null)
+                        {
+                            Params[2] = null;
+                        }
+                        else
+                        {
+                            Params[2] = inventoryServices.GetDataByValue(model.CategoryName).Rows[0][0]; ;
+                        }
                         Params[3] = model.Location;
                         Params[4] = model.Capacity;
                         inventoryServices.EditData(Params);
@@ -120,9 +132,17 @@ namespace inventory_management.Logic.Presenters
                     else
                     {
                         //Add inventory name Method 
+                        
                         Params = new object[4];
                         Params[0] = model.Name;
-                        Params[1] = inventoryServices.GetDataByValue(model.CategoryName).Rows[0][0];
+                        if(inventoryServices.GetDataByValue(model.CategoryName) == null)
+                        {
+                            Params[1] =null;
+                        }
+                        else
+                        {
+                            Params[1] = inventoryServices.GetDataByValue(model.CategoryName).Rows[0][0]; ;
+                        }
                         Params[2] = model.Location;
                         Params[3] = model.Capacity;
                         inventoryServices.AddData(Params);

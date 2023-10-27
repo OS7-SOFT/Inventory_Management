@@ -58,9 +58,9 @@ namespace inventory_management.Logic.Services
             return DataBase.Select("OrdersCount", () => { });
         }
         //GetData By Value method
-        public DataTable GetDataByValue(int id)
+        public DataTable GetDataByValue(int id, string storedProcedure)
         {
-            return DataBase.GetDataByValue("selectOrdersById", () => GetDataByValueParameters(id, DataBase.command));
+            return DataBase.GetDataByValue(storedProcedure, () => GetDataByValueParameters(id, DataBase.command));
         }
         public void GetDataByValueParameters(int id, SqlCommand command)
         {

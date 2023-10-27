@@ -22,7 +22,7 @@ namespace inventory_management.Logic.Services
         //GetData method
         DataTable GetData();
         //GetData By Value method
-        DataTable GetDataByValue(int id);
+        DataTable GetDataByValue(int id, string storedProcedure);
         void GetDataByValueParameters(int id, SqlCommand command);
     }
 }

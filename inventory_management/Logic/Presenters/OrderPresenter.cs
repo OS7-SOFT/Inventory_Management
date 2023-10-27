@@ -78,7 +78,7 @@ namespace inventory_management.Logic.Presenters
             model.Id = view.Id;
 
             //Get current order by id 
-            DataTable dt = orderServices.GetDataByValue(model.Id);
+            DataTable dt = orderServices.GetDataByValue(model.Id, "selectOrdersById");
             view.ProductName =dt.Rows[0][0].ToString();
             view.OrderedQuantity = Convert.ToInt32(dt.Rows[0][1]);
             view.CustomerName = dt.Rows[0][2].ToString();
