@@ -29,19 +29,64 @@ namespace inventory_management.Views.Forms
 
             okBtn.Click += delegate
             {
-                supplier.Name = txtName.Text;
-                supplier.Phone = txtPhone.Text;
-                supplier.Email = txtEmail.Text;
-                supplier.Save();
+                if (!supplier.isEdit)
+                {
+                    if (CheckName())
+                        SaveChange();
+                    else
+                        XtraMessageBox.Show("this supplier name is already exist\nchange name to another name", "Name Already exist", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                if (supplier.isEdit)
+                {
+                    if (CheckValueChanged())
+                        SaveChange();
+                    else
+                        this.Close();
+                }
             };
 
             cancelBtn.Click += delegate
             {
                 this.Close();
-                if (this.IsDisposed)
-                    supplier.Cancel();
-
             };
+            this.FormClosing += delegate
+            {
+                supplier.Cancel();
+            };
+        }
+
+
+        //Save Change
+        private void SaveChange()
+        {
+            supplier.Name = txtName.Text;
+            supplier.Phone = txtPhone.Text;
+            supplier.Email = txtEmail.Text;
+            supplier.Save();
+        }
+
+        //Check Name is exsiste
+        private bool CheckName()
+        {
+
+            List<string> supplierNames = supplier.SuppliersList
+               .OfType<DataRowView>()
+               .Select(x => x[1].ToString())
+               .ToList();
+            if (supplierNames.Contains(txtName.Text))
+                return false;
+            return true;
+        }
+
+        //check if user is change value
+        private bool CheckValueChanged()
+        {
+            if (txtName.Text.Trim() == supplier.Name && txtEmail.Text.Trim() == supplier.Email && txtPhone.Text.Trim() == supplier.Phone)
+            {
+                return false;
+            }
+            else
+                return true;
         }
     }
 }

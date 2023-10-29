@@ -20,7 +20,8 @@ namespace inventory_management.Views.Forms
             InitializeComponent();
 
             performedMethod();
-
+            if (this.IsDisposed)
+                inventory.Cancel();
         }
 
         private void performedMethod()
@@ -31,9 +32,6 @@ namespace inventory_management.Views.Forms
             capacityInvent.Value = (decimal)inventory.Capacity;
             if (inventory.Categories.Count > 0)
                 categoryCbx.Properties.Items.AddRange(inventory.Categories);
-
-
-
             //Get Current Category in edit
             if (inventory.Category_name != "" || inventory.Category_name != null)
                 categoryCbx.EditValue = inventory.Category_name;
@@ -42,19 +40,69 @@ namespace inventory_management.Views.Forms
 
             okBtn.Click += delegate
             {
+                //Add inventory
+                if (!inventory.isEdit)
+                {
+                    if (CheckName())
+                        SaveChange();
+                    else
+                        XtraMessageBox.Show("this inventory name is already exist\nchange name to another name", "Name Already exist", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                //Edit inventory
+                if (inventory.isEdit)
+                {
+                    if(CheckValueChanged())
+                        SaveChange();
+                    else
+                        this.Close();
+                      
+                }
                 
-                inventory.Name = txtNameInvent.Text;
-                inventory.Location = txtLocation.Text;
-                inventory.Capacity = (double)capacityInvent.Value;
-                inventory.Category_name = categoryCbx.EditValue !=null ? categoryCbx.EditValue.ToString() : null;
-                inventory.Save();
             };
+
+            //Close form 
             cancelBtn.Click += delegate
             {
                 this.Close();
-                if(this.IsDisposed)
-                    inventory.Cancel();
             };
+            this.FormClosing += delegate
+            {
+                inventory.Cancel();
+            };
+        }
+
+        //save change
+        private void SaveChange()
+        {
+            inventory.Name = txtNameInvent.Text;
+            inventory.Location = txtLocation.Text;
+            inventory.Capacity = (double)capacityInvent.Value;
+            inventory.Category_name = categoryCbx.EditValue != null ? categoryCbx.EditValue.ToString() : null;
+            inventory.Save();
+        }
+
+        //Check Name is exsiste
+        private bool CheckName()
+        {
+            
+            List<string> inventoryNames = inventory.InventoryList
+               .OfType<DataRowView>()
+               .Select(x => x[1].ToString())
+               .ToList();
+            if (inventoryNames.Contains(txtNameInvent.Text))
+                return false;
+            return true;
+        }
+
+        //check if user is change value
+        private bool CheckValueChanged()
+        {
+            if (txtNameInvent.Text.Trim() == inventory.Name && txtNameInvent.Text.Trim() == inventory.Name && txtLocation.Text.Trim() == inventory.Location && capacityInvent.Value == (decimal)inventory.Capacity && categoryCbx.EditValue.ToString().Trim() == inventory.Category_name)
+            {
+                return false;
+            }
+            else 
+                return true;
         }
     }
 }

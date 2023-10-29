@@ -20,7 +20,6 @@ namespace inventory_management.Views.Forms.Orders
         int id;
         string message;
         bool isSuccessed;
-        bool isEdit;
 
         //fildes 
         public BindingSource OrderList;
@@ -36,6 +35,7 @@ namespace inventory_management.Views.Forms.Orders
         public string Canceled;
         public string Product_name;
         public string Customer_name;
+        public bool isEdit;
 
         //Constructor
         public Order()

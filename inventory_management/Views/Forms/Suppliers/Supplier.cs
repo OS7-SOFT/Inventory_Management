@@ -22,14 +22,14 @@ namespace inventory_management.Views.Forms.Suppliers
         int id;
         string message;
         bool isSuccessed;
-        bool isEdit;
+       
 
         //fildes 
         public BindingSource SuppliersList;
         public string Name;
         public string Phone;
         public string Email;
-    
+        public bool isEdit;
         //Constructor
         public Supplier()
         {

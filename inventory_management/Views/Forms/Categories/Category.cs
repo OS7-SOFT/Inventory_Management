@@ -22,11 +22,11 @@ namespace inventory_management.Views.Forms.Categories
         int id;
         string message;
         bool isSuccessed;
-        bool isEdit;
 
         //fildes 
         public BindingSource CategoryList;
         public string Name;
+        public bool isEdit;
 
         //Constructor
         public Category()

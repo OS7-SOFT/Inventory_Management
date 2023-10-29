@@ -27,7 +27,6 @@ namespace inventory_management.Views.Forms.Inventories
         int to;
         string message;
         bool isSuccessed;
-        bool isEdit;
 
         //fildes 
         public BindingSource InventoryList;
@@ -37,6 +36,7 @@ namespace inventory_management.Views.Forms.Inventories
         public string Location;
         public double Capacity;
         public string Category_name;
+        public bool isEdit;
 
 
         //Constructor

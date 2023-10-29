@@ -31,20 +31,64 @@ namespace inventory_management.Views.Forms
 
             okBtn.Click += delegate
             {
-                customer.Name = txtName.Text;
-                customer.Phone = txtPhone.Text;
-                customer.Email = txtEmail.Text;
-                customer.Location = txtLocation.Text;
-                customer.Save();
+                if (!customer.isEdit)
+                {
+                    if (CheckName())
+                        SaveChange();
+                    else
+                        XtraMessageBox.Show("this customer name is already exist\nchange name to another name", "Name Already exist", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                if (customer.isEdit)
+                {
+                    if (CheckValueChanged())
+                        SaveChange();
+                    else
+                        this.Close();
+                }
             };
 
             cancelBtn.Click += delegate
             {
                 this.Close();
-                if (this.IsDisposed)
-                    customer.Cancel();
-                
             };
+            this.FormClosing += delegate
+            {
+                customer.Cancel();
+            };
+        }
+
+        //Save Change
+        private void SaveChange()
+        {
+            customer.Name = txtName.Text;
+            customer.Phone = txtPhone.Text;
+            customer.Email = txtEmail.Text;
+            customer.Location = txtLocation.Text;
+            customer.Save();
+        }
+
+        //Check Name is exsiste
+        private bool CheckName()
+        {
+
+            List<string> customerNames = customer.CustomersList
+               .OfType<DataRowView>()
+               .Select(x => x[1].ToString())
+               .ToList();
+            if (customerNames.Contains(txtName.Text))
+                return false;
+            return true;
+        }
+
+        //check if user is change value
+        private bool CheckValueChanged()
+        {
+            if (txtName.Text.Trim() == customer.Name && txtEmail.Text.Trim() == customer.Email && txtLocation.Text.Trim() == customer.Location)
+            {
+                return false;
+            }
+            else
+                return true;
         }
     }
 }

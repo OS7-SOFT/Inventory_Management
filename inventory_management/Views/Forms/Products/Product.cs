@@ -22,7 +22,7 @@ namespace inventory_management.Views.Forms.Products
         int id;
         string message;
         bool isSuccessed;
-        bool isEdit;
+       
 
         //fildes 
         public BindingSource ProductList;
@@ -40,7 +40,7 @@ namespace inventory_management.Views.Forms.Products
         public string Supplier_name;
         public string Sold;
         public string Defective;
-
+        public bool isEdit;
         //Constructor
         public Product()
         {

@@ -31,17 +31,50 @@ namespace inventory_management.Views.Forms.Categories
 
             okBtn.Click += delegate
             {
-                category.Name = txtCategoryName.Text.Trim();
-                category.Save();
+                if (!category.isEdit)
+                {
+                    if (CheckName())
+                    {
+                        category.Name = txtCategoryName.Text.Trim();
+                        category.Save();
+                    }
+                     else
+                       XtraMessageBox.Show("this category name is already exist\nchange name to another name", "Name Already exist", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+                if (category.isEdit)
+                {
+                    if (txtCategoryName.Text.Trim() != category.Name)
+                    {
+                        category.Name = txtCategoryName.Text.Trim();
+                        category.Save();
+                    }
+                    else
+                        this.Close();
+                }
+                
             };
 
             cancelBtn.Click += delegate
             {
-                
                 this.Close();
-                if (this.IsDisposed)
-                    category.Cancel();
             };
+            this.FormClosing += delegate
+            {
+                category.Cancel();
+            };
+        }
+
+        //Check Name is exsiste
+        private bool CheckName()
+        {
+
+            List<string> categoryNames = category.CategoryList
+               .OfType<DataRowView>()
+               .Select(x => x[1].ToString())
+               .ToList();
+            if (categoryNames.Contains(txtCategoryName.Text))
+                return false;
+            return true;
         }
 
     }

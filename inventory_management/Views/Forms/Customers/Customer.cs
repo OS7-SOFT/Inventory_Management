@@ -21,7 +21,6 @@ namespace inventory_management.Views.Forms.Customers
         int id;
         string message;
         bool isSuccessed;
-        bool isEdit;
 
         //fildes 
         public BindingSource CustomersList;
@@ -30,6 +29,7 @@ namespace inventory_management.Views.Forms.Customers
         public string Email;
         public string Location;
         public string Best;
+        public bool isEdit;
 
         //Constructor
         public Customer()
