@@ -34,6 +34,8 @@ namespace inventory_management.Views.Forms
                 categoryCbx.Properties.Items.AddRange(product.Categories);
             if (product.Suppliers.Count > 0)
                 supplierCbx.Properties.Items.AddRange(product.Suppliers);
+             if (product.Inventories.Count > 0)
+                inventoryCbx.Properties.Items.AddRange(product.Inventories);
 
             //Get Current Category in edit
             if (product.Category_name != "" || product.Category_name != null)
@@ -41,6 +43,9 @@ namespace inventory_management.Views.Forms
             //Get Current Category in edit
             if (product.Category_name != "" || product.Category_name != null)
                 supplierCbx.EditValue = product.Supplier_name;
+             //Get Current Inventory in edit
+            if (product.Inventory_name != "" || product.Inventory_name != null)
+                supplierCbx.EditValue = product.Inventory_name;
 
             okBtn.Click += delegate
             {
@@ -52,6 +57,7 @@ namespace inventory_management.Views.Forms
                 product.ExpirationDate = txtExDate.DateTime;
                 product.Category_name = categoryCbx.EditValue != null ? categoryCbx.EditValue.ToString() : ""; 
                 product.Supplier_name = supplierCbx.EditValue != null ? supplierCbx.EditValue.ToString() : "";
+                product.Inventory_name = inventoryCbx.EditValue != null ? inventoryCbx.EditValue.ToString() : "";
                 product.Save();
 
             };

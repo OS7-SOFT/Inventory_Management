@@ -26,6 +26,7 @@ namespace inventory_management.Views.Interfaces
         event EventHandler TransformEvent;
         event EventHandler GetInventoryInfoEvent;
 
+       
         BindingSource GetProducts { set; }
 
     }

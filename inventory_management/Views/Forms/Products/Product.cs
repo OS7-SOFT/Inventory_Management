@@ -28,6 +28,7 @@ namespace inventory_management.Views.Forms.Products
         public BindingSource ProductList;
         public List<string> Categories;
         public List<string> Suppliers;
+        public List<string> Inventories;
         public string Name;
         public int Quantity;
         public decimal Sell;
@@ -35,6 +36,7 @@ namespace inventory_management.Views.Forms.Products
         public DateTime Entry;
         public DateTime Expiration;
         public string Category_name;
+        public string Inventory_name;
         public string Supplier_name;
         public string Sold;
         public string Defective;
@@ -87,8 +89,14 @@ namespace inventory_management.Views.Forms.Products
             get { return Supplier_name; }
             set { Supplier_name = value; }
         }
+        public string InventroyName 
+        {
+            get { return Inventory_name; }
+            set { Inventory_name = value; }
+        }
         public List<string> SupplierList { set{ Suppliers = value; } }
         public List<string> CategoryList { set{ Categories = value; } }
+        public List<string> InventoryList { set { Inventories = value; } }
         public string ProductSold { set { Sold = value; } }
         public string ProductDefective { set { Defective = value; } }
         public string Message { set { message = value; } }
@@ -99,6 +107,7 @@ namespace inventory_management.Views.Forms.Products
             set { isEdit = value; }
         }
         public BindingSource GetDataList { set { ProductList = value; } }
+
 
         //events
         public event EventHandler SaveEvent;

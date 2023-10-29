@@ -17,6 +17,7 @@ namespace inventory_management.Logic.Presenters
         BindingSource productList;
         BindingSource categoryList;
         BindingSource suppliersList;
+        BindingSource inventoryList;
         private object[] Params;
 
         ProductModel model = new ProductModel();
@@ -68,6 +69,9 @@ namespace inventory_management.Logic.Presenters
                 .SelectMany(row => row.ItemArray
                 .Select(cell => cell.ToString()))
                 .ToList();
+
+            //Set Inventory combobox
+
         }
 
 

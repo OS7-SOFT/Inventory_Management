@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace inventory_management.Views.Interfaces
 {
@@ -16,9 +17,11 @@ namespace inventory_management.Views.Interfaces
         DateTime EntryDate { get; set; }
         DateTime ExpirationDate { get; set; }
         string CategoryName { get; set; }
+        string InventroyName { get; set; }
         List<string> CategoryList { set; }
         string SupplierName { get; set; }
         List<string> SupplierList { set; }
+        List<string> InventoryList { set; }
         string ProductSold {  set; }
         string ProductDefective {  set; }
 
