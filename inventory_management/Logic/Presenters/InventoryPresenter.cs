@@ -103,7 +103,13 @@ namespace inventory_management.Logic.Presenters
         {
             //set operation
             //--here--
+            Params = new object[4];
+            Params[0] = view.From;
+            Params[1] = view.To;
+            Params[2] = view.ProductId;
+            Params[3] = view.Quantity;
 
+            inventoryServices.TransferMethod(Params);
             view.Message = "Products Transferd Successfully";
         }
 

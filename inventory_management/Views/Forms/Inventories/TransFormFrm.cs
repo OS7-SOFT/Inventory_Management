@@ -40,12 +40,12 @@ namespace inventory_management.Views.Forms
                 //to fill tocombobox by inventory name 
                 List<DataRow> to = ((DataTable)inventory.InventoryList.DataSource)
                 .AsEnumerable()
-                .Where(row => (row.Field<string>(d.Count - 1) == d[d.Count - 1].ToString() || row.Field<string>(d.Count - 1) == "") && row.Field<string>(1) != fromInventCbx.EditValue.ToString())
+                .Where(row => (row.Field<string>(d.Count - 1) == d[d.Count - 1].ToString() || row.Field<string>(d.Count - 1) == null) && row.Field<string>(1) != fromInventCbx.EditValue.ToString())
                 .ToList();
                 toInventCbx.Properties.Items.Clear();
                 toInventCbx.Properties.Items.AddRange(to.Select(x => x[1]).ToList());
 
-                //set ptoducts 
+                //set products 
                 inventory.GetInfoInventory(GetId(fromInventCbx.EditValue.ToString()));
                 SetProducts();
 

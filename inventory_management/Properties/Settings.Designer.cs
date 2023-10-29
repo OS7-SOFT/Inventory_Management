@@ -25,7 +25,7 @@ namespace inventory_management.Properties {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("OS7_SOFT\\OS7DATABASE")]
+        [global::System.Configuration.DefaultSettingValueAttribute("ALI_OWN_PC")]
         public string DbServer {
             get {
                 return ((string)(this["DbServer"]));

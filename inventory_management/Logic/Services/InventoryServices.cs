@@ -69,7 +69,7 @@ namespace inventory_management.Logic.Services
             return DataBase.Select("categoryComboBox", () => { });
         }
         //GetData By Value method
-        public DataTable GetDataByValue(int id,string storedProcedure)
+        public DataTable GetDataByValue(int id, string storedProcedure)
         {
             return DataBase.GetDataByValue(storedProcedure, () => GetDataByValueParameters(id, DataBase.command));
         }
@@ -80,9 +80,9 @@ namespace inventory_management.Logic.Services
         //Get category id by category name
         public DataTable GetDataByValue(string name)
         {
-            if(name == null)
+            if (name == null || name == "")
             {
-                return null; 
+                return null;
             }
             else
             {
@@ -92,6 +92,19 @@ namespace inventory_management.Logic.Services
         public void GetDataByValueParameters(string name, SqlCommand command)
         {
             command.Parameters.Add("@name", SqlDbType.VarChar).Value = name;
+        }
+
+        //Method to tranfer Product from one inventory to another
+        public void TransferMethod(object[] Params)
+        {
+            DataBase.Excute("TransferProducts", () => TransferMethodParameters(Params, DataBase.command));
+        }
+        public void TransferMethodParameters(object[] Params, SqlCommand command)
+        {
+            command.Parameters.Add("@InventoryFromId", SqlDbType.Int).Value = (int)Params[0];
+            command.Parameters.Add("@InventoryToId", SqlDbType.Int).Value = (int)Params[1];
+            command.Parameters.Add("@ProductId", SqlDbType.Int).Value = (int)Params[3];
+            command.Parameters.Add("@Quantity", SqlDbType.Int).Value = (int)Params[4];
         }
     }
 }

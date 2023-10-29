@@ -16,6 +16,7 @@ namespace inventory_management.Models
         public DateTime EntryDate { get; set; }
         public DateTime ExpirationDate { get; set; }
         public string CategoryName { get; set; }
+        public string InventroyName { get; set; }
         public string SupplierName { get; set; }
 
     }

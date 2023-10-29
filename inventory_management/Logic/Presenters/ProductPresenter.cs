@@ -28,6 +28,7 @@ namespace inventory_management.Logic.Presenters
             productList = new BindingSource();
             categoryList = new BindingSource();
             suppliersList = new BindingSource();
+            inventoryList = new BindingSource();
             this.view = view;
             this.view.AddEvent += AddMethod;
             this.view.EditEvent += LoadDataToEdit;
@@ -48,6 +49,7 @@ namespace inventory_management.Logic.Presenters
             model.ExpirationDate = view.ExpirationDate;
             model.CategoryName = view.CategoryName;
             model.SupplierName = view.SupplierName;
+            model.InventroyName = view.InventroyName;
         }
 
         private void LoadData(object sender, EventArgs e)
@@ -71,6 +73,11 @@ namespace inventory_management.Logic.Presenters
                 .ToList();
 
             //Set Inventory combobox
+            inventoryList.DataSource = productServices.GetComboBoxData("inventoryComboBox");
+            view.InventoryList = ((DataTable)inventoryList.DataSource).AsEnumerable()
+                .SelectMany(row => row.ItemArray
+                .Select(cell => cell.ToString()))
+                .ToList();
 
         }
 
@@ -94,8 +101,8 @@ namespace inventory_management.Logic.Presenters
             view.EntryDate = Convert.ToDateTime(dt.Rows[0][4]);
             view.ExpirationDate = Convert.ToDateTime(dt.Rows[0][5]);
             view.CategoryName = dt.Rows[0][6].ToString();
-            view.SupplierName = dt.Rows[0][7].ToString();
-
+            view.InventroyName = dt.Rows[0][7].ToString();
+            view.SupplierName = dt.Rows[0][8].ToString();
         }
 
         private void DeleteProduct(object sender, EventArgs e)
@@ -121,7 +128,7 @@ namespace inventory_management.Logic.Presenters
                     {
                         model.Id = view.Id;
                         //Edit productMethod 
-                        Params = new object[9];
+                        Params = new object[10];
                         Params[0] = model.Id;
                         Params[1] = model.Name;
                         Params[2] = model.Quantity;
@@ -130,14 +137,15 @@ namespace inventory_management.Logic.Presenters
                         Params[5] = model.EntryDate;
                         Params[6] = model.ExpirationDate;
                         Params[7] = productServices.GetDataByValue(model.CategoryName, "selectCategoryComboBoxId").Rows[0][0];
-                        Params[8] = productServices.GetDataByValue(model.SupplierName, "supplierComboBoxId").Rows[0][0];
+                        Params[8] = productServices.GetDataByValue(model.InventroyName, "selectInventoryComboBoxId").Rows[0][0];
+                        Params[9] = productServices.GetDataByValue(model.SupplierName, "supplierComboBoxId").Rows[0][0];
                         productServices.EditData(Params);
                         view.Message = $"{view.ProductName} product Edited Successfully";
                     }
                     else
                     {
                         //Add product name Method 
-                        Params = new object[8];
+                        Params = new object[9];
                         Params[0] = model.Name;
                         Params[1] = model.Quantity;
                         Params[2] = model.SellPrice;
@@ -145,7 +153,8 @@ namespace inventory_management.Logic.Presenters
                         Params[4] = model.EntryDate;
                         Params[5] = model.ExpirationDate;
                         Params[6] = productServices.GetDataByValue(model.CategoryName, "selectCategoryComboBoxId").Rows[0][0];
-                        Params[7] = productServices.GetDataByValue(model.SupplierName, "supplierComboBoxId").Rows[0][0];
+                        Params[7] = productServices.GetDataByValue(model.InventroyName, "selectInventoryComboBoxId").Rows[0][0];
+                        Params[8] = productServices.GetDataByValue(model.SupplierName, "supplierComboBoxId").Rows[0][0];
                         productServices.AddData(Params);
                         view.Message = $"{view.ProductName} product Added Successfully";
                     }

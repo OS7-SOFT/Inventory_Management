@@ -24,7 +24,8 @@ namespace inventory_management.Logic.Services
             command.Parameters.Add("@entryDate", SqlDbType.Date).Value = (DateTime)Params[4];
             command.Parameters.Add("@expirationDate", SqlDbType.Date).Value = (DateTime)Params[5];
             command.Parameters.Add("@categoryId", SqlDbType.Int).Value = (int)Params[6];
-            command.Parameters.Add("@supplierId", SqlDbType.Int).Value = (int)Params[7];
+            command.Parameters.Add("@inventorId", SqlDbType.Int).Value = (int)Params[7];
+            command.Parameters.Add("@supplierId", SqlDbType.Int).Value = (int)Params[8];
         }
         // Delete method
         public void DeleteData(int id)
@@ -50,7 +51,8 @@ namespace inventory_management.Logic.Services
             command.Parameters.Add("@entryDate", SqlDbType.Date).Value = (DateTime)Params[5];
             command.Parameters.Add("@expirationDate", SqlDbType.Date).Value = (DateTime)Params[6];
             command.Parameters.Add("@categoryId", SqlDbType.Int).Value = (int)Params[7];
-            command.Parameters.Add("@supplierId", SqlDbType.Int).Value = (int)Params[8];
+            command.Parameters.Add("@inventorId", SqlDbType.Int).Value = (int)Params[8];
+            command.Parameters.Add("@supplierId", SqlDbType.Int).Value = (int)Params[9];
         }
 
         //GetData method
