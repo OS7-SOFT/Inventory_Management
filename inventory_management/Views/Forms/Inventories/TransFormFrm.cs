@@ -46,7 +46,7 @@ namespace inventory_management.Views.Forms
                 toInventCbx.Properties.Items.AddRange(to.Select(x => x[1]).ToList());
 
                 //set products 
-                inventory.GetInfoInventory(GetId(fromInventCbx.EditValue.ToString()));
+                inventory.GetInfoInventory(GetId(fromInventCbx.EditValue.ToString(),inventory.InventoryList));
                 SetProducts();
 
 
@@ -81,7 +81,7 @@ namespace inventory_management.Views.Forms
                     {
                         var result = MessageWarring();
                         if (result == DialogResult.Yes )
-                            inventory.Transform(GetId(fromInventCbx.EditValue.ToString()), GetId(toInventCbx.EditValue.ToString()), GetId(productCbx.EditValue.ToString()),(int)prodCount.EditValue);
+                            inventory.Transform(GetId(fromInventCbx.EditValue.ToString(),inventory.InventoryList), GetId(toInventCbx.EditValue.ToString(),inventory.InventoryList), GetId(productCbx.EditValue.ToString(),inventory.Products),Convert.ToInt32(prodCount.EditValue));
                     }
                 }
             };
@@ -117,9 +117,9 @@ namespace inventory_management.Views.Forms
         }
 
         //Get inventory id
-        private int GetId(string val)
+        private int GetId(string val,BindingSource bindingSource)
         {
-            int id = inventory.InventoryList.OfType<DataRowView>()
+            int id = bindingSource.OfType<DataRowView>()
                         .Where(x => x[1].ToString() == val)
                         .Select(x => Convert.ToInt32(x[0]))
                         .FirstOrDefault();
