@@ -74,11 +74,7 @@ namespace inventory_management.Logic.Presenters
 
             //Set Inventory combobox
             inventoryList.DataSource = productServices.GetComboBoxData("inventoryComboBox");
-            view.InventoryList = ((DataTable)inventoryList.DataSource).AsEnumerable()
-                .SelectMany(row => row.ItemArray
-                .Select(cell => cell.ToString()))
-                .ToList();
-
+            view.InventoryList = inventoryList;
         }
 
 

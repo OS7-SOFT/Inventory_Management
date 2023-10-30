@@ -28,7 +28,7 @@ namespace inventory_management.Views.Forms.Products
         public BindingSource ProductList;
         public List<string> Categories;
         public List<string> Suppliers;
-        public List<string> Inventories;
+        public BindingSource Inventories;
         public string Name;
         public int Quantity;
         public decimal Sell;
@@ -96,7 +96,7 @@ namespace inventory_management.Views.Forms.Products
         }
         public List<string> SupplierList { set{ Suppliers = value; } }
         public List<string> CategoryList { set{ Categories = value; } }
-        public List<string> InventoryList { set { Inventories = value; } }
+        public BindingSource InventoryList { set { Inventories = value; } }
         public string ProductSold { set { Sold = value; } }
         public string ProductDefective { set { Defective = value; } }
         public string Message { set { message = value; } }

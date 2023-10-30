@@ -61,10 +61,7 @@ namespace inventory_management.Logic.Presenters
 
             //Set Product comboBox
             productList.DataSource = orderServices.GetComboBoxData("productComboBox");
-            view.ProductsList = ((DataTable)productList.DataSource).AsEnumerable()
-                .SelectMany(row => row.ItemArray
-                .Select(cell => cell.ToString()))
-                .ToList();
+            view.ProductsList = productList;
         }
 
         private void AddMethod(object sender, EventArgs e)
@@ -147,7 +144,6 @@ namespace inventory_management.Logic.Presenters
         {
             view.OrderedQuantity = 0;
             view.CustomerName = "";
-            view.ProductName = "";
 
         }
 

@@ -21,9 +21,9 @@ namespace inventory_management.Views.Interfaces
         List<string> CategoryList { set; }
         string SupplierName { get; set; }
         List<string> SupplierList { set; }
-        List<string> InventoryList { set; }
         string ProductSold {  set; }
         string ProductDefective {  set; }
+        BindingSource InventoryList { set; }
 
     }
 }

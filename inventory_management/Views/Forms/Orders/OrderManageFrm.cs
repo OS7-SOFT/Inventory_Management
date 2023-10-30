@@ -23,11 +23,18 @@ namespace inventory_management.Views.Forms
 
         private void PerformedMethod()
         {
+            //select product
+            ProductCbx.EditValueChanged += delegate
+            {
+                txtQuantity.Properties.MaxValue = GetProductCount();
+                txtQuantity.Properties.MinValue = 0;
+            };
+
             txtQuantity.Value = order.Quantity;
             statusCbx.EditValue = order.Status;
             
             if (order.Products.Count > 0)
-                ProductCbx.Properties.Items.AddRange(order.Products);
+                ProductCbx.Properties.Items.AddRange(GetNameProducts());
             if (order.Customers.Count > 0)
                 customerCbx.Properties.Items.AddRange(order.Customers);
           
@@ -84,6 +91,24 @@ namespace inventory_management.Views.Forms
             }
             else
                 return true;
+        }
+
+        //GetProductCount
+        private decimal GetProductCount()
+        {
+            List<object> current = ((DataTable)order.Products.DataSource)
+              .AsEnumerable()
+              .Where(row => row.Field<string>(0) == ProductCbx.EditValue.ToString())
+              .FirstOrDefault().ItemArray.ToList();
+
+            return Convert.ToDecimal(current[1]);
+        }
+        // Get products name
+        private List<string> GetNameProducts()
+        {
+            return order.Products.OfType<DataRowView>()
+                .Select(x => x[0].ToString())
+                .ToList();
         }
     }
 }

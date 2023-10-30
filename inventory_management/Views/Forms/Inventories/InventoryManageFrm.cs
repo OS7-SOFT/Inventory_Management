@@ -20,12 +20,17 @@ namespace inventory_management.Views.Forms
             InitializeComponent();
 
             performedMethod();
-            if (this.IsDisposed)
-                inventory.Cancel();
+        
         }
 
         private void performedMethod()
         {
+
+            //select min value 
+            capacityInvent.Properties.MaxValue = 10000000000000000000  ;
+            capacityInvent.Properties.MinValue = 0  ;
+
+
             //Set Data 
             txtNameInvent.Text = inventory.Name;
             txtLocation.Text = inventory.Location;

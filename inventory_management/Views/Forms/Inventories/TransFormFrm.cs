@@ -86,6 +86,11 @@ namespace inventory_management.Views.Forms
                 }
             };
 
+            cancelTransBtn.Click += delegate
+            {
+                this.Close();
+            };
+
         }
 
         //Get All product in current inventory

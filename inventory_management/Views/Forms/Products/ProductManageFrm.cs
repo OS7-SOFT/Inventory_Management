@@ -23,19 +23,28 @@ namespace inventory_management.Views.Forms
 
         private void PerformedMethod()
         {
+            //set min value 
+            txtSellPrice.Properties.MaxValue = 10000000000000000000;
+            txtSellPrice.Properties.MinValue = 0;
+            txtBuyPrice.Properties.MaxValue = 10000000000000000000;
+            txtBuyPrice.Properties.MinValue = 0;
+            quantityProduct.Properties.MaxValue = 10000000000000000000;
+            quantityProduct.Properties.MinValue = 0;
+
             txtProdName.Text = product.Name;
             quantityProduct.Value = product.Quantity;
             txtSellPrice.Value = product.Sell;
             txtBuyPrice.Value = product.Buy;
             txtExDate.DateTime = product.Expiration;
+            
             if (txtExDate.DateTime < DateTime.Now)
                 txtExDate.DateTime = DateTime.Now; 
             if (product.Categories.Count > 0)
                 categoryCbx.Properties.Items.AddRange(product.Categories);
             if (product.Suppliers.Count > 0)
                 supplierCbx.Properties.Items.AddRange(product.Suppliers);
-             if (product.Inventories.Count > 0)
-                inventoryCbx.Properties.Items.AddRange(product.Inventories);
+            if (product.Inventories.Count > 0)
+                inventoryCbx.Properties.Items.AddRange(GetInventoryName());
 
             //Get Current Category in edit
             if (product.Category_name != "" || product.Category_name != null)
@@ -45,25 +54,23 @@ namespace inventory_management.Views.Forms
                 supplierCbx.EditValue = product.Supplier_name;
              //Get Current Inventory in edit
             if (product.Inventory_name != "" || product.Inventory_name != null)
-                supplierCbx.EditValue = product.Inventory_name;
+                inventoryCbx.EditValue = product.Inventory_name;
 
             okBtn.Click += delegate
             {
                 //Add inventory
                 if (!product.isEdit)
                 {
-                    if (CheckName())
+                    if (CheckName() && CheckQuantity())
                     {
                         product.Entry = DateTime.Now;
                         SaveChange();
                     }  
-                    else
-                        XtraMessageBox.Show("this product name is already exist\nchange name to another name", "Name Already exist", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
                 //Edit inventory
                 if (product.isEdit)
                 {
-                    if (CheckValueChanged())
+                    if (CheckValueChanged() && CheckQuantity())
                         SaveChange();
                     else
                         this.Close();
@@ -106,7 +113,11 @@ namespace inventory_management.Views.Forms
                .Select(x => x[1].ToString())
                .ToList();
             if (productsName.Contains(txtProdName.Text))
+            {
+                XtraMessageBox.Show("this product name is already exist\nchange name to another name", "Name Already exist", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
                 return false;
+            }
             return true;
         }
 
@@ -116,6 +127,38 @@ namespace inventory_management.Views.Forms
             if (txtProdName.Text.Trim() == product.Name && quantityProduct.Value == product.Quantity && txtSellPrice.Value == product.Sell && txtBuyPrice.Value == product.Buy && txtExDate.DateTime == product.Expiration && categoryCbx.EditValue.ToString().Trim() == product.Category_name && supplierCbx.EditValue.ToString().Trim() == product.Supplier_name && inventoryCbx.EditValue.ToString().Trim() == product.Inventory_name )
             {
                 return false;
+            }
+            else
+                return true;
+        }
+
+        //get inventory name
+        private List<string> GetInventoryName()
+        {
+            return product.Inventories.OfType<DataRowView>()
+               .Select(x => x[0].ToString())
+               .ToList();
+        }
+
+        //check quantity
+        private bool CheckQuantity()
+        {
+            List<object> current = ((DataTable)product.Inventories.DataSource)
+              .AsEnumerable()
+              .Where(row => row.Field<string>(0) == inventoryCbx.EditValue.ToString())
+              .FirstOrDefault().ItemArray.ToList();
+
+            if (Convert.ToInt32(current[1]) < quantityProduct.Value)
+            {
+                XtraMessageBox.Show("Product account larg than inventory capacity available", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else if (Convert.ToInt32(current[1]) >= quantityProduct.Value && Convert.ToInt32(current[1]) - quantityProduct.Value <= 100)
+            {
+                var result = XtraMessageBox.Show($"iWhen Adding this number of products to the '{inventoryCbx.EditValue.ToString()}' inventory\n" +
+                                    $"the available storage capacity after adding will be less than 100\n" +
+                                    $"Do you want to continue adding the product to this inventory ?", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                return result == DialogResult.Yes ? true : false;
             }
             else
                 return true;

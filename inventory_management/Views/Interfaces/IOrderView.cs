@@ -18,7 +18,7 @@ namespace inventory_management.Views.Interfaces
         string CanceledOrderCount {  set; }
         List<string> CustomersList {  set; }
         string CustomerName { get; set; }
-        List<string> ProductsList {  set; }
+        BindingSource ProductsList {  set; }
         string ProductName { get; set; }
 
 }

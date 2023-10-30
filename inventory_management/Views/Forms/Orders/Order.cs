@@ -23,7 +23,7 @@ namespace inventory_management.Views.Forms.Orders
 
         //fildes 
         public BindingSource OrderList;
-        public List<string> Products;
+        public BindingSource Products;
         public List<string> Customers;
         public string Name;
         public int Quantity;
@@ -81,7 +81,7 @@ namespace inventory_management.Views.Forms.Orders
             get { return Customer_name;}
             set { Customer_name = value; }
         }
-        public List<string> ProductsList { set { Products = value; } }
+        public BindingSource ProductsList { set { Products = value; } }
         public string ProductName
         {
             get { return Product_name;}
