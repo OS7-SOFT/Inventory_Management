@@ -143,25 +143,30 @@ namespace inventory_management.Views.Forms
         //check quantity
         private bool CheckQuantity()
         {
-            List<object> current = ((DataTable)product.Inventories.DataSource)
-              .AsEnumerable()
-              .Where(row => row.Field<string>(0) == inventoryCbx.EditValue.ToString())
-              .FirstOrDefault().ItemArray.ToList();
+           if(inventoryCbx.SelectedItem != null)
+            {
+                List<object> current = ((DataTable)product.Inventories.DataSource)
+             .AsEnumerable()
+             .Where(row => row.Field<string>(0) == inventoryCbx.EditValue.ToString())
+             .FirstOrDefault().ItemArray.ToList();
 
-            if (Convert.ToInt32(current[1]) < quantityProduct.Value)
-            {
-                XtraMessageBox.Show("Product account larg than inventory capacity available", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
+                if (Convert.ToInt32(current[1]) < quantityProduct.Value)
+                {
+                    XtraMessageBox.Show("Product account larg than inventory capacity available", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
+                else if (Convert.ToInt32(current[1]) >= quantityProduct.Value && Convert.ToInt32(current[1]) - quantityProduct.Value <= 100)
+                {
+                    var result = XtraMessageBox.Show($"iWhen Adding this number of products to the '{inventoryCbx.EditValue.ToString()}' inventory\n" +
+                                        $"the available storage capacity after adding will be less than 100\n" +
+                                        $"Do you want to continue adding the product to this inventory ?", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                    return result == DialogResult.Yes ? true : false;
+                }
+                else
+                    return true;
             }
-            else if (Convert.ToInt32(current[1]) >= quantityProduct.Value && Convert.ToInt32(current[1]) - quantityProduct.Value <= 100)
-            {
-                var result = XtraMessageBox.Show($"iWhen Adding this number of products to the '{inventoryCbx.EditValue.ToString()}' inventory\n" +
-                                    $"the available storage capacity after adding will be less than 100\n" +
-                                    $"Do you want to continue adding the product to this inventory ?", "Error", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                return result == DialogResult.Yes ? true : false;
-            }
-            else
-                return true;
+            XtraMessageBox.Show("All fields is requird", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            return false;
         }
     }
 }
