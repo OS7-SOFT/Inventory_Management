@@ -17,6 +17,7 @@ using inventory_management.Views.Forms.Products;
 using inventory_management.Views.Forms.Orders;
 using DevExpress.XtraTab;
 using inventory_management.Views.Forms;
+using DevExpress.XtraEditors.Repository;
 
 namespace inventory_management
 {
@@ -99,6 +100,12 @@ namespace inventory_management
                 dgvCategory.DataSource = category.CategoryList.DataSource;
                 //Set category Count in label
                 lblCategoriesCount.Text = category.CategoryList.Count.ToString();
+                RepositoryItemComboBox res = new RepositoryItemComboBox();
+                gridViewCategory.Columns[2].ColumnEdit = res;
+                foreach (string inven in category.InventoryNamesList)
+                {
+                    res.Items.Add(inven);
+                }
             };
             //to update data
             UpdateData(categoryTab , category.LoadData);

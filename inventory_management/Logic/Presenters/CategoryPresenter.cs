@@ -39,7 +39,9 @@ namespace inventory_management.Logic.Presenters
             //Set data in categoryList from database
             categoryList.DataSource = categoryServices.GetData();
             view.GetDataList = categoryList;
-           
+            view.InventoryNamesList = ((DataTable)categoryList.DataSource).AsEnumerable()
+                    .Select(row => row.Field<string>("InventoryName"))
+                    .ToList();
         }
         private void AddMethod(object sender, EventArgs e)
         {

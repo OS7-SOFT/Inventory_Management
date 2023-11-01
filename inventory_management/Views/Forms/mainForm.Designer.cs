@@ -205,6 +205,7 @@
             this.addInventoryBtn = new DevExpress.XtraBars.BarButtonItem();
             this.editInventoryBtn = new DevExpress.XtraBars.BarButtonItem();
             this.deleteInventoryBtn = new DevExpress.XtraBars.BarButtonItem();
+            this.transformBtn = new DevExpress.XtraBars.BarButtonItem();
             this.ribbonPage2 = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.categoryTab = new DevExpress.XtraTab.XtraTabPage();
@@ -313,7 +314,6 @@
             this.commandBarGalleryDropDown6 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
             this.commandBarGalleryDropDown7 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.transformBtn = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             this.directXFormContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabPage)).BeginInit();
@@ -790,6 +790,15 @@
             this.deleteInventoryBtn.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("deleteInventoryBtn.ImageOptions.LargeImage")));
             this.deleteInventoryBtn.Name = "deleteInventoryBtn";
             // 
+            // transformBtn
+            // 
+            this.transformBtn.Caption = "Transform";
+            this.transformBtn.Hint = "transform products from inventory to another";
+            this.transformBtn.Id = 4;
+            this.transformBtn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("transformBtn.ImageOptions.Image")));
+            this.transformBtn.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("transformBtn.ImageOptions.LargeImage")));
+            this.transformBtn.Name = "transformBtn";
+            // 
             // ribbonPage2
             // 
             this.ribbonPage2.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -887,7 +896,6 @@
             this.gridViewCategory.AppearancePrint.HeaderPanel.Options.UseFont = true;
             this.gridViewCategory.GridControl = this.dgvCategory;
             this.gridViewCategory.Name = "gridViewCategory";
-            this.gridViewCategory.OptionsBehavior.Editable = false;
             // 
             // ribbonControl4
             // 
@@ -2436,15 +2444,6 @@
             this.ribbonPageGroup8.ItemLinks.Add(this.barEditItem3);
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             this.ribbonPageGroup8.Text = "Filter products by category";
-            // 
-            // transformBtn
-            // 
-            this.transformBtn.Caption = "Transform";
-            this.transformBtn.Hint = "transform products from inventory to another";
-            this.transformBtn.Id = 4;
-            this.transformBtn.ImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.Image")));
-            this.transformBtn.ImageOptions.LargeImage = ((System.Drawing.Image)(resources.GetObject("barButtonItem1.ImageOptions.LargeImage")));
-            this.transformBtn.Name = "transformBtn";
             // 
             // mainForm
             // 
