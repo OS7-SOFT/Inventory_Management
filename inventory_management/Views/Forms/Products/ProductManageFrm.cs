@@ -124,7 +124,7 @@ namespace inventory_management.Views.Forms
         //check if user is change value
         private bool CheckValueChanged()
         {
-            if (txtProdName.Text.Trim() == product.Name && quantityProduct.Value == product.Quantity && txtSellPrice.Value == product.Sell && txtBuyPrice.Value == product.Buy && txtExDate.DateTime == product.Expiration && categoryCbx.EditValue.ToString().Trim() == product.Category_name && supplierCbx.EditValue.ToString().Trim() == product.Supplier_name && inventoryCbx.EditValue.ToString().Trim() == product.Inventory_name )
+            if (txtProdName.Text.Trim() == product.Name && quantityProduct.Value == product.Quantity && txtSellPrice.Value == product.Sell && txtBuyPrice.Value == product.Buy && txtExDate.DateTime.ToString("d") == product.Expiration.ToString("d") && categoryCbx.EditValue.ToString().Trim() == product.Category_name && supplierCbx.EditValue.ToString().Trim() == product.Supplier_name && inventoryCbx.EditValue.ToString().Trim() == product.Inventory_name )
             {
                 return false;
             }

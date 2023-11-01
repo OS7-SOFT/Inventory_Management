@@ -102,9 +102,13 @@ namespace inventory_management
                 lblCategoriesCount.Text = category.CategoryList.Count.ToString();
                 RepositoryItemComboBox res = new RepositoryItemComboBox();
                 gridViewCategory.Columns[2].ColumnEdit = res;
-                foreach (string inven in category.InventoryNamesList)
+                for (int i = 0; i <= gridViewCategory.RowCount; i++ )
                 {
-                    res.Items.Add(inven);
+
+                    var row = gridViewCategory.GetDataRow(i);
+
+                    
+
                 }
             };
             //to update data

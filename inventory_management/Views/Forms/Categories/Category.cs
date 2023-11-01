@@ -25,9 +25,9 @@ namespace inventory_management.Views.Forms.Categories
 
         //fildes 
         public BindingSource CategoryList;
+        public List<string> InventoryName;
         public string Name;
         public bool isEdit;
-        public List<string> InventoryName;
 
         //Constructor
         public Category()
@@ -46,7 +46,7 @@ namespace inventory_management.Views.Forms.Categories
         public bool IsSuccessed { set { isSuccessed = value; } }
         public bool IsEdit { get { return isEdit; } set { isEdit = value; } }
         public BindingSource GetDataList { set { CategoryList = value; } }
-        public List<string> InventoryNamesList { get => InventoryName.ToList(); set => InventoryName = value; }
+        public List<string> InventoryNamesList { get => InventoryName; set => InventoryName = value; }
 
 
 
