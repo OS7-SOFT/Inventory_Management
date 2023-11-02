@@ -103,8 +103,8 @@ namespace inventory_management.Logic.Services
         {
             command.Parameters.Add("@InventoryFromId", SqlDbType.Int).Value = (int)Params[0];
             command.Parameters.Add("@InventoryToId", SqlDbType.Int).Value = (int)Params[1];
-            command.Parameters.Add("@ProductId", SqlDbType.Int).Value = (int)Params[3];
-            command.Parameters.Add("@Quantity", SqlDbType.Int).Value = (int)Params[4];
+            command.Parameters.Add("@ProductId", SqlDbType.Int).Value = (int)Params[2];
+            command.Parameters.Add("@Quantity", SqlDbType.Int).Value = (int)Params[3];
         }
     }
 }

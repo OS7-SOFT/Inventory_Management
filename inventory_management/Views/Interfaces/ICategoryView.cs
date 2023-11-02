@@ -11,8 +11,6 @@ namespace inventory_management.Views.Interfaces
     {
         //fields
         string CategoryName { get; set; }
-        List<string> InventoryNamesList { get; set; }
-
 
     }
 }

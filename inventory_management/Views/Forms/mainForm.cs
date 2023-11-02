@@ -32,7 +32,6 @@ namespace inventory_management
         Product product = Product.Instance();
         Order order = Order.Instance();
 
-
         public mainForm()
         {
             InitializeComponent();
@@ -101,15 +100,23 @@ namespace inventory_management
                 //Set category Count in label
                 lblCategoriesCount.Text = category.CategoryList.Count.ToString();
                 RepositoryItemComboBox res = new RepositoryItemComboBox();
-                gridViewCategory.Columns[2].ColumnEdit = res;
-                for (int i = 0; i <= gridViewCategory.RowCount; i++ )
+                for (int i = 0; i <= gridViewCategory.RowCount -1; i++)
                 {
-
-                    var row = gridViewCategory.GetDataRow(i);
-
                     
-
+                    var row = gridViewCategory.GetDataRow(i);
+                    var list = row["Inventory Names"].ToString().Split(',').ToList();
+                    if(list.Count > 1)
+                    {
+                        res.Items.AddRange(list);
+                        row.SetField("Inventory Names", res);
+                        gridViewCategory.Columns[2].ColumnEdit = res;
+                    }
+                    else if(list.Count <= 1)
+                    {
+                    }
+                    list.Clear();
                 }
+
             };
             //to update data
             UpdateData(categoryTab , category.LoadData);

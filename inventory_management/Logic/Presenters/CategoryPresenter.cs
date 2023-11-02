@@ -39,10 +39,35 @@ namespace inventory_management.Logic.Presenters
             //Set data in categoryList from database
             categoryList.DataSource = categoryServices.GetData();
             view.GetDataList = categoryList;
-            view.InventoryNamesList = ((DataTable)categoryList.DataSource)
-                    .AsEnumerable()
-                    .Select(row => row.Field<string>("InventoryName"))
-                    .ToList();
+            //view.InventoryNamesList = ((DataTable)categoryList.DataSource)
+            //        .AsEnumerable()
+            //        .Select(row => row.Field<string>("Inventory Names"))
+            //        .SelectMany(names => names.Split(','))
+            //        .Select(name => name.Trim()) // Optional: Remove leading/trailing spaces
+            //        .ToList();
+            //var inventoryData = ((DataTable)categoryList.DataSource)
+            //     .AsEnumerable()
+            //     .Select(row => new
+            //     {
+            //         Names = row.Field<string>("InventoryName"),
+            //         CategoryId = row.Field<int>("Category Id")
+            //     });
+
+            //// Group inventory names
+            //var groupedInventoryData = inventoryData
+            //    .GroupBy(name => name.CategoryId)
+            //    .ToDictionary(group => group.Key, group => group.Select(name => name.Names).ToList());
+
+            //// Create a list of inventory names for each category ID
+            //view.InventoryNamesList = groupedInventoryData.Values.ToList();
+
+            //List<string> s = ((DataTable)categoryList.DataSource)
+            //            .AsEnumerable()
+            //            .SelectMany(row => row.Field<string>("Inventory Names")
+            //                .Split(',')
+            //                .Select(name => name.Trim())
+            //            )
+            //            .ToList();
         }
         private void AddMethod(object sender, EventArgs e)
         {
