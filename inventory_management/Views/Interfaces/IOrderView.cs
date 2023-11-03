@@ -19,7 +19,9 @@ namespace inventory_management.Views.Interfaces
         List<string> CustomersList {  set; }
         string CustomerName { get; set; }
         BindingSource ProductsList {  set; }
+        BindingSource InventoryList { set; }
         string ProductName { get; set; }
+        int InvetoryId { get; set; }
 
 }
 }

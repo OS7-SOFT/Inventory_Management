@@ -94,27 +94,27 @@ namespace inventory_management
         {
             //load data
             category.LoadData();
-            category.CategoryList.ListChanged += delegate
+            category.CategoryList.DataSourceChanged += delegate
             {
                 dgvCategory.DataSource = category.CategoryList.DataSource;
                 //Set category Count in label
                 lblCategoriesCount.Text = category.CategoryList.Count.ToString();
                 RepositoryItemComboBox res = new RepositoryItemComboBox();
-                for (int i = 0; i <= gridViewCategory.RowCount -1; i++)
+                for (int i = 0; i <= 3; i++)
                 {
                     
                     var row = gridViewCategory.GetDataRow(i);
-                    var list = row["Inventory Names"].ToString().Split(',').ToList();
-                    if(list.Count > 1)
-                    {
-                        res.Items.AddRange(list);
-                        row.SetField("Inventory Names", res);
-                        gridViewCategory.Columns[2].ColumnEdit = res;
-                    }
-                    else if(list.Count <= 1)
-                    {
-                    }
-                    list.Clear();
+                    //var list = row["Inventory Names"].ToString().Split(',').ToList();
+                    //if(list.Count > 1)
+                    //{
+                    //    res.Items.AddRange(list);
+                    //    row.SetField("Inventory Names", res);
+                    //    gridViewCategory.Columns[2].ColumnEdit = res;
+                    //}
+                    //else if(list.Count <= 1)
+                    //{
+                    //}
+                    //list.Clear();
                 }
 
             };

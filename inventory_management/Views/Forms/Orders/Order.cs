@@ -24,6 +24,7 @@ namespace inventory_management.Views.Forms.Orders
         //fildes 
         public BindingSource OrderList;
         public BindingSource Products;
+        public BindingSource Inventories;
         public List<string> Customers;
         public string Name;
         public int Quantity;
@@ -34,6 +35,7 @@ namespace inventory_management.Views.Forms.Orders
         public string Complete;
         public string Canceled;
         public string Product_name;
+        public int Inventory_id;
         public string Customer_name;
         public bool isEdit;
 
@@ -81,11 +83,15 @@ namespace inventory_management.Views.Forms.Orders
             get { return Customer_name;}
             set { Customer_name = value; }
         }
-        public BindingSource ProductsList { set { Products = value; } }
         public string ProductName
         {
             get { return Product_name;}
             set { Product_name = value; }
+        }
+        public int InvetoryId
+        {
+            get { return Inventory_id; }
+            set { Inventory_id = value ; }
         }
         public string Message { set { message = value; } }
         public bool IsSuccessed { set { isSuccessed = value; } }
@@ -94,6 +100,8 @@ namespace inventory_management.Views.Forms.Orders
             set { isEdit = value; }
             get { return isEdit; }
         }
+        public BindingSource ProductsList { set { Products = value; } }
+        public BindingSource InventoryList { set { Inventories = value; } }
         public BindingSource GetDataList { set { OrderList = value; } }
 
         //event

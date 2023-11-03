@@ -17,6 +17,8 @@ namespace inventory_management.Logic.Presenters
         BindingSource orderList;
         BindingSource productList;
         BindingSource customerList;
+        BindingSource inventoryList;
+
         private object[] Params;
 
         OrderModel model = new OrderModel();
@@ -27,6 +29,7 @@ namespace inventory_management.Logic.Presenters
             orderList = new BindingSource();
             productList = new BindingSource();
             customerList = new BindingSource();
+            inventoryList = new BindingSource();
             this.view = view;
             this.view.AddEvent += AddMethod;
             this.view.EditEvent += LoadDataToEdit;
@@ -59,9 +62,11 @@ namespace inventory_management.Logic.Presenters
                 .Select(cell => cell.ToString()))
                 .ToList();
 
-            //Set Product comboBox
+            //Set Product & Inventory comboBox
             productList.DataSource = orderServices.GetComboBoxData("productComboBox");
             view.ProductsList = productList;
+            inventoryList.DataSource = orderServices.GetComboBoxData("SelectToInventoryOrderedCbx");
+            view.InventoryList = inventoryList;
         }
 
         private void AddMethod(object sender, EventArgs e)
@@ -80,7 +85,8 @@ namespace inventory_management.Logic.Presenters
             view.OrderedQuantity = Convert.ToInt32(dt.Rows[0][1]);
             view.CustomerName = dt.Rows[0][2].ToString();
             view.DeliveryStatus = dt.Rows[0][3].ToString();
-            view.OrderDate =Convert.ToDateTime(dt.Rows[0][4]);
+            view.InvetoryId = Convert.ToInt32(dt.Rows[0][4]);
+            view.OrderDate =Convert.ToDateTime(dt.Rows[0][5]);
 
         }
 
@@ -107,25 +113,27 @@ namespace inventory_management.Logic.Presenters
                     {
                         model.Id = view.Id;
                         //Edit orderMethod 
-                        Params = new object[6];
+                        Params = new object[7];
                         Params[0] = model.Id;
                         Params[1] = orderServices.GetDataByValue(model.ProductName, "selectProductComboBoxId").Rows[0][0];
                         Params[2] = model.OrderedQuantity;
                         Params[3] = model.OrderDate;
                         Params[4] = model.DeliveryStatus;
                         Params[5] = orderServices.GetDataByValue(model.CustomerName, "selectCustomerComboBoxId").Rows[0][0];
+                        Params[6] = view.InvetoryId;
                         orderServices.EditData(Params);
                         view.Message = $"Order {view.Id} Edited Successfully";
                     }
                     else
                     {
                         //Add order name Method 
-                        Params = new object[5];
+                        Params = new object[6];
                         Params[0] = orderServices.GetDataByValue(model.ProductName, "selectProductComboBoxId").Rows[0][0];
                         Params[1] = model.OrderedQuantity;
                         Params[2] = model.OrderDate;
                         Params[3] = model.DeliveryStatus;
                         Params[4] = orderServices.GetDataByValue(model.CustomerName, "selectCustomerComboBoxId").Rows[0][0];                     
+                        Params[5] = view.InvetoryId;
                         orderServices.AddData(Params);
                         view.Message = $"Order {view.Id}  Added Successfully";
                     }
