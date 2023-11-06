@@ -158,7 +158,7 @@ namespace inventory_management.Logic.Presenters
 
         private bool CheckInput()
         {
-            if (view.OrderedQuantity == 0 || view.CustomerName == "" || view.ProductName == "" || view.DeliveryStatus == "")
+            if (view.OrderedQuantity == 0 || view.CustomerName == "" || view.ProductName == ""  || view.DeliveryStatus == "")
             {
 
                 return false;

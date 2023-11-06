@@ -25,7 +25,7 @@ namespace inventory_management.Logic.Services
             command.Parameters.Add("@inventoryId", SqlDbType.Int).Value = (int)Params[5];
         }
         // Delete method
-        public void DeleteData(int id)
+        public  void DeleteData(int id)
         {
             DataBase.Excute("deleteOrder", () => DeleteDataParameters(id, DataBase.command));
         }
@@ -82,5 +82,7 @@ namespace inventory_management.Logic.Services
         {
             return DataBase.Select(storedProcedure, () => { });
         }
+
+       
     }
 }

@@ -263,9 +263,11 @@
             this.inventoryCbx.Properties.Appearance.Options.UseFont = true;
             this.inventoryCbx.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.inventoryCbx.Properties.ContextImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("comboBoxEdit1.Properties.ContextImageOptions.Image")));
+            this.inventoryCbx.Properties.ContextImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("inventoryCbx.Properties.ContextImageOptions.Image")));
             this.inventoryCbx.Size = new System.Drawing.Size(281, 30);
             this.inventoryCbx.TabIndex = 49;
+            this.inventoryCbx.ToolTip = "Select inventory to store current product ";
+            this.inventoryCbx.ToolTipIconType = DevExpress.Utils.ToolTipIconType.Information;
             // 
             // labelControl2
             // 

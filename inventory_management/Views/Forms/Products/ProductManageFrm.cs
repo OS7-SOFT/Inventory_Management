@@ -23,7 +23,7 @@ namespace inventory_management.Views.Forms
 
         private void PerformedMethod()
         {
-            //set min value 
+            //set min max value 
             txtSellPrice.Properties.MaxValue = 10000000000000000000;
             txtSellPrice.Properties.MinValue = 0;
             txtBuyPrice.Properties.MaxValue = 10000000000000000000;
@@ -31,30 +31,40 @@ namespace inventory_management.Views.Forms
             quantityProduct.Properties.MaxValue = 10000000000000000000;
             quantityProduct.Properties.MinValue = 0;
 
-            txtProdName.Text = product.Name;
-            quantityProduct.Value = product.Quantity;
-            txtSellPrice.Value = product.Sell;
-            txtBuyPrice.Value = product.Buy;
-            txtExDate.DateTime = product.Expiration;
-            
             if (txtExDate.DateTime < DateTime.Now)
-                txtExDate.DateTime = DateTime.Now; 
+                txtExDate.DateTime = DateTime.Now;
+
+            //fill comboboxes
             if (product.Categories.Count > 0)
                 categoryCbx.Properties.Items.AddRange(product.Categories);
             if (product.Suppliers.Count > 0)
                 supplierCbx.Properties.Items.AddRange(product.Suppliers);
-            if (product.Inventories.Count > 0)
-                inventoryCbx.Properties.Items.AddRange(GetInventoryName());
 
-            //Get Current Category in edit
-            if (product.Category_name != "" || product.Category_name != null)
-                categoryCbx.EditValue = product.Category_name;
-            //Get Current Category in edit
-            if (product.Category_name != "" || product.Category_name != null)
-                supplierCbx.EditValue = product.Supplier_name;
-             //Get Current Inventory in edit
-            if (product.Inventory_name != "" || product.Inventory_name != null)
-                inventoryCbx.EditValue = product.Inventory_name;
+            GetDataToEdit();
+
+            FillInventory();
+
+
+            //Events
+            categoryCbx.EditValueChanged += delegate
+            {
+                CheckValueComboBox(categoryCbx);
+                if (categoryCbx.Text.Trim() != null)
+                    FillInventory();
+            };
+            inventoryCbx.EditValueChanged += delegate
+            {
+                CheckValueComboBox(inventoryCbx);
+            };
+            supplierCbx.EditValueChanged += delegate
+            {
+                CheckValueComboBox(supplierCbx);
+            };
+
+
+
+
+
 
             okBtn.Click += delegate
             {
@@ -65,13 +75,18 @@ namespace inventory_management.Views.Forms
                     {
                         product.Entry = DateTime.Now;
                         SaveChange();
-                    }  
+                    }
                 }
                 //Edit inventory
                 if (product.isEdit)
                 {
-                    if (CheckValueChanged() && CheckQuantity())
-                        SaveChange();
+                    if (CheckValueChanged()) 
+                    {
+                        if (CheckQuantity()) 
+                        {
+                            SaveChange();
+                        } 
+                    }
                     else
                         this.Close();
 
@@ -88,6 +103,27 @@ namespace inventory_management.Views.Forms
             {
                 product.Cancel();
             };
+
+        }
+
+        //Get Data to Edit
+        private void GetDataToEdit()
+        {
+
+            txtProdName.Text = product.Name;
+            quantityProduct.Value = product.Quantity;
+            txtSellPrice.Value = product.Sell;
+            txtBuyPrice.Value = product.Buy;
+            txtExDate.DateTime = product.Expiration;
+            //Get Current Category in edit
+            if (product.Category_name != "" || product.Category_name != null)
+                categoryCbx.EditValue = product.Category_name;
+            //Get Current Category in edit
+            if (product.Category_name != "" || product.Category_name != null)
+                supplierCbx.EditValue = product.Supplier_name;
+            //Get Current Inventory in edit
+            if (product.Inventory_name != "" || product.Inventory_name != null)
+                inventoryCbx.EditValue = product.Inventory_name;
 
         }
 
@@ -124,7 +160,7 @@ namespace inventory_management.Views.Forms
         //check if user is change value
         private bool CheckValueChanged()
         {
-            if (txtProdName.Text.Trim() == product.Name && quantityProduct.Value == product.Quantity && txtSellPrice.Value == product.Sell && txtBuyPrice.Value == product.Buy && txtExDate.DateTime.ToString("d") == product.Expiration.ToString("d") && categoryCbx.EditValue.ToString().Trim() == product.Category_name && supplierCbx.EditValue.ToString().Trim() == product.Supplier_name && inventoryCbx.EditValue.ToString().Trim() == product.Inventory_name )
+            if (txtProdName.Text.Trim() == product.Name && quantityProduct.Value == product.Quantity && txtSellPrice.Value == product.Sell && txtBuyPrice.Value == product.Buy && txtExDate.DateTime.ToString("d") == product.Expiration.ToString("d") && categoryCbx.Text.Trim() == product.Category_name && supplierCbx.Text.Trim() == product.Supplier_name && inventoryCbx.Text.Trim() == product.Inventory_name)
             {
                 return false;
             }
@@ -135,15 +171,42 @@ namespace inventory_management.Views.Forms
         //get inventory name
         private List<string> GetInventoryName()
         {
-            return product.Inventories.OfType<DataRowView>()
+            if (categoryCbx.Text.Trim() != null && categoryCbx.Text.Trim() != "")
+            {
+                return product.Inventories.OfType<DataRowView>()
+               .Where(x => x[2].ToString() == categoryCbx.EditValue.ToString())
                .Select(x => x[0].ToString())
                .ToList();
+            }
+            else
+            {
+                return product.Inventories.OfType<DataRowView>()
+               .Select(x => x[0].ToString())
+               .ToList();
+            }
+
         }
+        //Fill inventoryCbx
+        private void FillInventory()
+        {
+            inventoryCbx.Properties.Items.Clear();
+            if (GetInventoryName().Count > 0)
+            {
+                inventoryCbx.Properties.Items.AddRange(GetInventoryName());
+                inventoryCbx.ToolTip = "Select inventory to store current product";
+            }
+            else
+            {
+                inventoryCbx.Text = null;
+                inventoryCbx.ToolTip = "No there any inventory conatian this category";
+            }
+        }
+
 
         //check quantity
         private bool CheckQuantity()
         {
-           if(inventoryCbx.SelectedItem != null)
+            if (inventoryCbx.SelectedItem != null)
             {
                 List<object> current = ((DataTable)product.Inventories.DataSource)
              .AsEnumerable()
@@ -167,6 +230,18 @@ namespace inventory_management.Views.Forms
             }
             XtraMessageBox.Show("All fields is requird", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             return false;
+        }
+
+        //Check Combobox value
+        private void CheckValueComboBox(ComboBoxEdit CB)
+        {
+            string enteredValue = CB.Text;
+
+            bool isValid = CB.Properties.Items.Contains(enteredValue);
+
+            CB.EditValue = isValid ? enteredValue : null;
+
+
         }
     }
 }

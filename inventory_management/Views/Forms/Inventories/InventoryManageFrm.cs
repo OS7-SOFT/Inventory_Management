@@ -25,7 +25,7 @@ namespace inventory_management.Views.Forms
 
         private void performedMethod()
         {
-
+          
             //select min value 
             capacityInvent.Properties.MaxValue = 10000000000000000000  ;
             capacityInvent.Properties.MinValue = 0  ;
@@ -42,6 +42,12 @@ namespace inventory_management.Views.Forms
                 categoryCbx.EditValue = inventory.Category_name;
             else
                 categoryCbx.EditValue = "";
+
+            //Events 
+            categoryCbx.EditValueChanged += delegate
+            {
+                CheckValueComboBox();
+            };
 
             okBtn.Click += delegate
             {
@@ -102,12 +108,22 @@ namespace inventory_management.Views.Forms
         //check if user is change value
         private bool CheckValueChanged()
         {
-            if (txtNameInvent.Text.Trim() == inventory.Name && txtNameInvent.Text.Trim() == inventory.Name && txtLocation.Text.Trim() == inventory.Location && capacityInvent.Value == (decimal)inventory.Capacity && categoryCbx.EditValue.ToString().Trim() == inventory.Category_name)
+            if (txtNameInvent.Text.Trim() == inventory.Name && txtNameInvent.Text.Trim() == inventory.Name && txtLocation.Text.Trim() == inventory.Location && capacityInvent.Value == (decimal)inventory.Capacity && categoryCbx.Text.Trim() == inventory.Category_name)
             {
                 return false;
             }
             else 
                 return true;
+        }
+
+        //Check Combobox value
+        private void CheckValueComboBox()
+        {
+            string enteredValue = categoryCbx.Text;
+
+            bool isValid = categoryCbx.Properties.Items.Contains(enteredValue);
+
+            categoryCbx.EditValue = isValid ? enteredValue : null;
         }
     }
 }

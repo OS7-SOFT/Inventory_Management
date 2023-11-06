@@ -302,8 +302,12 @@ namespace inventory_management
         {
             if (Dgv.SelectedRowsCount > 0)
             {
+                var notComplete = "";
+                var status = Dgv.GetRowCellValue(Dgv.FocusedRowHandle, Dgv.Columns[5]).ToString();
+                notComplete = status == "Under proccessing" ? "\nthe state this order not complete yet \nwhen you delete this order the quantity order is back to the inventory ":"";
+
                 var name = Dgv.GetRowCellValue(Dgv.FocusedRowHandle,Dgv.Columns[1]).ToString();
-                var result = XtraMessageBox.Show($"Are you sure to delete ${name} ?","checked Delete",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
+                var result = XtraMessageBox.Show($"Are you sure to delete ${name} ?{notComplete}","checked Delete",MessageBoxButtons.YesNo,MessageBoxIcon.Warning);
                 if (result ==  DialogResult.Yes)
                     return Convert.ToInt32(Dgv.GetRowCellValue(Dgv.FocusedRowHandle,Dgv.Columns[0]));
                 

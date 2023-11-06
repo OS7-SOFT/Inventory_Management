@@ -97,14 +97,14 @@ namespace inventory_management.Logic.Services
         //Method to tranfer Product from one inventory to another
         public void TransferMethod(object[] Params)
         {
-            DataBase.Excute("TransferProducts", () => TransferMethodParameters(Params, DataBase.command));
+            DataBase.Excute("transfer_product", () => TransferMethodParameters(Params, DataBase.command));
         }
         public void TransferMethodParameters(object[] Params, SqlCommand command)
         {
-            command.Parameters.Add("@InventoryFromId", SqlDbType.Int).Value = (int)Params[0];
-            command.Parameters.Add("@InventoryToId", SqlDbType.Int).Value = (int)Params[1];
-            command.Parameters.Add("@ProductId", SqlDbType.Int).Value = (int)Params[2];
-            command.Parameters.Add("@Quantity", SqlDbType.Int).Value = (int)Params[3];
+            command.Parameters.Add("@fromInventId ", SqlDbType.Int).Value = (int)Params[0];
+            command.Parameters.Add("@toInventId", SqlDbType.Int).Value = (int)Params[1];
+            command.Parameters.Add("@productId", SqlDbType.Int).Value = (int)Params[2];
+            command.Parameters.Add("@quantity", SqlDbType.Int).Value = (int)Params[3];
         }
     }
 }
