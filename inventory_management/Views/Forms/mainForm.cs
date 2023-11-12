@@ -18,6 +18,8 @@ using inventory_management.Views.Forms.Orders;
 using DevExpress.XtraTab;
 using inventory_management.Views.Forms;
 using DevExpress.XtraEditors.Repository;
+using inventory_management.Views.Forms.Home;
+using inventory_management.Views.Notification;
 
 namespace inventory_management
 {
@@ -31,6 +33,7 @@ namespace inventory_management
         Supplier supplier = Supplier.Instance();
         Product product = Product.Instance();
         Order order = Order.Instance();
+        Home home = Home.Instance();
 
         public mainForm()
         {
@@ -41,7 +44,7 @@ namespace inventory_management
             SuppliersManagement();
             ProductManagement();
             OrderManagement();
-           
+            HomeManagement();
         }
 
 
@@ -275,6 +278,14 @@ namespace inventory_management
             };
         }
 
+        private void HomeManagement()
+        {
+            //load data
+            home.LoadData();
+            Notify();
+            //update data
+            UpdateData(homeBtn, home.LoadData);
+        }
 
         //Update date when open tab
         private void UpdateData(XtraTabPage namePage,Action loadData)
@@ -317,6 +328,59 @@ namespace inventory_management
             return 0;
         }
 
-        
+        public void Notify()
+        {
+            List<string> NotFullInventory = ((DataTable)home.FullInventory.DataSource).AsEnumerable()
+               .Where(row => Convert.ToInt32(row["Available"]) <= 100) // Condition for "Available" equal to 100
+               .Select(row => row["InventoryName"].ToString())
+               .ToList();
+
+            List<string> FullInventory = ((DataTable)home.FullInventory.DataSource).AsEnumerable()
+              .Where(row => Convert.ToInt32(row["Available"]) == 0) // Condition for "Available" equal to 100
+              .Select(row => row["InventoryName"].ToString())
+              .ToList();
+
+            List<string> NotExpiredProduct = ((DataTable)home.ExpiredProduct.DataSource).AsEnumerable()
+                .Where(row => (DateTime.Now - Convert.ToDateTime(row["ExpirationDate"])).TotalDays <= 60) // Condition for expiration date within 60 days
+                .Select(row => row["ProductName"].ToString())
+                .ToList();
+
+            List<string> ExpiredProduct = ((DataTable)home.ExpiredProduct.DataSource).AsEnumerable()
+                .Where(row => (DateTime.Now - Convert.ToDateTime(row["ExpirationDate"])).TotalDays == 0) // Condition for expiration date within 60 days
+                .Select(row => row["ProductName"].ToString())
+                .ToList();
+
+            if (NotFullInventory.Count > 0)
+            {
+                foreach (string item in NotFullInventory)
+                {
+                    NotificationBox.Instance().CreateNotifiction("The " + item + "Inventory is almost full", "Waring", Color.Orange, NotifictionTable, NotifictionGroupControl);
+                }
+            }
+            if(FullInventory.Count > 0)
+            {
+                foreach (string item in FullInventory)
+                {
+                    NotificationBox.Instance().CreateNotifiction("The " + item + "Inventory full", "Waring", Color.Red, NotifictionTable, NotifictionGroupControl);
+                }
+            }
+
+
+            if (NotExpiredProduct.Count > 0)
+            {
+                foreach (string item in NotExpiredProduct)
+                {
+                    NotificationBox.Instance().CreateNotifiction("The " + item + " is Near reach it expireing date", "Waring", Color.Orange, NotifictionTable, NotifictionGroupControl);
+                }
+            }
+            if (ExpiredProduct.Count > 0)
+            {
+                foreach (string item in ExpiredProduct)
+                {
+                    NotificationBox.Instance().CreateNotifiction("The " + item + "Is expired", "Waring", Color.Red, NotifictionTable, NotifictionGroupControl);
+                }
+            }
+
+        }
     }
 }

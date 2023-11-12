@@ -185,7 +185,7 @@
             this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
             this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.NotifictionGroupControl = new DevExpress.XtraEditors.GroupControl();
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.addAccountBtn = new DevExpress.XtraBars.BarButtonItem();
             this.editAccountBtn = new DevExpress.XtraBars.BarButtonItem();
@@ -314,6 +314,9 @@
             this.commandBarGalleryDropDown6 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
             this.commandBarGalleryDropDown7 = new DevExpress.XtraBars.Commands.CommandBarGalleryDropDown(this.components);
             this.ribbonPageGroup8 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.NotifictionTable = new DevExpress.Utils.Layout.TablePanel();
+            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
+            this.labelControl7 = new DevExpress.XtraEditors.LabelControl();
             ((System.ComponentModel.ISupportInitialize)(this.repositoryItemComboBox1)).BeginInit();
             this.directXFormContainerControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabPage)).BeginInit();
@@ -329,7 +332,8 @@
             ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(doughnutSeriesView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NotifictionGroupControl)).BeginInit();
+            this.NotifictionGroupControl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.inventoryTab.SuspendLayout();
             this.xtraScrollableControl2.SuspendLayout();
@@ -398,6 +402,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NotifictionTable)).BeginInit();
+            this.NotifictionTable.SuspendLayout();
             this.SuspendLayout();
             // 
             // repositoryItemComboBox1
@@ -447,7 +453,7 @@
             // 
             this.xtraScrollableControl1.Controls.Add(this.groupControl3);
             this.xtraScrollableControl1.Controls.Add(this.groupControl2);
-            this.xtraScrollableControl1.Controls.Add(this.groupControl1);
+            this.xtraScrollableControl1.Controls.Add(this.NotifictionGroupControl);
             this.xtraScrollableControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.xtraScrollableControl1.Location = new System.Drawing.Point(0, 183);
             this.xtraScrollableControl1.Name = "xtraScrollableControl1";
@@ -507,23 +513,24 @@
             this.groupControl2.TabIndex = 1;
             this.groupControl2.Text = "Orders";
             // 
-            // groupControl1
+            // NotifictionGroupControl
             // 
-            this.groupControl1.Appearance.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupControl1.Appearance.Options.UseFont = true;
-            this.groupControl1.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupControl1.AppearanceCaption.Options.UseFont = true;
-            this.groupControl1.AppearanceCaption.Options.UseTextOptions = true;
-            this.groupControl1.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
-            this.groupControl1.AppearanceCaption.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Show;
-            this.groupControl1.AppearanceCaption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
-            this.groupControl1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.groupControl1.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImageOptions.Image")));
-            this.groupControl1.Location = new System.Drawing.Point(11, 10);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(689, 289);
-            this.groupControl1.TabIndex = 0;
-            this.groupControl1.Text = "Alerts";
+            this.NotifictionGroupControl.Appearance.Font = new System.Drawing.Font("Arial", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NotifictionGroupControl.Appearance.Options.UseFont = true;
+            this.NotifictionGroupControl.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NotifictionGroupControl.AppearanceCaption.Options.UseFont = true;
+            this.NotifictionGroupControl.AppearanceCaption.Options.UseTextOptions = true;
+            this.NotifictionGroupControl.AppearanceCaption.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Near;
+            this.NotifictionGroupControl.AppearanceCaption.TextOptions.HotkeyPrefix = DevExpress.Utils.HKeyPrefix.Show;
+            this.NotifictionGroupControl.AppearanceCaption.TextOptions.WordWrap = DevExpress.Utils.WordWrap.NoWrap;
+            this.NotifictionGroupControl.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.NotifictionGroupControl.CaptionImageOptions.Image = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImageOptions.Image")));
+            this.NotifictionGroupControl.Controls.Add(this.NotifictionTable);
+            this.NotifictionGroupControl.Location = new System.Drawing.Point(11, 10);
+            this.NotifictionGroupControl.Name = "NotifictionGroupControl";
+            this.NotifictionGroupControl.Size = new System.Drawing.Size(689, 289);
+            this.NotifictionGroupControl.TabIndex = 0;
+            this.NotifictionGroupControl.Text = "Alerts";
             // 
             // ribbonControl1
             // 
@@ -2445,6 +2452,46 @@
             this.ribbonPageGroup8.Name = "ribbonPageGroup8";
             this.ribbonPageGroup8.Text = "Filter products by category";
             // 
+            // NotifictionTable
+            // 
+            this.NotifictionTable.AutoScroll = true;
+            this.NotifictionTable.Columns.AddRange(new DevExpress.Utils.Layout.TablePanelColumn[] {
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 12.71F),
+            new DevExpress.Utils.Layout.TablePanelColumn(DevExpress.Utils.Layout.TablePanelEntityStyle.Relative, 87.29F)});
+            this.NotifictionTable.Controls.Add(this.labelControl4);
+            this.NotifictionTable.Controls.Add(this.labelControl7);
+            this.NotifictionTable.Location = new System.Drawing.Point(5, 28);
+            this.NotifictionTable.Name = "NotifictionTable";
+            this.NotifictionTable.Rows.AddRange(new DevExpress.Utils.Layout.TablePanelRow[] {
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 45.19998F),
+            new DevExpress.Utils.Layout.TablePanelRow(DevExpress.Utils.Layout.TablePanelEntityStyle.Absolute, 80F)});
+            this.NotifictionTable.ShowGrid = DevExpress.Utils.DefaultBoolean.True;
+            this.NotifictionTable.Size = new System.Drawing.Size(679, 256);
+            this.NotifictionTable.TabIndex = 3;
+            this.NotifictionTable.UseSkinIndents = true;
+            // 
+            // labelControl4
+            // 
+            this.labelControl4.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl4.Appearance.Options.UseFont = true;
+            this.labelControl4.Location = new System.Drawing.Point(126, 26);
+            this.labelControl4.Margin = new System.Windows.Forms.Padding(30, 10, 30, 3);
+            this.labelControl4.Name = "labelControl4";
+            this.labelControl4.Size = new System.Drawing.Size(74, 23);
+            this.labelControl4.TabIndex = 1;
+            this.labelControl4.Text = "Message";
+            // 
+            // labelControl7
+            // 
+            this.labelControl7.Appearance.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelControl7.Appearance.Options.UseFont = true;
+            this.labelControl7.Location = new System.Drawing.Point(23, 26);
+            this.labelControl7.Margin = new System.Windows.Forms.Padding(10, 10, 7, 3);
+            this.labelControl7.Name = "labelControl7";
+            this.labelControl7.Size = new System.Drawing.Size(53, 23);
+            this.labelControl7.TabIndex = 1;
+            this.labelControl7.Text = "Status";
+            // 
             // mainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 16F);
@@ -2472,7 +2519,8 @@
             ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NotifictionGroupControl)).EndInit();
+            this.NotifictionGroupControl.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             this.inventoryTab.ResumeLayout(false);
             this.inventoryTab.PerformLayout();
@@ -2552,6 +2600,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.commandBarGalleryDropDown7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NotifictionTable)).EndInit();
+            this.NotifictionTable.ResumeLayout(false);
+            this.NotifictionTable.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2565,7 +2616,6 @@
         private DevExpress.XtraEditors.XtraScrollableControl xtraScrollableControl1;
         private DevExpress.XtraEditors.GroupControl groupControl3;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
         private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
@@ -2695,6 +2745,10 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridViewInventory;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraBars.BarButtonItem transformBtn;
+        private DevExpress.XtraEditors.LabelControl labelControl4;
+        private DevExpress.XtraEditors.LabelControl labelControl7;
+        private DevExpress.Utils.Layout.TablePanel NotifictionTable;
+        private DevExpress.XtraEditors.GroupControl NotifictionGroupControl;
     }
 }
 
